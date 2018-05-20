@@ -1,6 +1,6 @@
 ---
 title: Duality - LD34
-layout: post
+date: "2016-01-06"
 category: gamejam
 image: ld3400.png
 comments: true

@@ -1,7 +1,7 @@
 ---
 title: A Year of 3D Printing
 category: blog
-layout: post
+date: "2016-12-31"
 image: 3dprinting/allprints.png
 tags: blog, life, 3d, printing, maker, recap, 2016
 description: A recap of my escapades with 3D printing in 2016.

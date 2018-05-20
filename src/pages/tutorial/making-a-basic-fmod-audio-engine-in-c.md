@@ -1,6 +1,6 @@
 ---
 title: Making a Basic FMOD Audio Engine in C++
-layout: post
+date: "2016-04-12"
 category: tutorial
 tags: tutorial, fmod, audio, engine, c++, cpp, programming
 description: A tutorial about setting about a basic audio engine for video games in C++ using the Fmod API.

@@ -1,6 +1,6 @@
 ---
 title: Down the Rabbit Hole
-layout: post
+date: "2014-12-07"
 category: gamejam
 image: dtrh1.jpg
 tags: ludum, dare, haxe, haxeflixel, game, jam

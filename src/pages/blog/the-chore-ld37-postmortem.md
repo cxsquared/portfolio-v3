@@ -1,6 +1,6 @@
 ---
 title: The Chore LD37 Postmortem
-layout: post
+date: "2016-12-29"
 tags: Ludum Dare, post, mortem, Postmortem, LD37, The Chore, 37, haxe, haxeflixel
 category: blog
 image: LD37/ld37_1.png

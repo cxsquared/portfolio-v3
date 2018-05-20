@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Setting Up Xcode and Visual Studio for FMOD Development
+date: "2016-04-02"
 tags: FMOD, Audio Programming, Game Development, tutorial, game, cpp, c++, programming, visual, studio
 category: tutorial
 description: Setting up the XCode and Visual Studio programming environment for developing an audio engine for the Fmod API in C++.

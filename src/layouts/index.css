@@ -16,3 +16,7 @@
 html {
     background: var(--tomorrow-background);
 }
+
+a {
+    text-shadow: none;
+}

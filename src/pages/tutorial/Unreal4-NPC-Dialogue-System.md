@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Unreal 4 NPC Dialogue System
+date: "2017-01-04"
 tags: Unreal4, Tutorial, NPC, Dialogue, 4.13, edited, widget, blueprints
 category: tutorial
 description: An Unreal 4 blueprint tutorial covering the creation of a dynamic dialogue system and text widgets.

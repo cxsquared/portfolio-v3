@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Creating a Visual Novel in Unity
+date: "2015-09-27"
 tags: Unity, Tutorial, Visual Novel
 category: tutorial
 ---

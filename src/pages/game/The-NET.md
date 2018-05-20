@@ -1,6 +1,6 @@
 ---
 title: The NET
-layout: post
+date: "2013-11-04"
 category: game
 image: net.png
 tags: net, falsh, early, class

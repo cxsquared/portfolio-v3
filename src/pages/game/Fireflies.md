@@ -1,6 +1,6 @@
 ---
 title: Fireflies
-layout: post
+date: "2014-11-08"
 category: gamejam
 image: firefly.png
 tags: game, jam, gamejam, zero, 0, hour, haxeflixel, haxe

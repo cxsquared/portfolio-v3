@@ -1,6 +1,6 @@
 ---
 title: "Global Game Jam 2017: A Failed Postmortem"
-layout: post
+date: "2017-01-26"
 tags: ggj, global game jam, game jam, postmortem, unreal 4, midi
 category: blog
 description: A postmortem on my Global Game Jam 2017 experience and some Unreal 4 tips and tricks.

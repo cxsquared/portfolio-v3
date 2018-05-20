@@ -1,6 +1,6 @@
 ---
 title: Notes
-layout: post
+date: "2013-03-04"
 category: game
 image: notes.png
 tags: notes, flash, early, class

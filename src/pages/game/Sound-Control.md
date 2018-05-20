@@ -1,6 +1,6 @@
 ---
 title: Sound Control
-layout: post
+date: "2015-08-24"
 category: gamejam
 image: ld33.jpg
 tags: ludum, dare, 33, sound, music, game, jam, haxe, haxeflixel

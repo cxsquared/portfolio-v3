@@ -1,6 +1,6 @@
 ---
 title: Pirate Panic!
-layout: post
+date: "2015-02-15"
 category: gamejam
 image: pp.jpg
 tags: game, jam, pirate panic, unity, global

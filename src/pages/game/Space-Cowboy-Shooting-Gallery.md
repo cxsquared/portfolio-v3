@@ -1,6 +1,6 @@
 ---
 title: Space Cowboy Shooting Gallery
-layout: post
+date: "2014-10-21"
 category: gamejam
 image: scsgFull.png
 tags: game, jam, gamejam, unity, leapmotion, leap, motion, vr

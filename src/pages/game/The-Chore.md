@@ -1,6 +1,6 @@
 ---
 title: The Chore
-layout: post
+date: "2016-12-30"
 category: gamejam
 image: LD37/ld37_5.png
 tags: game, jam, ludum, dare, ld, 37, haxe, haxeflixel

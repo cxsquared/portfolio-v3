@@ -1,6 +1,6 @@
 ---
 title: My Favorite Games of Ludum Dare 37
-layout: post
+date: "2017-01-02"
 tags: ld, ludum, dare, 37, ld37, game, jam
 category: blog
 image: LD37/favoriteLD.png

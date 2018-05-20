@@ -1,7 +1,7 @@
 ---
 title: Pirate Panic! Global Game Jam 2015 Post-mortem
 author: cxsquared
-layout: post
+date: "2015-02-15"
 category: blog
 tags: pirate panic, global, game, jam, post, mortem, postmortem, unity
 ---

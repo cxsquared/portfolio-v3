@@ -1,7 +1,7 @@
 ---
 title: Heading To GDC
 author: cxsquared
-layout: post
+date: "2015-02-22"
 category: blog
 tags: gdc, game, development, personal, blog, life
 ---

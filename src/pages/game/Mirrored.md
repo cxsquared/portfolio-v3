@@ -1,6 +1,6 @@
 ---
 title: Mirrored
-layout: post
+date: "2014-10-01"
 category: released
 image: mirrored1.png 
 tags: mirrored, android, puzzle, java, libgdx, released, game

@@ -1,6 +1,6 @@
 ---
 title: Return of Aetheria
-layout: post
+date: "2015-06-01"
 category: released
 image: roa2.jpg
 tag: school, alternate, reality, game, work, music, convention, con, flash, as3, indy, pop, con

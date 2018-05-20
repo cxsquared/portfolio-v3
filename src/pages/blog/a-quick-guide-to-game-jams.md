@@ -1,6 +1,6 @@
 ---
 title: A Quick Guide to Game Jams
-layout: post
+date: "2017-01-19"
 tags: ggj, global game jam, game jam, guide, ludum dare, ld
 category: blog
 description: Some tips and tricks on why and how you should participate in game jams.

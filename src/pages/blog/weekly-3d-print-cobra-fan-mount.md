@@ -1,6 +1,6 @@
 ---
 title: Weekly 3D Print Cobra Fan Mount
-layout: post
+date: "2017-01-16"
 tags: fan, 3d printing, weekly, mount, cobra, thingiverse, rear, upgrade, wanhao, i3, makerselect, monoprice, timelapse
 category: blog
 description: A summary and time-lapse of the cobra rear fan mount upgrade for the wanhao i3 3D printer.
