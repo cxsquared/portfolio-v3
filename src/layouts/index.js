@@ -7,7 +7,7 @@ import './index.css'
 import 'prismjs/themes/prism-tomorrow.css'
 
 const Layout = ({ children, data }) => (
-  <div style={{ background: data.site.siteMetadata.colors.blue.background }}>
+  <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -44,7 +44,6 @@ export const query = graphql`
       siteMetadata {
         title
         colors {
-          background
           blue
         }
       }

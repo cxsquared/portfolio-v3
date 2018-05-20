@@ -3,7 +3,7 @@ import lincolnTheme from 'typography-theme-lincoln'
 import Config from '../../gatsby-config'
 
 lincolnTheme.bodyColor = Config.siteMetadata.colors.foreground
-lincolnTheme.headerColor = Config.siteMetadata.colors.aqua
+lincolnTheme.headerColor = Config.siteMetadata.colors.blue
 
 const typography = new Typography(lincolnTheme)
 
