@@ -7,7 +7,7 @@ import './index.css'
 import 'prismjs/themes/prism-tomorrow.css'
 
 const Layout = ({ children, data }) => (
-  <div>
+  <div style={{ background: data.site.siteMetadata.colors.blue.background }}>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -15,7 +15,10 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header
+      siteTitle={data.site.siteMetadata.title}
+      backgroundColor={data.site.siteMetadata.colors.blue}
+    />
     <div
       style={{
         margin: '0 auto',
@@ -40,6 +43,10 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        colors {
+          background
+          blue
+        }
       }
     }
   }
