@@ -1,11 +1,16 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const PostColumn = ({ sectionTitle, posts }) => {
-  console.log(`Generating posts for ${sectionTitle}`)
-  console.log({ posts })
+import { rhythm } from '../utils/typography'
+
+const PostColumn = ({ sectionTitle, posts, gridColumn }) => {
   return (
-    <div>
+    <div
+      style={{
+        margin: rhythm(1 / 4),
+        flexGrow: 1,
+      }}
+    >
       <h1>{sectionTitle}</h1>
       {posts.map(post => {
         return (
@@ -22,9 +27,14 @@ const PostColumn = ({ sectionTitle, posts }) => {
 }
 
 const IndexPage = ({ data }) => {
-  console.log(data)
   return (
-    <div>
+    <div
+      style={{
+        display: 'grid',
+        alignContent: 'center',
+        gridTemplateColumns: '1fr 1fr 1fr',
+      }}
+    >
       <PostColumn
         sectionTitle="Games"
         posts={data.allMarkdownRemark.edges.filter(e => {
