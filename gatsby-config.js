@@ -37,7 +37,10 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        excerpt_seperator: '<!-- excerpt -->',
         plugins: [
+          'gatsby-remark-responsive-iframe',
+          `gatsby-remark-autolink-headers`,
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
@@ -52,6 +55,13 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 590,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-embed-youtube',
+            options: {
+              width: 800,
+              height: 400,
             },
           },
         ],

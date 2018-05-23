@@ -20,6 +20,7 @@ const Layout = ({ children, data }) => (
       backgroundColor={data.site.siteMetadata.colors.blue}
     />
     <div
+      className="content"
       style={{
         margin: '0 auto',
         maxWidth: 960,
