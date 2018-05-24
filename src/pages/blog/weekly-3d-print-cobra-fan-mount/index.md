@@ -17,7 +17,7 @@ Almost all tutorials and forums will tell you that upgrading your fan is one of 
 
 The real upgrade in this print is getting a better fan. The [Monoprice Makerselect][makerselect] comes with a pretty wimpy fan and a mount that doesn't even really point towards the nozzle. Almost all of the popular mounts use a radial fan which produces quite a lot of blowing power and is pretty quiet. I just purchased a decently prices fan off of [Amazon](https://www.amazon.com/gp/product/B00H6VM83I/ref=oh_aui_search_detailpage?ie=UTF8&psc=1). This fan should work for almost all the popular fan mounts on [Thingiverse][thingLink]. When mounting the new fan it's important to make sure you match the wire colors when plugging it in or you could fry your fan. Overall I'm really happy with this upgrade and it's increased the quality of my prints especially when it comes overhanging areas. Here's a time-lapse of the mount being printed.
 
-{% youtube https://youtu.be/Yo8JGvpMMv0 %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Yo8JGvpMMv0" frameborder="0" allowfullscreen></iframe>
 
 If you have any questions or suggestions for things to print in the future feel free to comment bellow.
 
