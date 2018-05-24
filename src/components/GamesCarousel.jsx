@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import '../layouts/index.css';
 
 const GamesCarousel = ({ games }) => {
     const settings = {
@@ -54,16 +55,28 @@ const GamesCarousel = ({ games }) => {
       return (categories[g1.node.frontmatter.category] - categories[g2.node.frontmatter.category]);
     })
 
-    return <Slider {...settings}>
-        {games.map(game => {
-            return <div key={game.node.id}>
-              <Link to={game.node.fields.slug}>
-                <h3>{game.node.frontmatter.title}</h3>
-                <img src={game.node.frontmatter.imageURL}/> 
-              </Link>
-            </div>;
-        })}
-    </Slider>;
+    return <div>
+      <h1>Games</h1>
+      <Slider {...settings}>
+          {games.map(game => {
+              return <div
+                className="game"
+                key={game.node.id}
+              >
+                <Link to={game.node.fields.slug}>
+                  <h3>{game.node.frontmatter.title}</h3>
+                    <img
+                    src={game.node.frontmatter.imageURL}
+                    style={{
+                      width: 'fit-content',
+                      alignSelf: 'center',
+                      objectFit: 'cover'
+                    }}/> 
+                </Link>
+              </div>;
+          })}
+      </Slider>
+    </div>;
 }
 
 export default GamesCarousel;

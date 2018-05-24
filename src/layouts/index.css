@@ -20,3 +20,20 @@ html {
 a {
     text-shadow: none;
 }
+
+.slick-track > .slick-slide {
+    height: 300px;
+    object-position: center;
+}
+
+.about {
+    background-color: var(--tomorrow-yellow);
+    text-align: center;
+    color: var(--tomorrow-currentLine);
+}
+
+.footer {
+    background-color: var(--tomorrow-green);
+    text-align: center;
+    color: var(--tomorrow-currentLine);
+}

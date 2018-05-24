@@ -2,17 +2,11 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const Header = ({ siteTitle, backgroundColor }) => (
-  <div
-    className="header"
-    style={{
-      background: backgroundColor,
-    }}
-  >
     <div
       style={{
         margin: '0 auto',
-        maxWidth: 960,
         padding: '1.45rem 1.0875rem',
+        background: backgroundColor
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -27,7 +21,6 @@ const Header = ({ siteTitle, backgroundColor }) => (
         </Link>
       </h1>
     </div>
-  </div>
 )
 
 export default Header

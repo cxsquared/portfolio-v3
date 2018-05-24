@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import PostsColumn from '../components/PostsColumn'
+import Posts from '../components/Posts'
 import GamesCarousel from '../components/GamesCarousel'
 
 import { rhythm } from '../utils/typography'
@@ -24,19 +24,25 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <div>
-      <GamesCarousel games={games} />
-      <PostsColumn
-        sectionTitle="Posts"
-        posts={data.allMarkdownRemark.edges.filter(e => {
-          if (
-            e.node.frontmatter.category === 'blog' ||
-            e.node.frontmatter.category === 'tutorial'
-          ) {
-            return e.node
-          }
-        })}
-      />
+    <div className="content-sections">
+      <div className="games">
+        <GamesCarousel games={games} />
+      </div>
+      <div className="posts">
+        <Posts
+          sectionTitle="What's New"
+          posts={data.allMarkdownRemark.edges
+            .filter(e => {
+              if (
+                e.node.frontmatter.category === 'blog' ||
+                e.node.frontmatter.category === 'tutorial'
+              ) {
+                return e.node
+              }
+            })
+            .slice(0, 4)}
+        />
+      </div>
     </div>
   )
 }
