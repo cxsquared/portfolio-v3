@@ -2,22 +2,16 @@ module.exports = {
   siteMetadata: {
     title: 'Chips and Bits',
     siteUrl: 'https://codyclaborn.me',
-    colors: {
-      background: '#1d1f21',
-      currentLine: '#282a2e',
-      selection: '#373b41',
-      foreground: '#c5c8c6',
-      comment: '#969896',
-      red: '#cc6666',
-      orange: '#de935f',
-      yellow: '#f0c674',
-      green: '#b5bd68',
-      aqua: '#8abeb7',
-      blue: '#81a2be',
-      purple: '#b294bb',
-    },
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-plugin-sharp`,
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-matomo',
@@ -25,13 +19,6 @@ module.exports = {
         siteId: '1',
         matomoUrl: 'https://codyclaborn.me/piwik/',
         siteUrl: 'https://codyclaborn.me',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
       },
     },
     {
@@ -57,13 +44,6 @@ module.exports = {
               maxWidth: 590,
             },
           },
-          {
-            resolve: 'gatsby-remark-embed-youtube',
-            options: {
-              width: 800,
-              height: 400,
-            },
-          },
         ],
       },
     },
@@ -74,6 +54,5 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-sharp`,
   ],
 }

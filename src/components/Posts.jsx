@@ -1,35 +1,80 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { css } from 'gatsby-plugin-glamor'
+import Colors from '../utils/Colors';
+import { rhythm  } from '../utils/typography'
 
 const Posts = ({ sectionTitle, posts, gridColumn }) => {
   return (
-    <div
-    css={{
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      gridTemplateRows: '1fr 2fr 2fr',
-
-      '@media(min-width: 600px)': {
-        gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: '1fr 2fr 2fr',
-      },
-    }}>
-      <h1
-      style={{
-        gridRow: '1',
-        gridColumn: '1 / -1'
-      }}>{sectionTitle}</h1>
-      {posts.map((post, i) => {
-        return (
-          <div key={post.node.id} className="post">
-            <Link to={post.node.fields.slug}>
-              <h3>{post.node.frontmatter.title}</h3>
-              <p style={{}}>{post.node.excerpt}</p>
-            </Link>
-          </div>
-        )
-      })}
+    <div className="posts">
+      <h2 style={{
+        textAlign: "center"
+      }}>{sectionTitle}</h2>
+      <div
+        css={{
+          display: 'flex',
+          flexWrap: 'wrap'
+        }}>
+        {posts.map((post, i) => {
+          const postLink = post.node.fields.slug;
+          return (
+            <div key={post.node.id} 
+                 className="post" 
+                 css={{
+                    padding: '10px',
+                    flex: '1 1 50%',
+                    '@media (max-width: 800px)': {
+                      flex: '1 1 100%'
+                    }
+                  }}>
+                <header>
+                    <time dateTime={post.node.frontmatter.date}
+                          style={{
+                            fontSize: rhythm (1/2)
+                          }}
+                    >
+                      <Link to={postLink}
+                            css={{
+                              color: Colors.comment,
+                              ':hover': {
+                                color: Colors.red
+                              }
+                            }}>
+                        {new Date(post.node.frontmatter.date).toDateString()}
+                      </Link>
+                    </time>
+                    <h3 style={{
+                      marginTop: rhythm(1/4)
+                    }}>
+                      <Link to={postLink}
+                            css={{
+                              color: Colors.foreground,
+                              ':hover': {
+                                  color: Colors.red
+                              }}}>
+                        {post.node.frontmatter.title}
+                      </Link>
+                    </h3>
+                </header>
+                <p>
+                  {post.node.excerpt}
+                  <span style={{
+                    display: 'block'
+                  }}>
+                    <Link to={postLink}
+                          css={{
+                            color: Colors.red,
+                            ':hover': {
+                              color: Colors.foreground
+                            }}}>
+                      Read More
+                    </Link>
+                  </span>
+                </p>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

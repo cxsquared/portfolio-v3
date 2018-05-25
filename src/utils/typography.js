@@ -1,10 +1,10 @@
 import Typography from 'typography'
-import lincolnTheme from 'typography-theme-lincoln'
-import Config from '../../gatsby-config'
+import githubTheme from 'typography-theme-github'
+import Colors from './Colors'
 
-lincolnTheme.bodyColor = Config.siteMetadata.colors.foreground
-lincolnTheme.headerColor = Config.siteMetadata.colors.blue
+githubTheme.bodyColor = Colors.foreground
+githubTheme.headerColor = Colors.foreground
 
-const typography = new Typography(lincolnTheme)
+const typography = new Typography(githubTheme)
 
 export default typography

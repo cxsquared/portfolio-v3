@@ -13,23 +13,28 @@
     --tomorrow-purple: #b294bb;
 }
 
-html {
+html body {
+    width: 100%;
     background: var(--tomorrow-background);
 }
 
 a {
     text-shadow: none;
+    background: none;
 }
 
-.slick-track > .slick-slide {
-    height: 300px;
-    object-position: center;
+a:hover {
+    color: var(--tomorrow-red);
 }
 
 .about {
     background-color: var(--tomorrow-yellow);
     text-align: center;
     color: var(--tomorrow-currentLine);
+}
+
+.content {
+    outline: solid  var(--tomorrow-purple);
 }
 
 .footer {

@@ -1,12 +1,38 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Slider from 'react-slick';
+import PropTypes from 'prop-types';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../layouts/index.css';
 
-const GamesCarousel = ({ games }) => {
+class GamesCarousel extends React.PureComponent {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() { 
+    setTimeout(() => { window.dispatchEvent(new Event('resize')) }, 150); 
+  }
+
+  render() {
+
+    return <div className="game-section"
+                style={{
+                  backgroundColor: '#b5bd68',
+                  textAlign: 'center',
+                  color: '#969896',
+                  height: '360px'
+                }}>
+      <h2 style={{
+        marginTop: 0
+      }}>Games</h2>
+      <div className="game-carousel">
+        GamesCarousel
+      </div>
+    </div>;
+
     const settings = {
         dots: true,
         infinite: true,
@@ -37,6 +63,8 @@ const GamesCarousel = ({ games }) => {
       "gamejam": 2,
       "game": 3
     }
+    
+    const games = this.props.games;
 
     games.sort((g1, g2) => {
       if (g1.node.frontmatter.category === g2.node.frontmatter.category) {
@@ -55,7 +83,7 @@ const GamesCarousel = ({ games }) => {
       return (categories[g1.node.frontmatter.category] - categories[g2.node.frontmatter.category]);
     })
 
-    return <div>
+    return <div className="games">
       <h1>Games</h1>
       <Slider {...settings}>
           {games.map(game => {
@@ -66,7 +94,7 @@ const GamesCarousel = ({ games }) => {
                 <Link to={game.node.fields.slug}>
                   <h3>{game.node.frontmatter.title}</h3>
                     <img
-                    src={game.node.frontmatter.imageURL}
+                    src={game.node.frontmatter.image.publicURL}
                     style={{
                       width: 'fit-content',
                       alignSelf: 'center',
@@ -77,6 +105,11 @@ const GamesCarousel = ({ games }) => {
           })}
       </Slider>
     </div>;
+  }
+}
+
+GamesCarousel.propTypes = {
+  games: PropTypes.array.isRequired
 }
 
 export default GamesCarousel;
