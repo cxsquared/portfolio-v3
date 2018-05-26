@@ -98,7 +98,7 @@ class GamesCarousel extends React.PureComponent {
     } 
 
     return <div className="games">
-      <h1>Games</h1>
+      <h1 style={{ textAlign: 'center' }}>Games</h1>
       <Carousel infiniteLoop={true}
                 showThumbs={false}
                 showStatus={false}

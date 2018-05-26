@@ -7,9 +7,9 @@ import { rhythm  } from '../utils/typography'
 const Posts = ({ sectionTitle, posts, gridColumn }) => {
   return (
     <div className="posts">
-      <h2 style={{
+      <h1 style={{
         textAlign: "center"
-      }}>{sectionTitle}</h2>
+      }}>{sectionTitle}</h1>
       <div
         css={{
           display: 'flex',

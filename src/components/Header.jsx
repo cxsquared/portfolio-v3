@@ -1,16 +1,21 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Colors from '../utils/Colors';
+import logo from '../assets/logo.svg';
 
 const Header = ({ siteTitle, backgroundColor }) => (
     <div
       style={{
         margin: '0 auto',
-        padding: '1.45rem 1.0875rem',
+        padding: '.50rem 1.0875rem',
         background: Colors.blue
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 style={{ 
+        margin: 0,
+        padding: 0,
+        border: 'none'
+      }}>
         <Link
           to="/"
           style={{
@@ -18,7 +23,15 @@ const Header = ({ siteTitle, backgroundColor }) => (
             textDecoration: 'none',
           }}
         >
-          {siteTitle}
+        <img src={logo}
+             style={{
+               display: 'inline',
+               width: '50px',
+               height: '50px',
+               margin: '0',
+               objectFit: 'cover'
+             }}/>
+          <span style={{ verticalAlign: '16px' }}>{siteTitle.toUpperCase()}</span>
         </Link>
       </h1>
     </div>
