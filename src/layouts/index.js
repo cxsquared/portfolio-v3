@@ -11,7 +11,7 @@ const Layout = ({ children, data }) => (
     css={{
       display: 'grid',
       gridGap: '10px',
-      gridTemplateColumns: '.5fr 8fr 2fr .5fr',
+      gridTemplateColumns: '1fr 8fr 2fr 1fr',
       gridTemplateRows: '2fr auto 1fr',
     }}
   >

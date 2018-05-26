@@ -34,11 +34,14 @@ a:hover {
 }
 
 .content {
-    outline: solid  var(--tomorrow-purple);
 }
 
 .footer {
     background-color: var(--tomorrow-green);
     text-align: center;
     color: var(--tomorrow-currentLine);
+}
+
+.slick-slide {
+    width: 300px;
 }

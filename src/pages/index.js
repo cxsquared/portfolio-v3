@@ -21,13 +21,20 @@ const IndexPage = ({ data }) => {
     <div className="content-sections">
       <GamesCarousel games={games} />
       <Posts
-        sectionTitle="What's New"
+        sectionTitle="Latest Tutorials"
         posts={data.allMarkdownRemark.edges
           .filter(e => {
-            if (
-              e.node.frontmatter.category === 'blog' ||
-              e.node.frontmatter.category === 'tutorial'
-            ) {
+            if (e.node.frontmatter.category === 'tutorial') {
+              return e.node
+            }
+          })
+          .slice(0, 4)}
+      />
+      <Posts
+        sectionTitle="Latest Posts"
+        posts={data.allMarkdownRemark.edges
+          .filter(e => {
+            if (e.node.frontmatter.category === 'blog') {
               return e.node
             }
           })
