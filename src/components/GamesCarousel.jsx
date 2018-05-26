@@ -1,18 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+import { Carousel } from 'react-responsive-carousel';
 
 import '../layouts/index.css';
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'; 
 
 class GamesCarousel extends React.PureComponent {
   constructor(props) {
-    super(props)
+    super(props);
+
+    this.state = {
+      width: 800,
+      selectedItem: 1
+    }
   }
 
-  componentDidMount() { 
-    setTimeout(() => { window.dispatchEvent(new Event('resize')) }, 150); 
+  updateDimensions() {
+    this.setState({ width: window.innerWidth });
+  }
+
+  componentDidMount() {
+    this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions.bind(this));
+  }
+
+  onCarouselChange(index) {
+    console.log(`previous index: ${this.state.selectedItem} new index: ${index}`);
+    var newIndex = index;
+    if (this.state.width > 800) {
+      if (index < 1) {
+        newIndex = 1;
+      } else if (index > this.props.games.length - 2) {
+        newIndex = this.props.games.length - 2;
+      }
+    }
+
+    this.setState({
+      selectedItem: newIndex
+    });
   }
 
   _sortGames(gamesToSort) {
@@ -44,30 +74,41 @@ class GamesCarousel extends React.PureComponent {
 
   render() {
     var slides = this._sortGames(this.props.games.map(g => g.node)).map((game, i) => {
-        return <Slide index={i}
-                      key={game.id}>
+        return <div key={game.id}
+                    style={{
+                      display: 'flex'
+                    }}>
           <Link to={game.fields.slug}>
-            <h3>{game.frontmatter.title}</h3>
-              <Image src={game.frontmatter.image.publicURL}
-                     style={{
-                       objectFit: 'cover'
-                     }} />
+            <img src={game.frontmatter.image.publicURL}
+                 style={{
+                   height: 'fit-content',
+                   maxHeight: "300px",
+                   objectFit: 'cover'
+                 }} />
+            <p className="legend">
+                 {game.frontmatter.title}
+            </p>
           </Link>
-        </Slide>
+        </div>
     });
+
+    let centerSlidePercentage = 33.33;
+    if (this.state.width <= 800) {
+      centerSlidePercentage = 100;
+    } 
 
     return <div className="games">
       <h1>Games</h1>
-      <CarouselProvider naturalSlideWidth={100}
-                        naturalSlideHeight={125}
-                        totalSlides={slides.length}
-                        visibleSlides={3} >
-        <Slider>
-          {slides}
-        </Slider>
-        <ButtonBack>Back</ButtonBack>
-        <ButtonNext>Next</ButtonNext>
-      </CarouselProvider>
+      <Carousel infiniteLoop={true}
+                showThumbs={false}
+                showStatus={false}
+                centerMode={true}
+                centerSlidePercentage={centerSlidePercentage}
+                useKeyboardArrows={true}
+                onChange={this.onCarouselChange.bind(this)}
+                selectedItem={this.state.selectedItem}>
+        {slides}
+      </Carousel>
     </div>;
   }
 }
