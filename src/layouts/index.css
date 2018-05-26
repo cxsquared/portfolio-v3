@@ -41,19 +41,3 @@ a:hover {
     text-align: center;
     color: var(--tomorrow-currentLine);
 }
-
-.games li.slide {
-    min-width: 33.33%;
-}
-
-@media all and (max-width: 600px) {
-    .games li.slide {
-        min-width: 50%;
-    }
-}
-
-@media all and (max-width: 480px) {
-    .games li.slide {
-        min-width: 100%;
-    }
-}
