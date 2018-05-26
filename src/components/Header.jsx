@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
 import Colors from '../utils/Colors';
 import logo from '../assets/logo.svg';
+import Icon from 'react-icons-kit';
+import { search } from 'react-icons-kit/fa/search';
 import { rhythm } from '../utils/typography';
 import { css } from 'gatsby-plugin-glamor';
 
@@ -55,17 +57,20 @@ class Header extends React.PureComponent{
       </Link>
     </h1>;
 
-    const search = <input type="text" 
-                          placeholder="Search"
-                          css={{
-                            border: '0',
-                            width: '100%',
-                            outline: '0',
-                            borderBottom: `1px solid ${Colors.currentLine}`,
-                            background: 'transparent',
-                            ':focus': {
-                              outline: 'none'
-                            }}} />;
+    const searchInput = <div style={{ display: 'flex' }}>
+      <input type="text" 
+        placeholder="Search"
+        css={{
+          border: '0',
+          width: '100%',
+          outline: '0',
+          borderBottom: `1px solid ${Colors.currentLine}`,
+          background: 'transparent',
+          ':focus': {
+            outline: 'none'
+      }}} />
+      <Icon icon={search} />
+    </div>;
 
     const navLinkStyle={
       color: 'black',
@@ -96,7 +101,7 @@ class Header extends React.PureComponent{
               {this._buildNavLink(<Link to={"/games/"} css={navLinkStyle}>Games</Link>)}
               {this._buildNavLink(<Link to={"/tutorials/"} css={navLinkStyle}>Tutorials</Link>)}
               {this._buildNavLink(<Link to={"/blog/"} css={navLinkStyle}>Blog</Link>, "", { marginRight: 'auto' })}
-              {this._buildNavLink(search, "", { width: '23%' })}
+              {this._buildNavLink(searchInput, "", { width: '23%' })}
             </ul>
           </nav>
         </div>
