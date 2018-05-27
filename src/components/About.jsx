@@ -8,7 +8,7 @@ class About extends React.PureComponent {
         super(props);
     }
 
-     render() {
+    render() {
         const author = <div>
             <h3>The musings and creations of Cody Claborn</h3>
             <p>
@@ -29,7 +29,7 @@ class About extends React.PureComponent {
                     height="450" 
                     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/7355881&color=%23cc6666&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" />
         </div>;
- 
+
         return <div
         className="about"
         css={{
@@ -49,7 +49,7 @@ class About extends React.PureComponent {
             {socialMedia}
             {music}
         </div>;
-     }
+    }
 }
 
 export default About;
