@@ -3,6 +3,8 @@ import Helmet from 'react-helmet'
 import { css } from 'gatsby-plugin-glamor'
 
 import Header from '../components/header'
+import About from '../components/About'
+
 import 'prismjs/themes/prism-tomorrow.css'
 import './index.css'
 
@@ -10,9 +12,9 @@ const Layout = ({ children, data }) => (
   <div
     css={{
       display: 'grid',
-      gridGap: '10px',
+      gridGap: '15px',
       gridTemplateColumns: '1fr 8fr 2fr 1fr',
-      gridTemplateRows: '2fr auto 1fr',
+      gridTemplateRows: '2fr auto auto 1fr',
     }}
   >
     <Helmet
@@ -31,21 +33,16 @@ const Layout = ({ children, data }) => (
     >
       <Header siteTitle={data.site.siteMetadata.title} />
     </div>
-    <div
-      className="about"
-      css={{
-        gridColumn: '3 / span 1',
-        gridRow: '2',
-        height: '600px',
-      }}
-    >
-      About
-    </div>
+    <About />
     <div
       className="content"
       css={{
         gridColumn: '2 / span 1',
-        gridRow: '2',
+        gridRow: '2 / span 2',
+        '@media all and (max-width: 1000px)': {
+          gridColumn: '2 / span 2',
+          gridRow: '2',
+        },
       }}
     >
       {children()}

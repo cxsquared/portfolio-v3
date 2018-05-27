@@ -27,17 +27,8 @@ a:hover {
     color: var(--tomorrow-red);
 }
 
-.about {
-    background-color: var(--tomorrow-yellow);
-    text-align: center;
-    color: var(--tomorrow-currentLine);
-}
-
-.content {
-}
-
 .footer {
-    background-color: var(--tomorrow-green);
+    background-color: var(--tomorrow-blue);
     text-align: center;
     color: var(--tomorrow-currentLine);
 }

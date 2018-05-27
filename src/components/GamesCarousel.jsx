@@ -11,7 +11,7 @@ class GamesCarousel extends React.PureComponent {
     super(props);
 
     this.state = {
-      width: 800,
+      width: 1200,
       selectedItem: 1
     }
   }
@@ -32,7 +32,7 @@ class GamesCarousel extends React.PureComponent {
   onCarouselChange(index) {
     console.log(`previous index: ${this.state.selectedItem} new index: ${index}`);
     var newIndex = index;
-    if (this.state.width > 800) {
+    if (this.state.width > 1000) {
       if (index < 1) {
         newIndex = 1;
       } else if (index > this.props.games.length - 2) {
@@ -93,7 +93,7 @@ class GamesCarousel extends React.PureComponent {
     });
 
     let centerSlidePercentage = 33.33;
-    if (this.state.width <= 800) {
+    if (this.state.width <= 1000) {
       centerSlidePercentage = 100;
     } 
 

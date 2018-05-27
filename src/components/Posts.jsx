@@ -23,7 +23,7 @@ const Posts = ({ sectionTitle, posts, gridColumn }) => {
                  css={{
                     padding: '10px',
                     flex: '1 1 50%',
-                    '@media (max-width: 800px)': {
+                    '@media (max-width: 1000px)': {
                       flex: '1 1 100%'
                     }
                   }}>
