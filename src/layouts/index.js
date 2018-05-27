@@ -17,19 +17,6 @@ class Layout extends React.PureComponent {
     }
   }
 
-  updateDimensions() {
-    this.setState({ width: window.innerWidth })
-  }
-
-  componentDidMount() {
-    this.updateDimensions()
-    window.addEventListener('resize', this.updateDimensions.bind(this))
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions.bind(this))
-  }
-
   render() {
     return (
       <div

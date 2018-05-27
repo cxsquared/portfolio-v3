@@ -6,6 +6,7 @@
 
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const createPaginatedPages = require('gatsby-paginate')
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
@@ -27,6 +28,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         allMarkdownRemark {
           edges {
             node {
+              id
+              frontmatter {
+                title
+                category
+              }
               fields {
                 slug
               }
@@ -35,6 +41,40 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then(result => {
+      // games paginated index
+      createPaginatedPages({
+        edges: result.data.allMarkdownRemark.edges.filter(e =>
+          ['game', 'gamejam', 'released'].includes(e.node.frontmatter.category)
+        ),
+        createPage: createPage,
+        pageTemplate: 'src/templates/paginated-page.js',
+        pathPrefix: 'games',
+        pageLength: 10,
+      })
+
+      // tutorials paginated index
+      createPaginatedPages({
+        edges: result.data.allMarkdownRemark.edges.filter(e =>
+          ['tutorial'].includes(e.node.frontmatter.category)
+        ),
+        createPage: createPage,
+        pageTemplate: 'src/templates/paginated-page.js',
+        pathPrefix: 'tutorials',
+        pageLength: 10,
+      })
+
+      // blog paginated index
+      createPaginatedPages({
+        edges: result.data.allMarkdownRemark.edges.filter(e =>
+          ['blog'].includes(e.node.frontmatter.category)
+        ),
+        createPage: createPage,
+        pageTemplate: 'src/templates/paginated-page.js',
+        pathPrefix: 'blog',
+        pageLength: 10,
+      })
+
+      // all posts
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,
