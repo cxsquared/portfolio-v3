@@ -42,19 +42,18 @@ class PaginatedPage extends React.PureComponent {
       )
     }
 
+    const posts = (
+      <Posts
+        sectionTitle={additionalContext.category}
+        posts={group}
+        includeImages={true}
+      />
+    )
+
     return (
-      <div style={{ textAlign: 'center' }}>
-        <h1>{additionalContext.category}</h1>
-        {group.map(({ node }) => (
-          <div key={node.id} className="blogListing">
-            <div className="date">{node.frontmatter.date}</div>
-            <Link className="blogUrl" to={node.fields.slug}>
-              {node.frontmatter.title}
-            </Link>
-            <div>{node.excerpt}</div>
-          </div>
-        ))}
-        {paginationNav}
+      <div>
+        {posts}
+        <div style={{ textAlign: 'center' }}>{paginationNav}</div>
       </div>
     )
   }

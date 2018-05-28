@@ -25,12 +25,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
               id
+              excerpt(pruneLength: 400)
               frontmatter {
                 title
+                image {
+                  publicURL
+                }
+                description
+                date
                 category
               }
               fields {
