@@ -5,6 +5,7 @@ tags: sbr, double fine, mod, lua, spacebase df9
 category: released
 description: Space Base Restoration is a mod project focused on updating and adding content to Double Fine's Spacebase DF-9.
 image: spacebaseHub.png
+comments: true
 ---
 
 Space Base Restoration is a mod I contributed to for [Double Fine's Spacebase DF-9](http://www.spacebasedf9.com/). While the mod is no longer actively being worked on, I figured it would be a good idea to talk about and reflect on what was accomplished with the mod. The mod managed to inject a tiny bit of life into a forgotten and dropped game. As of January 2017 the mod has been downloaded over 2,000 times.<!-- excerpt -->
@@ -17,4 +18,4 @@ My first contribution was just adding a jukebox item into the game. I used the l
 
 The other major contribution I made was running the website. I worked with an artist in our team and created [SpaceBaseHub.net](http://www.spacebasehub.net/). It's built on top of [Jekyll](http://jekyllrb.com/) just like this website is. I really enjoyed working with the artist to create a good looking site. The biggest thing I enjoyed adding was analytic tracking for our site which included download tracking. This was all possible thanks to [Piwik](https://piwik.org/), an open-source web analytics platform. Following the creation of our new website and first official release, we even managed to get some coverage from [Gamasutra](http://www.gamasutra.com/view/news/255601/Modders_pick_up_Spacebase_development_where_Double_Fine_left_off.php) and [Kotaku](http://kotaku.com/fans-keep-working-on-cancelled-strategy-game-1735075779).
 
-While the project isn't currently active, there is some chatter every now and then amongst some of the original contributors. If you enjoyed Spacebase DF-9 and want to help feel free to [contact me]({{ site.baseurl }}/contact) and I can get you involved. You can also check out the mod source code over on [GitLab](https://gitlab.com/derelictgames/spacebase-v2-updated-code).
+While the project isn't currently active, there is some chatter every now and then amongst some of the original contributors. If you enjoyed Spacebase DF-9 and want to help feel free to [contact me](/contact) and I can get you involved. You can also check out the mod source code over on [GitLab](https://gitlab.com/derelictgames/spacebase-v2-updated-code).
