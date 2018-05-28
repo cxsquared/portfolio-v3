@@ -50,6 +50,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         pageTemplate: 'src/templates/paginated-page.js',
         pathPrefix: 'games',
         pageLength: 10,
+        context: {
+          category: 'Games',
+        },
       })
 
       // tutorials paginated index
@@ -61,6 +64,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         pageTemplate: 'src/templates/paginated-page.js',
         pathPrefix: 'tutorials',
         pageLength: 10,
+        context: {
+          category: 'Tutorials',
+        },
       })
 
       // blog paginated index
@@ -72,6 +78,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         pageTemplate: 'src/templates/paginated-page.js',
         pathPrefix: 'blog',
         pageLength: 10,
+        context: {
+          category: 'Blog',
+        },
       })
 
       // all posts

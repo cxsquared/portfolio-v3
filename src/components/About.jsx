@@ -35,7 +35,7 @@ class About extends React.PureComponent {
         className="about"
         css={{
             gridColumn: '3 / span 1',
-            gridRow: '2 / span 2',
+            gridRow: '2 / span 1',
             padding: '8px',
             borderLeft: `2px solid ${Colors.blue}`,
             borderRadius: '20px 5px 5px 20px',
