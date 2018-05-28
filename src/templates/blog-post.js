@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDisqusThread from 'react-disqus-thread'
+import Colors from '../utils/Colors'
+import { rhythm } from '../utils/typography'
 
 export default ({ data, location }) => {
   const post = data.markdownRemark
@@ -16,9 +18,35 @@ export default ({ data, location }) => {
     )
   }
 
+  const header = (
+    <header
+      style={{
+        marginBottom: rhythm(1),
+      }}
+    >
+      <h1
+        style={{
+          marginBottom: 0,
+          color: Colors.foreground,
+        }}
+      >
+        {post.frontmatter.title}
+      </h1>
+      <time
+        dateTime={post.frontmatter.date}
+        style={{
+          fontSize: rhythm(1 / 2),
+          color: Colors.comment,
+        }}
+      >
+        {new Date(post.frontmatter.date).toDateString()}
+      </time>
+    </header>
+  )
+
   return (
     <div>
-      <h1>{post.frontmatter.title}</h1>
+      {header}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       {comments}
     </div>
@@ -40,6 +68,7 @@ export const query = graphql`
       html
       tableOfContents
       frontmatter {
+        date
         title
         comments
         image {
