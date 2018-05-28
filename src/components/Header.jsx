@@ -84,7 +84,10 @@ class Header extends React.PureComponent{
 
   _onSearchEnter() {
     const search = this.state.searchQuery;
-    this.setState({ searchQuery: "" })
+    this.setState({ 
+      searchQuery: "",
+      menuOpen: false
+    });
     navigateTo(`/search/?s=${search}`);
   }
 
@@ -132,6 +135,21 @@ class Header extends React.PureComponent{
       </Link>
     </h1>;
 
+    const searchStyle = {
+          border: '0',
+          width: '100%',
+          outline: '0',
+          borderBottom: `1px solid ${Colors.currentLine}`,
+          background: 'transparent',
+          ':focus': {
+            outline: 'none'
+      }};
+
+    if (this.state.width <= 1000) {
+      searchStyle.borderBottom = `1px solid ${Colors.foreground}`;
+      searchStyle.color = Colors.foreground;
+    }
+
     const searchInput = <div style={{ display: 'flex' }}>
       <input type="text" 
         placeholder="Search"
@@ -146,15 +164,7 @@ class Header extends React.PureComponent{
             }
           }
         }
-        css={{
-          border: '0',
-          width: '100%',
-          outline: '0',
-          borderBottom: `1px solid ${Colors.currentLine}`,
-          background: 'transparent',
-          ':focus': {
-            outline: 'none'
-      }}} />
+        css={searchStyle} />
       <button
         onClick={() => this._onSearchEnter()}
         css={{
