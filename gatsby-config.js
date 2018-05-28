@@ -2,6 +2,9 @@ module.exports = {
   siteMetadata: {
     title: 'Chips and Bits',
     siteUrl: 'https://codyclaborn.me',
+    disqus: {
+      shortname: 'codyclaborn',
+    },
   },
   plugins: [
     {

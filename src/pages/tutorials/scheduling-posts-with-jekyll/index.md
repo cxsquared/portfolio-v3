@@ -4,16 +4,17 @@ date: "2017-01-12"
 tags: jekyll, automation, site, posts, tutorial, future, bash, cron, crontab, scripts, static, linux
 category: tutorial
 description: A tutorial covering how I schedule posts for my Jekyll site using cron and bash scripts.
-image: jekyllAutomation/jekyllAuto.png
+image: ./jekyllAuto.png
+comments: true
 ---
 
 One major down side to using a static site generator like [Jekyll][jekyll] is the lack of dynamic updates. CMS tools like [Wordpress][wordpress] allow for scheduling posts for the future which is almost essential for consistent blog posts. So what do you do if you want a static site but also want to schedule posts for the future? Well if you are hosting your site on your own sever then you can easily automate your site update process. In this post I'll be showing you how I schedule posts for my own site. This is a slightly specific usage so your millage my vary but these ideas should be easily adaptable to many situations.
 
-{% include toc.html %}
+![Picture of bash script](jekyllAuto.png)
 
 ## Preface
 
-Before we get started there are a few things to note. This implementation requires you to be able to build your Jekyll site on your own Linux server. And your site must use some form of version control and be hosted on a repository that you can access such as [Git][git] and [GitHub.com][github]. As long as you meet those conditions then this process should work for you. 
+Before we get started there are a few things to note. This implementation requires you to be able to build your Jekyll site on your own Linux server. And your site must use some form of version control and be hosted on a repository that you can access such as [Git][git] and [GitHub.com][github]. As long as you meet those conditions then this process should work for you.
 
 For this implementation we are going to be using cron to automate the updating of our site repository, updating of our ruby gems, building our Jekyll site, and then copying your Jekyll site to push it live. This is based on my own personal site so your implementation may vary but these techniques should be transferable to any self hosted Jekyll site.
 
@@ -25,8 +26,8 @@ The first thing we need to do is set up a script to actually update and build ou
 #!/bin/bash
 
 if [[ $# -eq 0]] ; then
-	echo "No path to Jekyll site supplied"
-	exit 1
+    echo "No path to Jekyll site supplied"
+    exit 1
 fi
 
 cd $1
@@ -38,8 +39,8 @@ bundle exec Jekyll build
 echo "Site at $1 updated $(date)"
 
 if [ ! -z "$2" ]
-	then
-	echo "Site at $1 updated $(date)" >> "$2"
+    then
+    echo "Site at $1 updated $(date)" >> "$2"
 fi
 
 ```
@@ -56,13 +57,13 @@ crontab -e
 
 This will bring up cron in what ever is your default editor. You should see a little bit of text that explains how the cronrab file works. Each line of the crontab file will run a command. The lines are formated as "Minute Hour Day Month Weekday Command". So if you want to run something everyday at 3:45 p.m. you would type...
 
-```
+```bash
 45 15 * * * 'your command here'
 ```
 
 The astrix(*) denotes that you should use every instance. So this says run the command at 45 minutes on hour 15 of every day of every month. I have my site update script set to run at 6:30 a.m. everyday. So to call our scripts you just add this line to the end of your crontab file...
 
-```
+```bash
 30 6 * * * sh path_to_script path_to_Jekyll_site path_to_log_file
 ```
 
