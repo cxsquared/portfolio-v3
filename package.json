@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "fuse.js": "^3.2.0",
     "gatsby": "^1.9.261",
     "gatsby-link": "^1.6.44",
     "gatsby-paginate": "^1.0.15",
