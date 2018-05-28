@@ -28,7 +28,7 @@ class About extends React.PureComponent {
 
         const socialMedia = <div style={{ width: '60%' }}>
             <h4>Get in touch</h4>
-            <SocialMediaLinks size={32} /> 
+            <SocialMediaLinks size={32} iconStyle={{ color: Colors.blue }} /> 
         </div>
 
         const music = <div>

@@ -1,9 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import Colors from '../utils/Colors'
 import { css } from 'gatsby-plugin-glamor'
 
 import Header from '../components/header'
 import About from '../components/About'
+import SocialMediaLinks from '../components/SocialMediaLinks'
 
 import 'prismjs/themes/prism-tomorrow.css'
 import './index.css'
@@ -55,13 +58,40 @@ class Layout extends React.PureComponent {
           {this.props.children()}
         </div>
         <div
-          className="footer"
           style={{
             gridColumn: '1 / -1',
             gridRow: '-1',
+            display: 'flex',
+            background: Colors.blue,
           }}
         >
-          Footer
+          <div style={{ flex: '1', textAlign: 'start', marginLeft: '20px' }}>
+            <SocialMediaLinks
+              size={32}
+              style={{ width: '30%', minWidth: '150px' }}
+              iconStyle={{
+                color: Colors.background,
+                ':hover': { color: Colors.red },
+              }}
+            />
+          </div>
+          <div style={{ flex: '1', textAlign: 'center' }}>
+            <p>© {new Date().getFullYear()}, Cody Claborn</p>
+          </div>
+          <div style={{ flex: '1', textAlign: 'end', marginRight: '20px' }}>
+            <Link
+              css={{
+                color: Colors.background,
+                ':hover': {
+                  color: Colors.red,
+                },
+                fontSize: '20px',
+              }}
+              to="/contact/"
+            >
+              Contact Me
+            </Link>
+          </div>
         </div>
       </div>
     )
