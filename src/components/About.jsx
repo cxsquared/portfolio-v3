@@ -1,6 +1,6 @@
 import React from 'react';
+import Link from 'gatsby-link';
 import Colors from '../utils/Colors';
-
 import SocialMediaLinks from './SocialMediaLinks';
 
 class About extends React.PureComponent {
@@ -14,7 +14,15 @@ class About extends React.PureComponent {
             <p>
                 Hi! I'm a programmer currently living in Indiana. 
                 I'm passionate about video games, music, and how programming intersetcs the two. 
-                Here are the projects I've worked on along with tutorials and other various blog posts.
+                Here are the projects I've worked on along with tutorials and other various blog posts.{' '}
+                <Link to="/about/"
+                  css={{
+                    color: Colors.red,
+                    ':hover': {
+                        color: Colors.foreground
+                    }}}>
+                    More about me
+                </Link>
             </p>
         </div>;
 

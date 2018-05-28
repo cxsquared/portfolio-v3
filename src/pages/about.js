@@ -1,5 +1,5 @@
 import React from 'react'
-import SocialMediaLinks from '../components/SocialMediaLinks'
+import Contact from '../components/Contact'
 import me from '../assets/me.jpg'
 
 class About extends React.PureComponent {
@@ -8,7 +8,7 @@ class About extends React.PureComponent {
   }
 
   render() {
-    return (
+    const about = (
       <div>
         <h1>About Me</h1>
         <img
@@ -38,7 +38,29 @@ class About extends React.PureComponent {
         </p>
       </div>
     )
+
+    return (
+      <div>
+        {about}
+        <Contact
+          submitted={/^\?s=true/.test(this.props.location.search)}
+          siteUrl={`${this.props.data.site.siteMetadata.siteUrl}${
+            this.props.location.pathname
+          }`}
+        />
+      </div>
+    )
   }
 }
 
 export default About
+
+export const query = graphql`
+  query AboutQuery {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`
