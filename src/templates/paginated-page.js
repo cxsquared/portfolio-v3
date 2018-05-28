@@ -29,7 +29,6 @@ class PaginatedPage extends React.PureComponent {
       pathPrefix,
       additionalContext,
     } = this.props.pathContext
-    console.log(`pathContext:${JSON.stringify(this.props.pathContext)}`)
 
     let paginationNav = null
     if (pageCount > 1) {

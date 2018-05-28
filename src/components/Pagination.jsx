@@ -32,9 +32,9 @@ class Pagination extends React.PureComponent {
                 }
             }
             if (i === 1){
-                pageNumbers[i-1] = <div onClick={() => navigateTo(`/${this.props.pathPrefix}/`)} css={style}>{i}</div>;
+                pageNumbers[i-1] = <div key={i} onClick={() => navigateTo(`/${this.props.pathPrefix}/`)} css={style}>{i}</div>;
             } else {
-                pageNumbers[i-1] = <div onClick={() => navigateTo(`/${this.props.pathPrefix}/${i}`)} css={style}>{i}</div>;
+                pageNumbers[i-1] = <div key={i} onClick={() => navigateTo(`/${this.props.pathPrefix}/${i}`)} css={style}>{i}</div>;
             }
         }
 

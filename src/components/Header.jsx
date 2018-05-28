@@ -53,7 +53,8 @@ class Header extends React.PureComponent{
 
     this.state = {
       width: 1200,
-      menuOpen: false
+      menuOpen: false,
+      searchQuery: ''
     }
   }
 
@@ -79,6 +80,12 @@ class Header extends React.PureComponent{
 
   _onMenuChange(state) {
     this.setState({menuOpen: state.isOpen})
+  }
+
+  _onSearchEnter() {
+    const search = this.state.searchQuery;
+    this.setState({ searchQuery: "" })
+    navigateTo(`/search/?s=${search}`);
   }
 
   updateDimensions() {
@@ -128,6 +135,17 @@ class Header extends React.PureComponent{
     const searchInput = <div style={{ display: 'flex' }}>
       <input type="text" 
         placeholder="Search"
+        onChange={e => this.setState({
+          searchQuery: e.target.value
+        })}
+        value={this.state.searchQuery}
+        onKeyPress={
+          event => {
+            if (event.key === "Enter") {
+              this._onSearchEnter();
+            }
+          }
+        }
         css={{
           border: '0',
           width: '100%',
@@ -137,7 +155,18 @@ class Header extends React.PureComponent{
           ':focus': {
             outline: 'none'
       }}} />
-      <Icon icon={search} />
+      <button
+        onClick={() => this._onSearchEnter()}
+        css={{
+          background: 'transparent',
+          border: 'none',
+          color: Colors.foreground,
+          ":hover": {
+            color: Colors.red
+          }
+        }}>
+        <Icon icon={search} />
+      </button>
     </div>;
 
     const navLinkStyle={
