@@ -30,10 +30,7 @@ class Layout extends React.PureComponent {
           gridTemplateRows: '2fr auto auto 1fr',
         }}
       >
-        <Helmet
-          title={this.props.data.site.siteMetadata.title}
-          meta={[{ name: 'keywords', content: 'sample, something' }]}
-        />
+        <Helmet title={this.props.data.site.siteMetadata.title} />
         <div
           className="header"
           style={{

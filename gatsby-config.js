@@ -5,6 +5,7 @@ module.exports = {
     disqus: {
       shortname: 'codyclaborn',
     },
+    twitter: 'cxsquared',
   },
   plugins: [
     {
@@ -20,8 +21,9 @@ module.exports = {
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: '1',
-        matomoUrl: 'https://codyclaborn.me/piwik/',
+        matomoUrl: 'https://codyclaborn.me/piwik',
         siteUrl: 'https://codyclaborn.me',
+        dev: true,
       },
     },
     {

@@ -2,9 +2,11 @@ import React from 'react'
 import ReactDisqusThread from 'react-disqus-thread'
 import Colors from '../utils/Colors'
 import { rhythm } from '../utils/typography'
+import Seo from '../components/Seo'
 
 export default ({ data, location }) => {
   const post = data.markdownRemark
+  const slug = location.pathname
 
   let comments = null
   if (post.frontmatter.comments) {
@@ -13,7 +15,7 @@ export default ({ data, location }) => {
         shortname={data.site.siteMetadata.disqus.shortname}
         identifier={post.id}
         title={post.title}
-        url={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
+        url={`${data.site.siteMetadata.siteUrl}${slug}`}
       />
     )
   }
@@ -44,8 +46,19 @@ export default ({ data, location }) => {
     </header>
   )
 
+  let postImage = ''
+  if (post.frontmatter.image) {
+    postImage = post.frontmatter.image.publicURL
+  }
+
   return (
     <div>
+      <Seo
+        key={`seo-${post.id}`}
+        postImage={postImage}
+        postData={post}
+        isBlogPost
+      />
       {header}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       {comments}
