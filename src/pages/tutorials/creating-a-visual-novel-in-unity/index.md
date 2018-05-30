@@ -1,42 +1,39 @@
 ---
 title: Creating a Visual Novel in Unity
 date: "2015-09-27"
-tags: Unity, Tutorial, Visual Novel
+tags: [Unity, Tutorial, Visual Novel]
 category: tutorial
+comments: true
 ---
-This tutorial will help you create a basic visual novel framework that you can use your own story and art in, as well as expand upon the framework itself with more functionality. I will say I’m not the best Unity dev and there are probably better ways to lay out this framework but this will give you a good start if you want to quickly get started with game development. You can see and download the games [source code on Github](https://github.com/cxsquared/Visual-Novel-Tutorial).  
+This tutorial will help you create a basic visual novel framework that you can use your own story and art in, as well as expand upon the framework itself with more functionality. I will say I’m not the best Unity dev and there are probably better ways to lay out this framework but this will give you a good start if you want to quickly get started with game development. You can see and download the games [source code on Github](https://github.com/cxsquared/Visual-Novel-Tutorial).
 
-A lot of this tutorial was adapted and inspired from TheHappieCat’s tutorial on the same subject. You can check out her [channel on Youtube](https://www.youtube.com/user/TheHappieCat) for more awesome game development videos.  If you’d like a more in-deepth look at the basics I recomend checkout out [Unity’s documentation](http://docs.unity3d.com/Manual/UnityBasics.html). 
+A lot of this tutorial was adapted and inspired from TheHappieCat’s tutorial on the same subject. You can check out her [channel on Youtube](https://www.youtube.com/user/TheHappieCat) for more awesome game development videos. If you’d like a more in-deepth look at the basics I recomend checkout out [Unity’s documentation](http://docs.unity3d.com/Manual/UnityBasics.html).
 
-## Table of Contents
-
-{% include toc.html %}
-
-##Planning
+## Planning
 
 * Intro
 
-	One of most important step to starting any game project is getting a decent plan in place. Just having a simple road map with the features you want can help guide you and make your time writing code and creating content more efficient. This tutorial will guide you through the steps to create a visual novel framework that you can use to create a game using your own story and art. 
+One of most important step to starting any game project is getting a decent plan in place. Just having a simple road map with the features you want can help guide you and make your time writing code and creating content more efficient. This tutorial will guide you through the steps to create a visual novel framework that you can use to create a game using your own story and art.
 
 * Road Map
 
-	The visual novel we are going to create is a basic one with only a few features. The basic features of a visual novel are:
+The visual novel we are going to create is a basic one with only a few features. The basic features of a visual novel are:
 
 * Scenes
 
-	You can think of these as the chapters to our visual novel. The scenes will hold the dialogue information for each encounter that you decide to create.
+You can think of these as the chapters to our visual novel. The scenes will hold the dialogue information for each encounter that you decide to create.
 
 * Characters
 
-	You can’t have a “visual” novel without having characters. The characters will contain the information about their art and different possible poses.
+You can’t have a “visual” novel without having characters. The characters will contain the information about their art and different possible poses.
 
 * Dialog
 
-	What good is a character if it can’t say anything? The dialog will be our script that the players will end up reading.
+What good is a character if it can’t say anything? The dialog will be our script that the players will end up reading.
 
 * Choices
 
-	Choices are what separates a game from other forms of media and lest the player interact with the game. The choices will go hand in hand with the dialog to allow the player to experience a dynamic story.
+Choices are what separates a game from other forms of media and lest the player interact with the game. The choices will go hand in hand with the dialog to allow the player to experience a dynamic story.
 
 All these parts come together to make a system that will allow you to create your own visual novel experience.
 
@@ -50,7 +47,7 @@ So now we’ll open Unity, I’m using version 5.1.1, and create a new project. 
 
 ![Blank Unity](02_BlankUnity.png)
 
-When your project is created you should be greeted with a default scene with just a Main Camera and Direction Light. The big grid image you see in the middle of the screen is your Scene view. This is where you’ll normally arrange things in the game, such as characters and objects. Using the mouse you can move around in the scene view. For now I’m going to assume you know the basics of scene view movement. You really won’t need much of it but if you’d like to look into it more you can check out [Unity’s manual page](http://docs.unity3d.com/Manual/SceneViewNavigation.html).  Since we are really only concerned about 2D movement we are going to change the scene view to fit our needs a little better. 
+When your project is created you should be greeted with a default scene with just a Main Camera and Direction Light. The big grid image you see in the middle of the screen is your Scene view. This is where you’ll normally arrange things in the game, such as characters and objects. Using the mouse you can move around in the scene view. For now I’m going to assume you know the basics of scene view movement. You really won’t need much of it but if you’d like to look into it more you can check out [Unity’s manual page](http://docs.unity3d.com/Manual/SceneViewNavigation.html).  Since we are really only concerned about 2D movement we are going to change the scene view to fit our needs a little better.
 
 ![Gizmo](03_Gizmo.png)
 
@@ -60,12 +57,12 @@ In the top right there is a little square with colored cones coming out of it, t
 
 ![Hierarchy](04_Hierarchy.png)
 
-If you look to the left there should be a tab called Hierarchy that contains a Main Camera and a Directional Light. Everything in the hierarchy is what will be a part of the game. The hierarchy is made up of Unity GameObjects. GameObjects are the basic components of every Unity game. All GameObjects contain Components that tell the GameObject what to do or how to function inside the game. Components are modules such as scripts or renderers that give instructions to the GameObject. 
+If you look to the left there should be a tab called Hierarchy that contains a Main Camera and a Directional Light. Everything in the hierarchy is what will be a part of the game. The hierarchy is made up of Unity GameObjects. GameObjects are the basic components of every Unity game. All GameObjects contain Components that tell the GameObject what to do or how to function inside the game. Components are modules such as scripts or renderers that give instructions to the GameObject.
 If you click on the Main Camera object you should see the right side of the screen, under the tab that says Inspector, a bunch of different Components that allow the Main Camera to function as a camera. The top Component is called a Transform. All GameObjects have a transform and this is what tells the GameObject where to place itself inside our game world and scene view. We’ll talk more about the different Components and how they interact as we start to add stuff to our game.
 
 ## Scenes
 
-By this point you should have a small understanding of what you are seeing on screen. We’ll cover more of the interface as the tutorial goes on. The next concept you need to understand is Scenes. Now this Scene concept is different from what I planned out above. A Scene is how Unity differentiates levels. We’ll leverage that fact to create our scenes/chapters in the game. Each one of the scenes/chapters we create in the game will be saved as a Unity Scene. 
+By this point you should have a small understanding of what you are seeing on screen. We’ll cover more of the interface as the tutorial goes on. The next concept you need to understand is Scenes. Now this Scene concept is different from what I planned out above. A Scene is how Unity differentiates levels. We’ll leverage that fact to create our scenes/chapters in the game. Each one of the scenes/chapters we create in the game will be saved as a Unity Scene.
 Let’s go ahead and save our first Scene. So go click File > Save Scene which should open up a file dialog in your Assets folder of your Unity project. I believe keeping things organized in a game project is very important so go ahead and create a folder named “Scenes” and then save your scene inside that folder with a name of “Scene1”. This naming convention is very important because we are going to use it to switch between scenes later.
 
 ![Scene Save](05_SaveScene.png)
@@ -95,6 +92,7 @@ To set the sprite we just imported as what shows up in the image GameObject we n
 ![Image Background](09_ImageBackground.png)
 
 ## Toolbar
+
 Now we are going to do is see the whole Canvas so that we can resize the image. To do this select the Canvas GameObject under the Hierarchy, then move your mouse over the Scene View and hit “f” on your keyboard. The “f” key focuses on the currently selected GameObject. This should put the Canvas in the middle of your Scene View and you should be able to see the image you added.
 
 ![Background Canvas](10_BackgroundCanvasTranslate.png)
@@ -117,7 +115,7 @@ The next thing we are to add is a panel so right click on your Hierarchy, go to 
 
 ![Panel](13_Panel.png)
 
-The next thing we are going to create is a text box to show what the characters are going to say. It will almost be the same as creating the Image and Panel but this time right click on the Panel in the Hierarchy and go to UI and then select Text. This creates a text box that we’ll use to show the dialogue. Resize the Text GameObject to fit the panel and set the anchors to the corners of the Panel. One important thing we are going to do is rename the GameObject to “Dialogue”. You can do this by either right clicking on the GameObject inside Hierarchy and clicking rename or changing the name at the top of the Inspector when the GameObject is selected. 
+The next thing we are going to create is a text box to show what the characters are going to say. It will almost be the same as creating the Image and Panel but this time right click on the Panel in the Hierarchy and go to UI and then select Text. This creates a text box that we’ll use to show the dialogue. Resize the Text GameObject to fit the panel and set the anchors to the corners of the Panel. One important thing we are going to do is rename the GameObject to “Dialogue”. You can do this by either right clicking on the GameObject inside Hierarchy and clicking rename or changing the name at the top of the Inspector when the GameObject is selected.
 Now go ahead and do the same thing again for a textbox that will show the name of the character. The only difference is that I placed it above the panel along the left side and made it only slightly bigger than when it was created. The anchors should be the same as the dialogue box. You should name this textbox “Name”. You can set the font and font size inside the Inspector whatever you think looks good for both textboxes. For the Dialogue box I also clicked the center icon in both alignment categories to center the text.
 
 ![Dialog Boxes](14_DialogueParser.png)
@@ -162,137 +160,137 @@ The next line of code is creating a Struct. A Struct is a powerful tool to help 
 
 ```csharp
 public class DialogueParser : MonoBehaviour {
-	
-	struct DialogueLine {
-		public string name;
-		public string content;
-		public int pose;
-		public string position;
-		public string[] options;
-		
-		public DialogueLine(string Name, string Content, int Pose, string Position) {
-			name = Name;
-			content = Content;
-			pose = Pose;
-			position = Position;
-			options = new string[0];
-		}
-	}
+
+    struct DialogueLine {
+        public string name;
+        public string content;
+        public int pose;
+        public string position;
+        public string[] options;
+
+        public DialogueLine(string Name, string Content, int Pose, string Position) {
+            name = Name;
+            content = Content;
+            pose = Pose;
+            position = Position;
+            options = new string[0];
+        }
+    }
 ```
 
 The next thing we need to do is set up a variable to contain all the different lines of dialogue we will have. We are using a List to hold the DialgueLines. You can think of a List as a office cabinet where you can store things with specific labels and in specific orders. The order thing will be very important for us because we want the lines to be shown to the player in a specific order
 
 ```csharp
 public class DialogueParser : MonoBehaviour {
-	
-	struct DialogueLine {
-		...
-	}
 
-	List<DialogueLine> lines;
+    struct DialogueLine {
+        ...
+    }
+
+    List<DialogueLine> lines;
 ```
 
 Now to work with our Start() function. What this function is doing for us is dynamically getting the dialogue file that we saved by looking at the name of the Unity Scene we are in and getting the number from that. It also instantiates the lines List which tells the computer to give use memory to store things in the List because we are about to put things in the List.  And finally we pass our dialogue file location to a new function called LoadDialogue() that we are about to create.
 
 ```csharp
 List<DialogueLine> lines;
-	
-	// Use this for initialization
-	void Start () {
-		string file = "Assets/Data/Dialogue";
-		string sceneNum = EditorApplication.currentScene;
-		sceneNum = Regex.Replace (sceneNum, "[^0-9]", "");
-		file += sceneNum;
-		file += ".txt";
-		
-		lines = new List<DialogueLine>();
-		
-		LoadDialogue (file);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Use this for initialization
+    void Start () {
+        string file = "Assets/Data/Dialogue";
+        string sceneNum = EditorApplication.currentScene;
+        sceneNum = Regex.Replace (sceneNum, "[^0-9]", "");
+        file += sceneNum;
+        file += ".txt";
+
+        lines = new List<DialogueLine>();
+
+        LoadDialogue (file);
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    }
 ```
 
 Let’s create the LoadDialogue() function. Each function starts with what it will return when called. In this case it’s void because we aren’t returning anything then we have the name of the function, and finally inside the parentheses we have what the function expects to get when called which in our case is a string of the filename. For the function we are using the line variable to store each line we read from the file. To actually read the file we use a StreamReader which job is to do all the low level work for us. Next we have a do-while loop. All this is saying is do this chunk of code, while our line does not equal null aka actually exists. Once there aren’t any more lines this do-while loop will stop. Inside the while we set the line to the current line the StreamReader has. If that is actually a line we then use that data to create a new DialogueLine and store it in our lines. I’m just splitting the line at “;” which is what we used to separate our dialogue parts. Another thing is that if you put Player as the name it’s expecting to give the player options and doesn’t want content, position, or pose. After all that is done we close the StreamReader.
 
 ```csharp
 // Update is called once per frame
-	void Update () {
-		
-	}
-	
-	void LoadDialogue(string filename) {
-		string line;
-		StreamReader r = new StreamReader (filename);
-		
-		using (r) {
-			do {
-				line = r.ReadLine();
-				if (line != null) {
-					string[] lineData = line.Split(';');
-					if (lineData[0] == "Player") {
-						DialogueLine lineEntry = new DialogueLine(lineData[0], "", 0, "");
-						lineEntry.options = new string[lineData.Length-1];
-						for (int i = 1; i < lineData.Length; i++) {
-							lineEntry.options[i-1] = lineData[i];
-						}
-						lines.Add(lineEntry);
-					} else {
-						DialogueLine lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
-						lines.Add(lineEntry);
-					}
-				}
-			}
-			while (line != null);
-			r.Close();
-		}
-	}
+    void Update () {
+
+    }
+
+    void LoadDialogue(string filename) {
+        string line;
+        StreamReader r = new StreamReader (filename);
+
+        using (r) {
+            do {
+                line = r.ReadLine();
+                if (line != null) {
+                    string[] lineData = line.Split(';');
+                    if (lineData[0] == "Player") {
+                        DialogueLine lineEntry = new DialogueLine(lineData[0], "", 0, "");
+                        lineEntry.options = new string[lineData.Length-1];
+                        for (int i = 1; i < lineData.Length; i++) {
+                            lineEntry.options[i-1] = lineData[i];
+                        }
+                        lines.Add(lineEntry);
+                    } else {
+                        DialogueLine lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
+                        lines.Add(lineEntry);
+                    }
+                }
+            }
+            while (line != null);
+            r.Close();
+        }
+    }
 ```
 
 That’s the bulk of our dialogue parser done. All we need now is a way to get the line information from the parser to use in different areas like actually setting it as the text box. So what we are going to create are getters for all our DialogueLine variables. The getters has to be public and is going to return something. It’s expecting to get a lineNumber that it will use to get the DialogueLine and find the data to return. Here are all of the getters.
 
 ```csharp
-	void LoadDialogue(string filename) {
-	...
-	}
-	
-	public string GetPosition(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].position;
-		}
-		return "";
-	}
-	
-	public string GetName(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].name;
-		}
-		return "";
-	}
-	
-	public string GetContent(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].content;
-		}
-		return "";
-	}
-	
-	public int GetPose(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].pose;
-		}
-		return 0;
-	}
-	
-	public string[] GetOptions(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].options;
-		}
-		return new string[0];
-	}
+    void LoadDialogue(string filename) {
+    ...
+    }
+
+    public string GetPosition(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].position;
+        }
+        return "";
+    }
+
+    public string GetName(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].name;
+        }
+        return "";
+    }
+
+    public string GetContent(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].content;
+        }
+        return "";
+    }
+
+    public int GetPose(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].pose;
+        }
+        return 0;
+    }
+
+    public string[] GetOptions(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].options;
+        }
+        return new string[0];
+    }
 }
 ```
 
@@ -308,108 +306,108 @@ using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
 public class DialogueParser : MonoBehaviour {
-	
-	struct DialogueLine {
-		public string name;
-		public string content;
-		public int pose;
-		public string position;
-		public string[] options;
-		
-		public DialogueLine(string Name, string Content, int Pose, string Position) {
-			name = Name;
-			content = Content;
-			pose = Pose;
-			position = Position;
-			options = new string[0];
-		}
-	}
 
-	List<DialogueLine> lines;
-	
-	// Use this for initialization
-	void Start () {
-		string file = "Assets/Data/Dialogue";
-		string sceneNum = EditorApplication.currentScene;
-		sceneNum = Regex.Replace (sceneNum, "[^0-9]", "");
-		file += sceneNum;
-		file += ".txt";
-		
-		lines = new List<DialogueLine>();
-		
-		LoadDialogue (file);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
-	void LoadDialogue(string filename) {
-		string line;
-		StreamReader r = new StreamReader (filename);
-		
-		using (r) {
-			do {
-				line = r.ReadLine();
-				if (line != null) {
-					string[] lineData = line.Split(';');
-					if (lineData[0] == "Player") {
-						DialogueLine lineEntry = new DialogueLine(lineData[0], "", 0, "");
-						lineEntry.options = new string[lineData.Length-1];
-						for (int i = 1; i < lineData.Length; i++) {
-							lineEntry.options[i-1] = lineData[i];
-						}
-						lines.Add(lineEntry);
-					} else {
-						DialogueLine lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
-						lines.Add(lineEntry);
-					}
-				}
-			}
-			while (line != null);
-			r.Close();
-		}
-	}
-	
-	public string GetPosition(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].position;
-		}
-		return "";
-	}
-	
-	public string GetName(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].name;
-		}
-		return "";
-	}
-	
-	public string GetContent(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].content;
-		}
-		return "";
-	}
-	
-	public int GetPose(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].pose;
-		}
-		return 0;
-	}
-	
-	public string[] GetOptions(int lineNumber) {
-		if (lineNumber < lines.Count) {
-			return lines[lineNumber].options;
-		}
-		return new string[0];
-	}
+    struct DialogueLine {
+        public string name;
+        public string content;
+        public int pose;
+        public string position;
+        public string[] options;
+
+        public DialogueLine(string Name, string Content, int Pose, string Position) {
+            name = Name;
+            content = Content;
+            pose = Pose;
+            position = Position;
+            options = new string[0];
+        }
+    }
+
+    List<DialogueLine> lines;
+
+    // Use this for initialization
+    void Start () {
+        string file = "Assets/Data/Dialogue";
+        string sceneNum = EditorApplication.currentScene;
+        sceneNum = Regex.Replace (sceneNum, "[^0-9]", "");
+        file += sceneNum;
+        file += ".txt";
+
+        lines = new List<DialogueLine>();
+
+        LoadDialogue (file);
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    }
+
+    void LoadDialogue(string filename) {
+        string line;
+        StreamReader r = new StreamReader (filename);
+
+        using (r) {
+            do {
+                line = r.ReadLine();
+                if (line != null) {
+                    string[] lineData = line.Split(';');
+                    if (lineData[0] == "Player") {
+                        DialogueLine lineEntry = new DialogueLine(lineData[0], "", 0, "");
+                        lineEntry.options = new string[lineData.Length-1];
+                        for (int i = 1; i < lineData.Length; i++) {
+                            lineEntry.options[i-1] = lineData[i];
+                        }
+                        lines.Add(lineEntry);
+                    } else {
+                        DialogueLine lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
+                        lines.Add(lineEntry);
+                    }
+                }
+            }
+            while (line != null);
+            r.Close();
+        }
+    }
+
+    public string GetPosition(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].position;
+        }
+        return "";
+    }
+
+    public string GetName(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].name;
+        }
+        return "";
+    }
+
+    public string GetContent(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].content;
+        }
+        return "";
+    }
+
+    public int GetPose(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].pose;
+        }
+        return 0;
+    }
+
+    public string[] GetOptions(int lineNumber) {
+        if (lineNumber < lines.Count) {
+            return lines[lineNumber].options;
+        }
+        return new string[0];
+    }
 }
 ```
 
-Now we need to add it to our game so that it will actually run. To do this go back into Unity, right click in the Hierarchy and click Create Empty. This gives us an empty GameObject to work with. 
+Now we need to add it to our game so that it will actually run. To do this go back into Unity, right click in the Hierarchy and click Create Empty. This gives us an empty GameObject to work with.
 
 ![Create Empty](16_CreateEmpty.png)
 
@@ -434,57 +432,57 @@ We need a lot more variable this time compared to the DialogueParser. The first 
 
 ```csharp
 public class DialogueManager : MonoBehaviour {
-	
-	DialogueParser parser;
-	
-	public string dialogue, characterName;
-	public int lineNum;
-	int pose;
-	string position;
-	string[] options;
-	public bool playerTalking;
-	List<Button> buttons = new List<Button> ();
-	
-	public Text dialogueBox;
-	public Text nameBox;
-	public GameObject choiceBox;
+
+    DialogueParser parser;
+
+    public string dialogue, characterName;
+    public int lineNum;
+    int pose;
+    string position;
+    string[] options;
+    public bool playerTalking;
+    List<Button> buttons = new List<Button> ();
+
+    public Text dialogueBox;
+    public Text nameBox;
+    public GameObject choiceBox;
 ```
 
 Now let’s get going with the Start() function. Here we are just initializing all our variables so that if we look at them before anything has happened it won’t break the game. For our parser we need to find the DialogueParser GameObject in the Scene. Luckily Unity has a great function for that called Find. This finds any GameObject within in our Scene and since we only have one DialogueParser GameObject we don’t have to worry about Unity finding the wrong one. After the GameObject is found we then have to get the actual DialogueParser script from the GameObject. To do this we just use GetComponent(). Now that we have the DialogueParser script we can get information about each line to show in our text boxes.
 
 ```csharp
 public class DialogueManager : MonoBehaviour {
-	
-	...
-	
-	// Use this for initialization
-	void Start () {
-		dialogue = "";
-		characterName = "";
-		pose = 0;
-		position = "L";
-		playerTalking = false;
-		parser = GameObject.Find("DialogueParser").GetComponent<DialogueParser>();
-		lineNum = 0;
-	}
+
+    ...
+
+    // Use this for initialization
+    void Start () {
+        dialogue = "";
+        characterName = "";
+        pose = 0;
+        position = "L";
+        playerTalking = false;
+        parser = GameObject.Find("DialogueParser").GetComponent<DialogueParser>();
+        lineNum = 0;
+    }
 ```
 
 Unlike the DialogParser class we are going to use the Update() method. The Update() method is called every frame update inside of Unity so the Update() function is constantly called. This function is really useful for constantly keeping track of things like player input in the game. We are going to use to it make detect if the player presses the left mouse button and to keep the UI up-to-date. So everytime the player presses the mouse button and there isn’t player choice options up we show the dialogue and go to the next line number.
 
 ```csharp
 void Start () {
-	...
+    ...
 }
-	
+
 // Update is called once per frame
 void Update () {
-	if (Input.GetMouseButtonDown (0) && playerTalking == false) {
-		ShowDialogue();
-		
-		lineNum++;
-	}
-	
-	UpdateUI ();
+    if (Input.GetMouseButtonDown (0) && playerTalking == false) {
+        ShowDialogue();
+
+        lineNum++;
+    }
+
+    UpdateUI ();
 }
 ```
 
@@ -492,12 +490,12 @@ The ShowDialogue() function just calls to other functions that are used to show 
 
 ```csharp
 void Update () {
-	...
+    ...
 }
-	
+
 public void ShowDialogue() {
-	ResetImages ();
-	ParseLine ();
+    ResetImages ();
+    ParseLine ();
 }
 ```
 
@@ -505,11 +503,11 @@ The ResetImages() function is used to remove any old images for each dialogue li
 
 ```csharp
 void ResetImages() {
-	if (characterName != "") {
-		GameObject character = GameObject.Find (characterName);
-		SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-		currSprite.sprite = null;
-	}
+    if (characterName != "") {
+        GameObject character = GameObject.Find (characterName);
+        SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
+        currSprite.sprite = null;
+    }
 }
 ```
 
@@ -517,37 +515,37 @@ The next thing the ShowDialogue() function does after resetting the images is to
 
 ```csharp
 void ParseLine() {
-	if (parser.GetName (lineNum) != "Player") {
-		playerTalking = false;
-		characterName = parser.GetName (lineNum);
-		dialogue = parser.GetContent (lineNum);
-		pose = parser.GetPose (lineNum);
-		position = parser.GetPosition (lineNum);
-		DisplayImages();
-	} else {
-		playerTalking = true;
-		characterName = "";
-		dialogue = "";
-		pose = 0;
-		position = "";
-		options = parser.GetOptions(lineNum);
-		CreateButtons();
-	}
+    if (parser.GetName (lineNum) != "Player") {
+        playerTalking = false;
+        characterName = parser.GetName (lineNum);
+        dialogue = parser.GetContent (lineNum);
+        pose = parser.GetPose (lineNum);
+        position = parser.GetPosition (lineNum);
+        DisplayImages();
+    } else {
+        playerTalking = true;
+        characterName = "";
+        dialogue = "";
+        pose = 0;
+        position = "";
+        options = parser.GetOptions(lineNum);
+        CreateButtons();
+    }
 }
 ```
 
-The next thing we’ll work on is the DisplayImages() function which is in charge of showing the current characters image on screen. We first make sure that a character is talking by checking if characterName isn’t equal to an empty string. If the character is actually a character we go ahead and find their GameObject in the Scene. We then call a function that set’s their location on in the Scene. Finally we get their SpriteRenderer Component and set that to the pose based on their Character Class that we’ll make later on. 
+The next thing we’ll work on is the DisplayImages() function which is in charge of showing the current characters image on screen. We first make sure that a character is talking by checking if characterName isn’t equal to an empty string. If the character is actually a character we go ahead and find their GameObject in the Scene. We then call a function that set’s their location on in the Scene. Finally we get their SpriteRenderer Component and set that to the pose based on their Character Class that we’ll make later on.
 
 ```csharp
 void DisplayImages() {
-	if (characterName != "") {
-	GameObject character = GameObject.Find(characterName);
-		
-		SetSpritePositions(character);
-			
-		SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-		currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
-	}
+    if (characterName != "") {
+    GameObject character = GameObject.Find(characterName);
+
+        SetSpritePositions(character);
+
+        SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
+        currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
+    }
 }
 ```
 
@@ -555,12 +553,12 @@ For the SetSpritePositions() function it need to take in a GameObject to move it
 
 ```csharp
 void SetSpritePositions(GameObject spriteObj) {
-	if (position == "L") {
-		spriteObj.transform.position = new Vector3 (-6, 0);
-	} else if (position == "R") {
-		spriteObj.transform.position = new Vector3 (6, 0);
-	}
-	spriteObj.transform.position = new Vector3 (spriteObj.transform.position.x, spriteObj.transform.position.y, 0);
+    if (position == "L") {
+        spriteObj.transform.position = new Vector3 (-6, 0);
+    } else if (position == "R") {
+        spriteObj.transform.position = new Vector3 (6, 0);
+    }
+    spriteObj.transform.position = new Vector3 (spriteObj.transform.position.x, spriteObj.transform.position.y, 0);
 }
 ```
 
@@ -568,18 +566,18 @@ Now let’s look at the second function that can be called from ParseLine() whic
 
 ```csharp
 void CreateButtons() {
-	for (int i = 0; i < options.Length; i++) {
-		GameObject button = (GameObject)Instantiate(choiceBox);
-		Button b = button.GetComponent<Button>();
-		ChoiceButton cb = button.GetComponent<ChoiceButton>();
-		cb.SetText(options[i].Split(':')[0]);
-		cb.option = options[i].Split(':')[1];
-		cb.box = this;
-		b.transform.SetParent(this.transform);
-		b.transform.localPosition = new Vector3(0,-25 + (i*50));
-		b.transform.localScale = new Vector3(1, 1, 1);
-		buttons.Add (b);
-	}
+    for (int i = 0; i < options.Length; i++) {
+        GameObject button = (GameObject)Instantiate(choiceBox);
+        Button b = button.GetComponent<Button>();
+        ChoiceButton cb = button.GetComponent<ChoiceButton>();
+        cb.SetText(options[i].Split(':')[0]);
+        cb.option = options[i].Split(':')[1];
+        cb.box = this;
+        b.transform.SetParent(this.transform);
+        b.transform.localPosition = new Vector3(0,-25 + (i*50));
+        b.transform.localScale = new Vector3(1, 1, 1);
+        buttons.Add (b);
+    }
 }
 ```
 
@@ -587,11 +585,11 @@ After we parse the dialogue we have to update the UI using the UpdateUI() functi
 
 ```csharp
 void UpdateUI() {
-	if (!playerTalking) {
-		ClearButtons();
-	}
-	dialogueBox.text = dialogue;
-	nameBox.text = characterName;
+    if (!playerTalking) {
+        ClearButtons();
+    }
+    dialogueBox.text = dialogue;
+    nameBox.text = characterName;
 }
 ```
 
@@ -599,12 +597,12 @@ Finally we just have to write the ClearButtons() function. This just uses a for 
 
 ```csharp
 void ClearButtons() {
-	for (int i = 0; i < buttons.Count; i++) {
-		print ("Clearing buttons");
-		Button b = buttons[i];
-		buttons.Remove(b);
-		Destroy(b.gameObject);
-	}
+    for (int i = 0; i < buttons.Count; i++) {
+        print ("Clearing buttons");
+        Button b = buttons[i];
+        buttons.Remove(b);
+        Destroy(b.gameObject);
+    }
 }
 ```
 
@@ -617,132 +615,133 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour {
-	
-	DialogueParser parser;
-	
-	public string dialogue, characterName;
-	public int lineNum;
-	int pose;
-	string position;
-	string[] options;
-	public bool playerTalking;
-	List<Button> buttons = new List<Button> ();
-	
-	public Text dialogueBox;
-	public Text nameBox;
-	public GameObject choiceBox;
-	
-	// Use this for initialization
-	void Start () {
-		dialogue = "";
-		characterName = "";
-		pose = 0;
-		position = "L";
-		playerTalking = false;
-		parser = GameObject.Find("DialogueParser").GetComponent<DialogueParser>();
-		lineNum = 0;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetMouseButtonDown (0) && playerTalking == false) {
-			ShowDialogue();
-			
-			lineNum++;
-		}
-		
-		UpdateUI ();
-	}
-	
-	public void ShowDialogue() {
-		ResetImages ();
-		ParseLine ();
-	}
-	
-	void UpdateUI() {
-		if (!playerTalking) {
-			ClearButtons();
-		}
-		dialogueBox.text = dialogue;
-		nameBox.text = characterName;
-	}
-	
-	void ClearButtons() {
-		for (int i = 0; i < buttons.Count; i++) {
-			print ("Clearing buttons");
-			Button b = buttons[i];
-			buttons.Remove(b);
-			Destroy(b.gameObject);
-		}
-	}
-	
-	void ParseLine() {
-		if (parser.GetName (lineNum) != "Player") {
-			playerTalking = false;
-			characterName = parser.GetName (lineNum);
-			dialogue = parser.GetContent (lineNum);
-			pose = parser.GetPose (lineNum);
-			position = parser.GetPosition (lineNum);
-			DisplayImages();
-		} else {
-			playerTalking = true;
-			characterName = "";
-			dialogue = "";
-			pose = 0;
-			position = "";
-			options = parser.GetOptions(lineNum);
-			CreateButtons();
-		}
-	}
-	
-	void CreateButtons() {
-		for (int i = 0; i < options.Length; i++) {
-			GameObject button = (GameObject)Instantiate(choiceBox);
-			Button b = button.GetComponent<Button>();
-			ChoiceButton cb = button.GetComponent<ChoiceButton>();
-			cb.SetText(options[i].Split(':')[0]);
-			cb.option = options[i].Split(':')[1];
-			cb.box = this;
-			b.transform.SetParent(this.transform);
-			b.transform.localPosition = new Vector3(0,-25 + (i*50));
-			b.transform.localScale = new Vector3(1, 1, 1);
-			buttons.Add (b);
-		}
-	}
-	
-	void ResetImages() {
-		if (characterName != "") {
-			GameObject character = GameObject.Find (characterName);
-			SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-			currSprite.sprite = null;
-		}
-	}
-	
-	void DisplayImages() {
-		if (characterName != "") {
-			GameObject character = GameObject.Find(characterName);
-			
-			SetSpritePositions(character);
-			
-			SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-			currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
-		}
-	}
-	
-	
-	void SetSpritePositions(GameObject spriteObj) {
-		if (position == "L") {
-			spriteObj.transform.position = new Vector3 (-6, 0);
-		} else if (position == "R") {
-			spriteObj.transform.position = new Vector3 (6, 0);
-		}
-		spriteObj.transform.position = new Vector3 (spriteObj.transform.position.x, spriteObj.transform.position.y, 0);
-	}
+
+    DialogueParser parser;
+
+    public string dialogue, characterName;
+    public int lineNum;
+    int pose;
+    string position;
+    string[] options;
+    public bool playerTalking;
+    List<Button> buttons = new List<Button> ();
+
+    public Text dialogueBox;
+    public Text nameBox;
+    public GameObject choiceBox;
+
+    // Use this for initialization
+    void Start () {
+        dialogue = "";
+        characterName = "";
+        pose = 0;
+        position = "L";
+        playerTalking = false;
+        parser = GameObject.Find("DialogueParser").GetComponent<DialogueParser>();
+        lineNum = 0;
+    }
+
+    // Update is called once per frame
+    void Update () {
+        if (Input.GetMouseButtonDown (0) && playerTalking == false) {
+            ShowDialogue();
+
+            lineNum++;
+        }
+
+        UpdateUI ();
+    }
+
+    public void ShowDialogue() {
+        ResetImages ();
+        ParseLine ();
+    }
+
+    void UpdateUI() {
+        if (!playerTalking) {
+            ClearButtons();
+        }
+        dialogueBox.text = dialogue;
+        nameBox.text = characterName;
+    }
+
+    void ClearButtons() {
+        for (int i = 0; i < buttons.Count; i++) {
+            print ("Clearing buttons");
+            Button b = buttons[i];
+            buttons.Remove(b);
+            Destroy(b.gameObject);
+        }
+    }
+
+    void ParseLine() {
+        if (parser.GetName (lineNum) != "Player") {
+            playerTalking = false;
+            characterName = parser.GetName (lineNum);
+            dialogue = parser.GetContent (lineNum);
+            pose = parser.GetPose (lineNum);
+            position = parser.GetPosition (lineNum);
+            DisplayImages();
+        } else {
+            playerTalking = true;
+            characterName = "";
+            dialogue = "";
+            pose = 0;
+            position = "";
+            options = parser.GetOptions(lineNum);
+            CreateButtons();
+        }
+    }
+
+    void CreateButtons() {
+        for (int i = 0; i < options.Length; i++) {
+            GameObject button = (GameObject)Instantiate(choiceBox);
+            Button b = button.GetComponent<Button>();
+            ChoiceButton cb = button.GetComponent<ChoiceButton>();
+            cb.SetText(options[i].Split(':')[0]);
+            cb.option = options[i].Split(':')[1];
+            cb.box = this;
+            b.transform.SetParent(this.transform);
+            b.transform.localPosition = new Vector3(0,-25 + (i*50));
+            b.transform.localScale = new Vector3(1, 1, 1);
+            buttons.Add (b);
+        }
+    }
+
+    void ResetImages() {
+        if (characterName != "") {
+            GameObject character = GameObject.Find (characterName);
+            SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
+            currSprite.sprite = null;
+        }
+    }
+
+    void DisplayImages() {
+        if (characterName != "") {
+            GameObject character = GameObject.Find(characterName);
+
+            SetSpritePositions(character);
+
+            SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
+            currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
+        }
+    }
+
+
+    void SetSpritePositions(GameObject spriteObj) {
+        if (position == "L") {
+            spriteObj.transform.position = new Vector3 (-6, 0);
+        } else if (position == "R") {
+            spriteObj.transform.position = new Vector3 (6, 0);
+        }
+        spriteObj.transform.position = new Vector3 (spriteObj.transform.position.x, spriteObj.transform.position.y, 0);
+    }
 }
 
 ```
 
 ## Prefab Button
+
 Prefabs in Unity are premade GameObjects that we can use to create new GameObjects on the fly. This is a super powerful tool inside of Unity. First we are going to create the ChoiceButton prefab which will be the button that shows up to give players options of things to do.
 
 To create our button prefab we first need to create a button attached to the Panel inside the canvas. To do that right click on the Panel GameObject in the Hierarchy, select UI, and then click on Button. A button should pop up in the middle of your Panel. Now grab your buttons anchor points and set them to the same size as the Panel. This is to make sure that when the panel resizes that the button will resize with it.
@@ -757,16 +756,16 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class ChoiceButton : MonoBehaviour {
-	
-	public string option;
-	public DialogueManager box;
+
+    public string option;
+    public DialogueManager box;
 ```
 
 We don’t need to touch the Start() or Update() function so the next thing we are going to do is create a function called SetText() which takes in a string as it’s argument. All this function is doing is finding the text in the button and setting it to something new.
 
 ```csharp
 public void SetText(string newText) {
-	this.GetComponentInChildren<Text> ().text = newText;
+    this.GetComponentInChildren<Text> ().text = newText;
 }
 ```
 
@@ -774,23 +773,23 @@ The next function, SetOpiton() does almost the same thing as the last function e
 
 ```csharp
 public void SetOption(string newOption) {
-	this.option = newOption;
+    this.option = newOption;
 }
 ```
-	
+
 The final function is ParseOpiton() which is what is going to happen when the Player clicks the button. We first split the option at the ‘,’ to separate the command from the number. After we have the command and the number we tell the DialogueManager that the player isn’t talking anymore because they’ve clicked the button. We then use an if statement to check if the option is going to change the line the player is on or change the scene. If they are changing the line then we just change the line inside of the DialogueManager. If it’s changing the scene we use a Unity class called Application to load the scene we want.
 
 ```csharp
 public void ParseOption() {
-	string command = option.Split (',') [0];
-	string commandModifier = option.Split (',') [1];
-	box.playerTalking = false;
-	if (command == "line") {
-		box.lineNum = int.Parse(commandModifier);
-		box.ShowDialogue ();
-	} else if (command == "scene") {
-		Application.LoadLevel("Scene" + commandModifier);
-	}
+    string command = option.Split (',') [0];
+    string commandModifier = option.Split (',') [1];
+    box.playerTalking = false;
+    if (command == "line") {
+        box.lineNum = int.Parse(commandModifier);
+        box.ShowDialogue ();
+    } else if (command == "scene") {
+        Application.LoadLevel("Scene" + commandModifier);
+    }
 }
 ```
 
@@ -802,44 +801,44 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class ChoiceButton : MonoBehaviour {
-	
-	public string option;
-	public DialogueManager box;
-	
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
-	public void SetText(string newText) {
-		this.GetComponentInChildren<Text> ().text = newText;
-	}
-	
-	public void SetOption(string newOption) {
-		this.option = newOption;
-	}
-	
-	public void ParseOption() {
-		string command = option.Split (',') [0];
-		string commandModifier = option.Split (',') [1];
-		box.playerTalking = false;
-		if (command == "line") {
-			box.lineNum = int.Parse(commandModifier);
-			box.ShowDialogue ();
-		} else if (command == "scene") {
-			Application.LoadLevel("Scene" + commandModifier);
-		}
-	}
+
+    public string option;
+    public DialogueManager box;
+
+    // Use this for initialization
+    void Start () {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    }
+
+    public void SetText(string newText) {
+        this.GetComponentInChildren<Text> ().text = newText;
+    }
+
+    public void SetOption(string newOption) {
+        this.option = newOption;
+    }
+
+    public void ParseOption() {
+        string command = option.Split (',') [0];
+        string commandModifier = option.Split (',') [1];
+        box.playerTalking = false;
+        if (command == "line") {
+            box.lineNum = int.Parse(commandModifier);
+            box.ShowDialogue ();
+        } else if (command == "scene") {
+            Application.LoadLevel("Scene" + commandModifier);
+        }
+    }
 }
 
 ```
 
-Now that this is done we want to attach the ChoiceButton Script to the button object we’ve already created on the Panel. But before we do that we have to clear all the errors. To do this just create a new Script in the Project Browser called Character. Open up the Character Script you just created and add one variable called characterPoses that will be a Sprite array. 
+Now that this is done we want to attach the ChoiceButton Script to the button object we’ve already created on the Panel. But before we do that we have to clear all the errors. To do this just create a new Script in the Project Browser called Character. Open up the Character Script you just created and add one variable called characterPoses that will be a Sprite array.
 
 ```csharp
 using UnityEngine;
@@ -847,19 +846,20 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
-	public Sprite[] characterPoses = null;
+    public Sprite[] characterPoses = null;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start () {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    }
 }
 ```
+
 Once this is done go back to Unity and you shouldn’t have any errors. So now add the ChoiceButton Script to our button GameObject. Do this by either dragging the script to the GameObject in the Hierarchy or clicking Add Component in the buttons Inspector.
 
 ![Choice Button](19_ChoiceButton.png)
@@ -892,7 +892,7 @@ Now we are almost done. One of the last things we need to do is hook everything 
 
 ![Dialogue Manager](25_DialogeManager.png)
 
-Now if you run it we still have a few problems but most of it should be working. First we need to set our Canvas to be an actual layer inside our Camera. Right now it just an overlay to and doesn’t have depth. To do this click on your Canvas in the Hierarchy and under Render Mode select Screen Space - Camera. Click on Render Camera and select Main Camera and then set the Order in Layer to -1 so it shows up behind the characters. If you play it now you’ll see characters pop up but the player buttons still won’t be working. 
+Now if you run it we still have a few problems but most of it should be working. First we need to set our Canvas to be an actual layer inside our Camera. Right now it just an overlay to and doesn’t have depth. To do this click on your Canvas in the Hierarchy and under Render Mode select Screen Space - Camera. Click on Render Camera and select Main Camera and then set the Order in Layer to -1 so it shows up behind the characters. If you play it now you’ll see characters pop up but the player buttons still won’t be working.
 
 The last thing we need to do is go into the button Prefab. Now set the Left and Right to both -250, the Top to -50, and the Bottom to 0. This will make the buttons show up the right way.
 

@@ -1,7 +1,7 @@
 ---
 title: Space Base Restoration
 date: "2017-01-05"
-tags: sbr, double fine, mod, lua, spacebase df9
+tags: [sbr, double fine, mod, lua, spacebase df9]
 category: released
 description: Space Base Restoration is a mod project focused on updating and adding content to Double Fine's Spacebase DF-9.
 image: spacebaseHub.png

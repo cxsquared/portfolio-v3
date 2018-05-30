@@ -3,7 +3,8 @@ title: Space Cowboy Shooting Gallery
 date: "2014-10-21"
 category: gamejam
 image: scsgFull.png
-tags: game, jam, gamejam, unity, leapmotion, leap, motion, vr
+tags: [game, jam, gamejam, unity, leapmotion, leap, motion, vr]
+comments: true
 ---
 
 Space Cowboy Shooting Gallery is an alternative controller shooting gallery game built with [Unity](http://unity3d.com/5?gclid=CKnDzaXg4MMCFQqDaQodi7QAXQ) and the [Leap Motion](https://www.leapmotion.com/). The game was built during a 24 hour game jam at IUPUI. I was the programmer for the game and created it along with [Michael Auer](https://twitter.com/auermi) and Luke Brown. We wanted to use something different during the game jam and our school had a Leap Motion so we decided to use it. You can see the source code and download the game over on my [Github](https://github.com/cxsquared/SpaceCowboyShootingGallery).

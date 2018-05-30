@@ -1,10 +1,11 @@
 ---
 title: Weekly 3D Print Cobra Fan Mount
 date: "2017-01-16"
-tags: fan, 3d printing, weekly, mount, cobra, thingiverse, rear, upgrade, wanhao, i3, makerselect, monoprice, timelapse
+tags: [fan, 3d printing, weekly, mount, cobra, thingiverse, rear, upgrade, wanhao, i3, makerselect, monoprice, timelapse]
 category: blog
 description: A summary and time-lapse of the cobra rear fan mount upgrade for the wanhao i3 3D printer.
-image: ./fanThumb.png
+image: fanThumb.png
+comments: true
 ---
 
 This weeks 3D print was a much needed fan upgrade for my printer. There are a lot of fan mounts out there for the [Wanhao][wanhao] style printer. I went with the [Cobra - Rear mounted cooler][thingiverse] because of it's looks and placement on the printer. You can check out the .STL and other files over at [Thingiverse.com/thing:1090433][thingiverse].

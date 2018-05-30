@@ -58,6 +58,7 @@ export default ({ data, location }) => {
         postImage={postImage}
         postData={post}
         isBlogPost
+        postUrl={`${data.site.siteMetadata.siteUrl}${slug}`}
       />
       {header}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -80,9 +81,11 @@ export const query = graphql`
       id
       html
       tableOfContents
+      excerpt
       frontmatter {
         date
         title
+        description
         comments
         image {
           publicURL

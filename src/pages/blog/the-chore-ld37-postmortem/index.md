@@ -1,32 +1,32 @@
 ---
 title: The Chore LD37 Postmortem
 date: "2016-12-29"
-tags: Ludum Dare, post, mortem, Postmortem, LD37, The Chore, 37, haxe, haxeflixel
+tags: [Ludum Dare, post, mortem, Postmortem, LD37, The Chore, "37", haxe, haxeflixel]
 category: blog
-image: ./ld37_1.png
+image: ld37_1.png
 description: A postmorten of the game I made for Ludum Dare 37.
+comments: true
 ---
 
 **The Chore** is a sequence puzzle game about cleaning a room with a dark twist. This was my 4th Ludum Dare but my first time joining the Jam instead of the Compo. I, [@Cxsquared](https://twitter.com/cxsquared), was lucky enough to have my good friend [@Moussetticus](https://twitter.com/Moussetticus) handling all the art and some of the design with me. I covered all the programming and audio for the game. Together we are pretty happy with how our game turned out. Feel free to play our game over here and if you are interested in the process feel free to read on.
 
-## Things Used:
+## Things Used
 
 * [HaxeFlixel](http://haxeflixel.com/)
 * [Abelton Live](https://www.ableton.com/en/)
 * [Maya](http://www.autodesk.com/products/maya/overview)
 * [3D Coat](http://3dcoat.com/home/)
 
-
 # The TLDR
 
-## What Went Right:
+## What Went Right
 
 * Using a JSON actor system instead of a hard coded system allowed me to quickly implement final art and tweaks in a little over an hour.
 * I was really happy with how the sound effects turned out.
 * Adding a small bit of story seemed to make our game more interesting/replayable even though the game isn’t that interesting.
 * The initial idea, even though it was content heavy, was more or less fully realized.
 
-## What Went Wrong:
+## What Went Wrong
 
 * Couldn’t get animations to render and export correctly from Maya.
 * Forgot about a timer feature (we should really write things down more.)
@@ -34,8 +34,7 @@ description: A postmorten of the game I made for Ludum Dare 37.
 * Didn’t include enough visual feedback for the actions in game.
 * Lack of understanding of the game idea between us. Took till the second day for us to fully agree on the direction and game play.
 
-
-# The Full Version:
+# The Full Version
 
 ## Day 1
 

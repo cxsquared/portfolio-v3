@@ -1,10 +1,10 @@
 ---
 title: Scheduling Posts with Jekyll
 date: "2017-01-12"
-tags: jekyll, automation, site, posts, tutorial, future, bash, cron, crontab, scripts, static, linux
+tags: [jekyll, automation, site, posts, tutorial, future, bash, cron, crontab, scripts, static, linux]
 category: tutorial
 description: A tutorial covering how I schedule posts for my Jekyll site using cron and bash scripts.
-image: ./jekyllAuto.png
+image: jekyllAuto.png
 comments: true
 ---
 

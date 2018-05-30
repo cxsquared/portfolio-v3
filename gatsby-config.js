@@ -21,9 +21,8 @@ module.exports = {
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: '1',
-        matomoUrl: 'https://codyclaborn.me/piwik',
+        matomoUrl: 'https://matomo.codyclaborn.me',
         siteUrl: 'https://codyclaborn.me',
-        dev: true,
       },
     },
     {
@@ -37,7 +36,7 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
-              inlineCodeMarker: '>',
+              inlineCodeMarker: '±',
             },
           },
           {

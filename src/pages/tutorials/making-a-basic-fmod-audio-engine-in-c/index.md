@@ -2,7 +2,7 @@
 title: Making a Basic FMOD Audio Engine in C++
 date: "2016-04-12"
 category: tutorial
-tags: tutorial, fmod, audio, engine, c++, cpp, programming
+tags: [tutorial, fmod, audio, engine, c++, cpp, programming]
 description: A tutorial about setting about a basic audio engine for video games in C++ using the Fmod API.
 ---
 
@@ -14,13 +14,13 @@ Also a big shout out to Guy Somberg who inspired me to write these tutorials and
 
 ## Engine Organization
 
-This basic engine is going to be broken down into two major parts: an **Implementation** struct that will handle the basic calls to the FMOD API and an **AudioEngine** class that will handle all the logic for loading, unloading, playing, stopping, and changing sounds. When you implement this audio engine into your project the only thing you'll be interacting with is the AudioEngine class. So Let's get started with the header file.
+This basic engine is going to be broken down into two major parts: an `cpp±Implementation` struct that will handle the basic calls to the FMOD API and an `cpp±AudioEngine` class that will handle all the logic for loading, unloading, playing, stopping, and changing sounds. When you implement this audio engine into your project the only thing you'll be interacting with is the AudioEngine class. So Let's get started with the header file.
 
 ## Header File
 
-Now I do want to say I'm not an expert at C++ by any standard. But this being said I'll try to go over everything I did and explain it the best I can. If you have any tips or questions feel free to leave them in the comments section at the bottom of the page. I'd love to get your feedback. 
+Now I do want to say I'm not an expert at C++ by any standard. But this being said I'll try to go over everything I did and explain it the best I can. If you have any tips or questions feel free to leave them in the comments section at the bottom of the page. I'd love to get your feedback.
 
-So to start off let's create an **AudioEngine.h** file. This will hold all the declarations of our structs and class that we'll use in this engine. To start out let's put an #ifndef statement at the top of our header and close it off like this:
+So to start off let's create an `cpp±AudioEngine.h` file. This will hold all the declarations of our structs and class that we'll use in this engine. To start out let's put an #ifndef statement at the top of our header and close it off like this:
 
 ```cpp
 
@@ -33,11 +33,11 @@ So to start off let's create an **AudioEngine.h** file. This will hold all the d
 
 ```
 
-What this is doing is checking if **_AUDIO_ENGINE_H_** has been defined before. If it hasn't then go ahead and include all the information in our header. This is to prevent multiple definitions of the objects in our header. If we were to include this header into two different files in our project it would only show up once to the compiler. This is helpful to prevent some weird possible bugs when we compile our code. If you want to know more about this you can check out this [site](http://www.cprogramming.com/tutorial/cpreprocessor.html).
+What this is doing is checking if `cpp±_AUDIO_ENGINE_H_` has been defined before. If it hasn't then go ahead and include all the information in our header. This is to prevent multiple definitions of the objects in our header. If we were to include this header into two different files in our project it would only show up once to the compiler. This is helpful to prevent some weird possible bugs when we compile our code. If you want to know more about this you can check out this [site](http://www.cprogramming.com/tutorial/cpreprocessor.html).
 
 ### Includes
 
-So now what do we need to include in our header. Well for starters we need the FMOD Studio headers which are **"fmod_studio.hpp"** and **"fmod.hpp"**. Both of these headers are where we'll get all our calls to the FMOD API. Now for engine itself we'll need a few standard library things which are: **<map>**, **<string>**, **<vector>**, and **<math.h>**. Also for debugging and error checking purposes we need to include **<iostream>**. And that is it for the headers we need to include. Your header file should look like this now:
+So now what do we need to include in our header. Well for starters we need the FMOD Studio headers which are `cpp±fmod_studio.hpp` and `cpp±fmod.hpp`. Both of these headers are where we'll get all our calls to the FMOD API. Now for engine itself we'll need a few standard library things which are: `cpp±<map>`, `cpp±<string>`, `cpp±<vector>`, and `cpp±<math.h>`. Also for debugging and error checking purposes we need to include `cpp±<iostream>`. And that is it for the headers we need to include. Your header file should look like this now:
 
 ```cpp
 
@@ -66,78 +66,78 @@ This will save you a lot of writing Std:: in front of basic items like strings a
 
 ### Vector 3
 
-Now that our file knows what we are going to be using let's start creating some basic things in our code the next thing you'll want to create is a struct called **Vector3**. A struct is basically a container that we can predefine what variables are going to be in it. We need this **Vector3** struct to place sound in 3D space if our projects require that. So after the **using namespace std;** (and before **#endif**) we'll create our struct:
+Now that our file knows what we are going to be using let's start creating some basic things in our code the next thing you'll want to create is a struct called `cpp±Vector3`. A struct is basically a container that we can predefine what variables are going to be in it. We need this `cpp±Vector3` struct to place sound in 3D space if our projects require that. So after the `cpp±using namespace std;` (and before `cpp±#endif`) we'll create our struct:
 
 ```cpp
 struct Vector3 {
-	float x;
-	float y;
-	float z;
+    float x;
+    float y;
+    float z;
 };
 
 ```
 
-### Implementation
+### Implementation Header
 
-The **Implementation** struct is going to contain most of our calls to the FMOD API. We separate these calls and the actual audio engine class itself to try and prevent any weird bugs from popping up. The struct is going to contain the code for initializing and shutting down the FMOD engine as well as hold instances of both the Studio and Low-Level system objects for FMOD. Implementation will also hold a map of all the sounds and events we've played in our projects. A map is just similar to an array or vector except that all objects are linked to a key. In this case the file name of our event/sound will be the key which will return either the sound or event. And the last thing the struct will do is call an update to FMOD to update the status of all events and sounds. The **Implementation** struct looks like this:
+The `cpp±Implementation` struct is going to contain most of our calls to the FMOD API. We separate these calls and the actual audio engine class itself to try and prevent any weird bugs from popping up. The struct is going to contain the code for initializing and shutting down the FMOD engine as well as hold instances of both the Studio and Low-Level system objects for FMOD. Implementation will also hold a map of all the sounds and events we've played in our projects. A map is just similar to an array or vector except that all objects are linked to a key. In this case the file name of our event/sound will be the key which will return either the sound or event. And the last thing the struct will do is call an update to FMOD to update the status of all events and sounds. The `cpp±Implementation` struct looks like this:
 
 ```cpp
 struct Implementation {
-	Implementation();
-	~Implementation();
+    Implementation();
+    ~Implementation();
 
-	void Update();
+    void Update();
 
-	FMOD::Studio::System* mpStudioSystem;
-	FMOD::System* mpSystem;
+    FMOD::Studio::System* mpStudioSystem;
+    FMOD::System* mpSystem;
 
-	int mnNextChannelId;
+    int mnNextChannelId;
 
-	typedef map<string, FMOD::Sound*> SoundMap;
-	typedef map<int, FMOD::Channel*> ChannelMap;
-	typedef map<string, FMOD::Studio::EventInstance*> EventMap;
-	typedef map<string, FMOD::Studio::Bank*> BankMap;
+    typedef map<string, FMOD::Sound*> SoundMap;
+    typedef map<int, FMOD::Channel*> ChannelMap;
+    typedef map<string, FMOD::Studio::EventInstance*> EventMap;
+    typedef map<string, FMOD::Studio::Bank*> BankMap;
 
-	BankMap mBanks;
-	EventMap mEvents;
-	SoundMap mSounds;
-	ChannelMap mChannels;
+    BankMap mBanks;
+    EventMap mEvents;
+    SoundMap mSounds;
+    ChannelMap mChannels;
 };
 
 ```
 
-### Audio Engine
+### Audio Engine Header
 
-The last thing in the header is the deffinition of the audio engine. The engine class will do calls to the **Implementation** struct to start, stop, and update FMOD. The engine will also handle basic things like loading, playing, stoping, and updating information on sounds and events. We'll go over each function in more detail when we write the logic behind them. For now the **Audio Engine** class should look like this:
+The last thing in the header is the deffinition of the audio engine. The engine class will do calls to the `cpp±Implementation` struct to start, stop, and update FMOD. The engine will also handle basic things like loading, playing, stoping, and updating information on sounds and events. We'll go over each function in more detail when we write the logic behind them. For now the `cpp±Audio Engine` class should look like this:
 
 ```cpp
 
 class CAudioEngine {
 public:
-	static void Init();
-	static void Update();
-	static void Shutdown();
-	static int ErrorCheck(FMOD_RESULT result);
+    static void Init();
+    static void Update();
+    static void Shutdown();
+    static int ErrorCheck(FMOD_RESULT result);
 
-	void LoadBank(const string& strBankName, FMOD_STUDIO_LOAD_BANK_FLAGS flags);
-	void LoadEvent(const string& strEventName);
-	void Loadsound(const string& strSoundName, bool b3d = true, bool bLooping = false, bool bStream = false);
-	void UnLoadSound(const string& strSoundName);
-	void Set3dListenerAndOrientation(const Vector3& vPos = Vector3{ 0, 0, 0 }, float fVolumedB = 0.0f);
-	void PlaySound(const string& strSoundName, const Vector3& vPos = Vector3{ 0, 0, 0 }, float fVolumedB = 0.0f);
-	void PlayEvent(const string& strEventName);
-	void StopChannel(int nChannelId);
-	void StopEvent(const string& strEventName, bool bImmediate = false);
-	void GeteventParameter(const string& strEventName, const string% strEventParameter, float* parameter);
-	void SetEventParameter(const string& strEventName, const string& strParameterName, flaot fValue);
-	void StopAllChannels();
-	void SetChannel3dPosition(int nChannelId, const Vector3& vPosition);
-	void SetChannelvolume(int nChannelId, float fVolumedB);
-	bool IsPlaying(int nChannelId) const;
-	bool IsEventPlaying(const string& strEventName) const;
-	float dbToVolume(float db);
-	float VolumeTodb(float volume);
-	FMOD_VECTOR VectorToFmod(const Vector& vPosition);
+    void LoadBank(const string& strBankName, FMOD_STUDIO_LOAD_BANK_FLAGS flags);
+    void LoadEvent(const string& strEventName);
+    void Loadsound(const string& strSoundName, bool b3d = true, bool bLooping = false, bool bStream = false);
+    void UnLoadSound(const string& strSoundName);
+    void Set3dListenerAndOrientation(const Vector3& vPos = Vector3{ 0, 0, 0 }, float fVolumedB = 0.0f);
+    void PlaySound(const string& strSoundName, const Vector3& vPos = Vector3{ 0, 0, 0 }, float fVolumedB = 0.0f);
+    void PlayEvent(const string& strEventName);
+    void StopChannel(int nChannelId);
+    void StopEvent(const string& strEventName, bool bImmediate = false);
+    void GeteventParameter(const string& strEventName, const string% strEventParameter, float* parameter);
+    void SetEventParameter(const string& strEventName, const string& strParameterName, flaot fValue);
+    void StopAllChannels();
+    void SetChannel3dPosition(int nChannelId, const Vector3& vPosition);
+    void SetChannelvolume(int nChannelId, float fVolumedB);
+    bool IsPlaying(int nChannelId) const;
+    bool IsEventPlaying(const string& strEventName) const;
+    float dbToVolume(float db);
+    float VolumeTodb(float volume);
+    FMOD_VECTOR VectorToFmod(const Vector& vPosition);
 };
 
 ```
@@ -156,8 +156,9 @@ The first thing we need to do is tell the file that we are using the AudioEngine
 
 ```
 
-### Implementation
-This is where we will initialize the underlying FMOD system that will allow us to play sounds. We'll start with the **Implementation** constructor which creates the FMOD Studio and Low-Level systems and set's it's variables.
+### Implementation Source
+
+This is where we will initialize the underlying FMOD system that will allow us to play sounds. We'll start with the `cpp±Implementation` constructor which creates the FMOD Studio and Low-Level systems and set's it's variables.
 
 ```cpp
 
@@ -172,7 +173,7 @@ Implementation::Implementation() {
 
 ```
 
-**CAudioEngine::ErrorCheck** is just a way for us to check that all FMOD calls are successful and we'll cover that later. As you can see the first thing we do is create the FMOD Studio System that handles all events and sounds. We then initialize the system and that takes in the number of channels, then flags that can change the way the system runs. The **FMOD_STUDIO_INIT_LIVEUPDATE** is a really cool feature where you can connect to your game with FMOD Studio and live mix the audio. Then to allow us to handle things at a lower level we call **getLowLevelSystem** which gives us the Low-Level system.
+`cpp±CAudioEngine::ErrorCheck` is just a way for us to check that all FMOD calls are successful and we'll cover that later. As you can see the first thing we do is create the FMOD Studio System that handles all events and sounds. We then initialize the system and that takes in the number of channels, then flags that can change the way the system runs. The `cpp±FMOD_STUDIO_INIT_LIVEUPDATE` is a really cool feature where you can connect to your game with FMOD Studio and live mix the audio. Then to allow us to handle things at a lower level we call `cpp±getLowLevelSystem` which gives us the Low-Level system.
 
 Next we create the deconstructor which cleans up FMOD and makes sure we don't leave anything behind. It's super simple and we just unload all assets and then shutdown FMOD.
 
@@ -185,7 +186,7 @@ Implementation::~Implementation() {
 
 ```
 
-Now we work on the update function of the **Implement** struct. In this function we check if a channel has stopped playing, if it has, we destroy it so we can clear up a channel to use. Other than that we just call the update function on the FMOD system to update the event sounds.
+Now we work on the update function of the `cpp±Implement` struct. In this function we check if a channel has stopped playing, if it has, we destroy it so we can clear up a channel to use. Other than that we just call the update function on the FMOD system to update the event sounds.
 
 ```cpp
 
@@ -217,9 +218,9 @@ Implementation* sgpImplementation = nullptr;
 
 ```
 
-### Audio Engine
+### Audio Engine Source
 
-The first two functions we'll add are the **Init** and **Update** functions which are super simple. We just need to create the **Implementation** and call its update.
+The first two functions we'll add are the `cpp±Init` and `cpp±Update` functions which are super simple. We just need to create the `cpp±Implementation` and call its update.
 
 ```cpp
 
@@ -242,12 +243,12 @@ void CAudioEngine::LoadSound(const std::string& strSoundName, bool b3d, bool bLo
     auto tFoundIt = sgpImplementation->mSounds.find(strSoundName);
     if (tFoundIt != sgpImplementation->mSounds.end())
         return;
-    
+
     FMOD_MODE eMode = FMOD_DEFAULT;
     eMode |= b3d ? FMOD_3D : FMOD_2D;
     eMode |= bLooping ? FMOD_LOOP_NORMAL : FMOD_LOOP_OFF;
     eMode |= bStream ? FMOD_CREATESTREAM : FMOD_CREATECOMPRESSEDSAMPLE;
-    
+
     FMOD::Sound* pSound = nullptr;
     CAudioEngine::ErrorCheck(sgpImplementation->mpSystem->createSound(strSoundName.c_str(), eMode, nullptr, &pSound));
     if (pSound){
@@ -267,14 +268,14 @@ void CAudioEngine::UnLoadSound(const std::string& strSoundName)
     auto tFoundIt = sgpImplementation->mSounds.find(strSoundName);
     if (tFoundIt == sgpImplementation->mSounds.end())
         return;
-    
+
     CAudioEngine::ErrorCheck(tFoundIt->second->release());
     sgpImplementation->mSounds.erase(tFoundIt);
 }
 
 ```
 
-Now we come to the largest function we have which is **PlaySounds**. Even though it's a little large it's actually quite simple. We first see if we have that sound in our sound map. If not we then load it. If we still can't find it then that means something went wrong and we can't play the sound. If we found the sound just fine then we create a new channel to house the sound and tell the sound to play, but we start the sound paused. This is so we don't get a pop in the audio when we set parameters.  If the channel was set right then we update all the possible parameters like volume and position and then unpause the sound. And finally we return the channel id encase we refer to it later.
+Now we come to the largest function we have which is `cpp±PlaySounds`. Even though it's a little large it's actually quite simple. We first see if we have that sound in our sound map. If not we then load it. If we still can't find it then that means something went wrong and we can't play the sound. If we found the sound just fine then we create a new channel to house the sound and tell the sound to play, but we start the sound paused. This is so we don't get a pop in the audio when we set parameters.  If the channel was set right then we update all the possible parameters like volume and position and then unpause the sound. And finally we return the channel id encase we refer to it later.
 
 ```cpp
 
@@ -352,7 +353,7 @@ void CAudioEngine::LoadBank(const std::string& strBankName, FMOD_STUDIO_LOAD_BAN
 
 ```
 
-The next thing we have to do is load events. Each event stored in a bank has to be loaded separately which helps save memory. We load Events like everything else except we load it in two parts: **EventDescription** and **EventInstance**. The description is the information and the instance is what actually plays the sound.
+The next thing we have to do is load events. Each event stored in a bank has to be loaded separately which helps save memory. We load Events like everything else except we load it in two parts: `cpp±EventDescription` and `cpp±EventInstance`. The description is the information and the instance is what actually plays the sound.
 
 ```cpp
 
@@ -368,7 +369,7 @@ void CAudioEngine::LoadEvent(const std::string& strEventName) {
         if (pEventInstance){
             sgpImplementation->mEvents[strEventName] = pEventInstance;
         }
-    }   
+    }
 }
 
 ```
@@ -398,7 +399,7 @@ void CAudioEngine::StopEvent(const string &strEventName, bool bImmediate) {
     auto tFoundIt = sgpImplementation->mEvents.find(strEventName);
     if (tFoundIt == sgpImplementation->mEvents.end())
         return;
-    
+
     FMOD_STUDIO_STOP_MODE eMode;
     eMode = bImmediate ? FMOD_STUDIO_STOP_IMMEDIATE : FMOD_STUDIO_STOP_ALLOWFADEOUT;
     CAudioEngine::ErrorCheck(tFoundIt->second->stop(eMode));
@@ -432,7 +433,7 @@ void CAudioEngine::GetEventParameter(const string &strEventName, const string &s
     auto tFoundIt = sgpImplementation->mEvents.find(strEventName);
     if (tFoundIt == sgpImplementation->mEvents.end())
         return;
-    
+
     FMOD::Studio::ParameterInstance* pParameter = NULL;
     CAudioEngine::ErrorCheck(tFoundIt->second->getParameter(strParameterName.c_str(), &pParameter));
     CAudioEngine::ErrorCheck(pParameter->getValue(parameter));
@@ -442,7 +443,7 @@ void CAudioEngine::SetEventParameter(const string &strEventName, const string &s
     auto tFoundIt = sgpImplementation->mEvents.find(strEventName);
     if (tFoundIt == sgpImplementation->mEvents.end())
         return;
-    
+
     FMOD::Studio::ParameterInstance* pParameter = NULL;
     CAudioEngine::ErrorCheck(tFoundIt->second->getParameter(strParameterName.c_str(), &pParameter));
     CAudioEngine::ErrorCheck(pParameter->setValue(fValue));
@@ -489,7 +490,7 @@ int CAudioEngine::ErrorCheck(FMOD_RESULT result) {
 
 ```
 
-And finally we just need a function to clean everything up and this just deletes the **Implementation**.
+And finally we just need a function to clean everything up and this just deletes the `cpp±Implementation`.
 
 ```cpp
 
@@ -499,6 +500,6 @@ void CAudioEngine::Shutdown() {
 
 ```
 
-And that's it!! In under 300 lines of code we have a flexible working audio engine for your projects. Now from here the sky's the limit. Audio is a huge part of any project so you as a programmer should treat it just as importantly as graphics and gameplay. Hopefully this tutorial has helped a bit in that process. Stay tuned for my next tutorial which will be on adding a state machine and some advanced features to our simple audio engine. Feel free to comment down below if you have any tips, tricks, or need help with anything. 
+And that's it!! In under 300 lines of code we have a flexible working audio engine for your projects. Now from here the sky's the limit. Audio is a huge part of any project so you as a programmer should treat it just as importantly as graphics and gameplay. Hopefully this tutorial has helped a bit in that process. Stay tuned for my next tutorial which will be on adding a state machine and some advanced features to our simple audio engine. Feel free to comment down below if you have any tips, tricks, or need help with anything.
 
 Thanks for reading!

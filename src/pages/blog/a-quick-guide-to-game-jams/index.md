@@ -1,17 +1,18 @@
 ---
 title: A Quick Guide to Game Jams
 date: "2017-01-19"
-tags: ggj, global game jam, game jam, guide, ludum dare, ld
+tags: [ggj, global game jam, game jam, guide, ludum dare, ld]
 category: blog
 description: Some tips and tricks on why and how you should participate in game jams.
-image: ./gamejam.png
+image: gamejam.png
+comments: true
 ---
 
 If you've been interested in game development for almost any decent length of time you've probably heard of a game jam. For those that don't know a game jam is an event where you take a short period of time to create a game. These normally last 48 hours, but I've seen game jams ranging from 1 hour to 2 weeks. This might sound like a very hard task, and it can be, but it's one of the best learning tools I've ever come across. In this post I'm going to talk a bit about my experience with game jams and why you should participate in game jams as well.
 
 ## My First Jam
 
-My first game jam was the [Global Game Jam][ggj](GGJ) in 2013. I had been developing games for about 6 months at this point and I had only made very small prototypes. Going into the [GGJ][ggj] I wasn't sure what to except. I was going to a site where I didn't know anyone and hadn't ever experienced a game jam before. Boy was I in for a treat. By the end of the game jam I had gotten to know so many new and awesome people and had a [game]({% post_url 2014-10-01-Mirrored %}) to show for it. From this point on I fell in love with game jams and to this day I've participated in probably around 10 plus game jams.
+My first game jam was the [Global Game Jam][ggj](GGJ) in 2013. I had been developing games for about 6 months at this point and I had only made very small prototypes. Going into the [GGJ][ggj] I wasn't sure what to except. I was going to a site where I didn't know anyone and hadn't ever experienced a game jam before. Boy was I in for a treat. By the end of the game jam I had gotten to know so many new and awesome people and had a [game](/games/mirrored/) to show for it. From this point on I fell in love with game jams and to this day I've participated in probably around 10 plus game jams.
 
 ## The Different Game Jams
 
@@ -25,7 +26,7 @@ There isn't just one type of game jam. Some jams are quick, some are long, some 
 
 * ### Ludum Dare
 
-![Ludum Dare Logo](http://www.sakergames.com/public/img/ludumdare.png)
+![Ludum Dare Logo](https://upload.wikimedia.org/wikipedia/commons/0/03/New_Ludum_Dare_Logo.png)
 
 [Ludum Dare][ld] is all about the games. [LD][ld] takes place three times a year during a weekend. You have 48 hours to use the theme they give you to create a game from scratch. The jam is split into to categories: The Compo and The Jam. The Compo is a solo event where everything must be made from scratch in 48 hours. The Jam however is a slightly more relaxed event where you can work in teams, use some pre-made items, and you get an extra 24 hours to make your game. The coolest part about [LD][ld] is playing and rating other games made during the jam and seeing how your game stacks up against them. You get great feedback from the participants and can really learn what went right and what went wrong while making your game.
 
@@ -43,9 +44,9 @@ There isn't just one type of game jam. Some jams are quick, some are long, some 
 
 ## Tips and Tricks
 
-While game jams are a lot of fun they can be pretty taxing on you. Here are some tips and tricks I've picked up over the years to help you get the most out of your jam experience. 
+While game jams are a lot of fun they can be pretty taxing on you. Here are some tips and tricks I've picked up over the years to help you get the most out of your jam experience.
 
-* ### SLEEP! 
+* ### SLEEP
 
 While 48 hours may make you think you can get any rest you'll work better if you get at least a little rest
 

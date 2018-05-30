@@ -1,10 +1,11 @@
 ---
 title: 'Weekly 3D Print: Hamilton Statue'
 date: "2017-01-09"
-tags: hamilton, 3d printing, star, statue, weekly, musical, arduino, neopixel
+tags: [hamilton, 3d printing, star, statue, weekly, musical, arduino, neopixel]
 category: blog
 description: The process of designing and 3D printing a statue based on the musical Hamilton with an Arduino and NeoPixel lights.
-image: 3dprinting/weekly/hamStatue/hamiltonFull.gif
+image: hamiltonFull.gif
+comments: true
 ---
 
 This weeks 3D printing project is actually a recap of a present I created during the holidays. My significant other is a huge fan of the Broadway play Hamilton, and I thought the logo would make for an awesome statue. <!-- excerpt -->
