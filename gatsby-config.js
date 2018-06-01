@@ -21,7 +21,7 @@ module.exports = {
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: '1',
-        matomoUrl: 'https://codyclaborn.me/piwik',
+        matomoUrl: 'https://matomo.codyclaborn.me',
         siteUrl: 'https://codyclaborn.me',
       },
     },
@@ -82,5 +82,6 @@ module.exports = {
         exclude: ['/kanye/*'],
       },
     },
+    `gatsby-plugin-meta-redirect`,
   ],
 }

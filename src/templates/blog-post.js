@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDisqusThread from 'react-disqus-thread'
+import { DiscussionEmbed } from 'disqus-react'
 import Colors from '../utils/Colors'
 import { rhythm } from '../utils/typography'
 import Seo from '../components/Seo'
@@ -14,11 +14,13 @@ export default ({ data, location }) => {
   let comments = null
   if (post.frontmatter.comments) {
     comments = (
-      <ReactDisqusThread
+      <DiscussionEmbed
         shortname={data.site.siteMetadata.disqus.shortname}
-        identifier={post.id}
-        title={post.title}
-        url={`${data.site.siteMetadata.siteUrl}${slug}`}
+        config={{
+          identifier: post.id,
+          title: post.title,
+          url: `${data.site.siteMetadata.siteUrl}${slug}`,
+        }}
       />
     )
   }
