@@ -15,7 +15,7 @@ const menuStyles = {
     position: 'fixed',
     width: '36px',
     height: '30px',
-    right: '36px',
+    right: '12px',
     top: '12px',
   },
   bmCrossButton: {

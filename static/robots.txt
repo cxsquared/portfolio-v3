@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /kanye/
+
+Sitemap: https://codyclaborn.me/sitemap.xml

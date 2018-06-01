@@ -1,0 +1,22 @@
+{
+    "body": [
+        {
+            "text": "\nThank you for playing Derelicts Spacebase DF-9 1.08 fan patch!",
+            "y": 70
+        },
+        {
+            "text": "We added a lit.",
+            "y": -50
+        },
+        {
+            "text": "Open source license available at: http://opensource.org/licenses/cpal_1.0",
+            "y": -240
+        }
+    ],
+    "footer": {
+        "text": ">> SpacebaseHub",
+        "url": "http://www.spacebasehub.net/",
+        "y": -320,
+        "w": 360
+    }
+}

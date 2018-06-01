@@ -3,10 +3,13 @@ import ReactDisqusThread from 'react-disqus-thread'
 import Colors from '../utils/Colors'
 import { rhythm } from '../utils/typography'
 import Seo from '../components/Seo'
+import Toc from '../components/Toc'
 
 export default ({ data, location }) => {
   const post = data.markdownRemark
   const slug = location.pathname
+
+  const toc = <Toc toc={post.tableOfContents} />
 
   let comments = null
   if (post.frontmatter.comments) {
@@ -61,6 +64,7 @@ export default ({ data, location }) => {
         postUrl={`${data.site.siteMetadata.siteUrl}${slug}`}
       />
       {header}
+      {toc}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       {comments}
     </div>
@@ -87,6 +91,7 @@ export const query = graphql`
         title
         description
         comments
+        toc
         image {
           publicURL
         }

@@ -11,7 +11,9 @@ Sound Control is a game made using [HaxeFlixel](http://haxeflixel.com) in 48 hou
 
 ![Screen shot of the game jam game duality](ld33.jpg)
 
-#### My entry for the Ludum Dare 33 compo. The theme was You are the Monster
+### My Entry
+
+The theme was You are the Monster
 
 I had no plans on doing this jam but really liked the theme and ended up making a game I'm pretty happy with.
 
@@ -27,7 +29,7 @@ Here's how I did...
 
 ![Ratings](scrate.png)
 
-### Soundtrack
+#### Soundtrack
 
 <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/138137011&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 

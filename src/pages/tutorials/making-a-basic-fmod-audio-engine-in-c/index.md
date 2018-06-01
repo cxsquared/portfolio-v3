@@ -4,6 +4,7 @@ date: "2016-04-12"
 category: tutorial
 tags: [tutorial, fmod, audio, engine, c++, cpp, programming]
 description: A tutorial about setting about a basic audio engine for video games in C++ using the Fmod API.
+toc: true
 ---
 
 In my previous post, [Setting Up Xcode and Visual Studio for FMOD Development](/tutorial/setting-up-xcode-and-visual-studio-for-fmod-development/) talked about getting your IDE environment ready for creating an FMOD audio engine implementation. In this tutorial I'll go over creating a basic audio engine that you can use in your C++ projects to add quick and easy dynamic audio. This engine will be able to handle both single audio files and FMOD Studio Events to give you lots of flexibility. So let's get to the code.

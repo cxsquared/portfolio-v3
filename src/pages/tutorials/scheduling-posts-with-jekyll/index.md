@@ -6,6 +6,7 @@ category: tutorial
 description: A tutorial covering how I schedule posts for my Jekyll site using cron and bash scripts.
 image: jekyllAuto.png
 comments: true
+toc: true
 ---
 
 One major down side to using a static site generator like [Jekyll][jekyll] is the lack of dynamic updates. CMS tools like [Wordpress][wordpress] allow for scheduling posts for the future which is almost essential for consistent blog posts. So what do you do if you want a static site but also want to schedule posts for the future? Well if you are hosting your site on your own sever then you can easily automate your site update process. In this post I'll be showing you how I schedule posts for my own site. This is a slightly specific usage so your millage my vary but these ideas should be easily adaptable to many situations.

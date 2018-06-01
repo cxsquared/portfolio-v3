@@ -72,7 +72,9 @@ class Layout extends React.PureComponent {
               }}
             />
           </div>
-          <div style={{ flex: '1', textAlign: 'center' }}>
+          <div
+            style={{ flex: '1', textAlign: 'center', color: Colors.background }}
+          >
             <p>© {new Date().getFullYear()}, Cody Claborn</p>
           </div>
           <div style={{ flex: '1', textAlign: 'end', marginRight: '20px' }}>
