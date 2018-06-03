@@ -96,12 +96,13 @@ class Header extends React.PureComponent{
   }
 
   componentDidMount() {
-      this.updateDimensions()
-      window.addEventListener('resize', this.updateDimensions.bind(this))
+      this.updateDimensions();
+      this.updateDimensionsHandle = this.updateDimensions.bind(this);
+      window.addEventListener('resize', this.updateDimensionsHandle);
   }
 
   componentWillUnmount() {
-      window.removeEventListener('resize', this.updateDimensions.bind(this))
+      window.removeEventListener('resize', this.updateDimensionsHandle)
   }
 
   render() {

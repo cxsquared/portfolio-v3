@@ -11,7 +11,8 @@ class Toc extends React.PureComponent {
         super(props);
 
         this.state = {
-            collapse: false
+            collapse: false,
+            mobile: false
         }
     }
 
@@ -19,15 +20,25 @@ class Toc extends React.PureComponent {
         const collapse = window.scrollY > 300;
         this.setState({ collapse });
     }
+
+    handleDimensions() {
+        const isMobile = window.innerWidth <= 1000;
+        this.setState({ mobile: isMobile });
+    }
     
     componentDidMount() {
         this.handleScroll();
         this.handleScrollHandle = this.handleScroll.bind(this)
         window.addEventListener('scroll', this.handleScrollHandle);        
+
+        this.handleDimensions();
+        this.handleDimensionsHandle = this.handleDimensions.bind(this);
+        window.addEventListener('resize', this.handleDimensionsHandle);
     }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScrollHandle);
+        window.removeEventListener('resize', this.handleDimensionsHandle);
     }
 
     render() {
@@ -58,7 +69,7 @@ class Toc extends React.PureComponent {
 
         let toc = null;
         if (this.props.toc !== '') {
-            toc = <div style={{
+            let tocStyle = {
                     margin: 0,
                     display: 'inline',
                     float: 'right',
@@ -67,7 +78,14 @@ class Toc extends React.PureComponent {
                     background: Colors.selection,
                     borderRadius: '10px',
                     border: `1px solid ${Colors.comment}`
-                }}>
+                };
+
+            if (this.state.mobile) {
+                tocStyle.display = 'block';
+                tocStyle.float = 'none';
+            }
+
+            toc = <div style={tocStyle}>
                 <h3>Contents</h3>
                 <div dangerouslySetInnerHTML={{__html: this.props.toc}}
                  css={{
