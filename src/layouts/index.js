@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import Colors from '../utils/Colors'
 import { css } from 'gatsby-plugin-glamor'
 
-import Header from '../components/header'
+import Header from '../components/Header'
 import About from '../components/About'
 import SocialMediaLinks from '../components/SocialMediaLinks'
 
