@@ -109,7 +109,7 @@ struct Implementation {
 
 ### Audio Engine Header
 
-The last thing in the header is the deffinition of the audio engine. The engine class will do calls to the `cpp±Implementation` struct to start, stop, and update FMOD. The engine will also handle basic things like loading, playing, stoping, and updating information on sounds and events. We'll go over each function in more detail when we write the logic behind them. For now the `cpp±Audio Engine` class should look like this:
+The last thing in the header is the definition  of the audio engine. The engine class will do calls to the `cpp±Implementation` struct to start, stop, and update FMOD. The engine will also handle basic things like loading, playing, stopping, and updating information on sounds and events. We'll go over each function in more detail when we write the logic behind them. For now the `cpp±Audio Engine` class should look like this:
 
 ```cpp
 

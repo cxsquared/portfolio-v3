@@ -8,7 +8,7 @@ toc: true
 ---
 This tutorial will help you create a basic visual novel framework that you can use your own story and art in, as well as expand upon the framework itself with more functionality. I will say I’m not the best Unity dev and there are probably better ways to lay out this framework but this will give you a good start if you want to quickly get started with game development. You can see and download the games [source code on Github](https://github.com/cxsquared/Visual-Novel-Tutorial).
 
-A lot of this tutorial was adapted and inspired from TheHappieCat’s tutorial on the same subject. You can check out her [channel on Youtube](https://www.youtube.com/user/TheHappieCat) for more awesome game development videos. If you’d like a more in-deepth look at the basics I recomend checkout out [Unity’s documentation](http://docs.unity3d.com/Manual/UnityBasics.html).
+A lot of this tutorial was adapted and inspired from TheHappieCat’s tutorial on the same subject. You can check out her [channel on Youtube](https://www.youtube.com/user/TheHappieCat) for more awesome game development videos. If you’d like a more in-deepth look at the basics I recommend checkout out [Unity’s documentation](http://docs.unity3d.com/Manual/UnityBasics.html).
 
 ## Planning
 
@@ -59,11 +59,13 @@ In the top right there is a little square with colored cones coming out of it, t
 ![Hierarchy](04_Hierarchy.png)
 
 If you look to the left there should be a tab called Hierarchy that contains a Main Camera and a Directional Light. Everything in the hierarchy is what will be a part of the game. The hierarchy is made up of Unity GameObjects. GameObjects are the basic components of every Unity game. All GameObjects contain Components that tell the GameObject what to do or how to function inside the game. Components are modules such as scripts or renderers that give instructions to the GameObject.
+
 If you click on the Main Camera object you should see the right side of the screen, under the tab that says Inspector, a bunch of different Components that allow the Main Camera to function as a camera. The top Component is called a Transform. All GameObjects have a transform and this is what tells the GameObject where to place itself inside our game world and scene view. We’ll talk more about the different Components and how they interact as we start to add stuff to our game.
 
 ## Scenes
 
 By this point you should have a small understanding of what you are seeing on screen. We’ll cover more of the interface as the tutorial goes on. The next concept you need to understand is Scenes. Now this Scene concept is different from what I planned out above. A Scene is how Unity differentiates levels. We’ll leverage that fact to create our scenes/chapters in the game. Each one of the scenes/chapters we create in the game will be saved as a Unity Scene.
+
 Let’s go ahead and save our first Scene. So go click File > Save Scene which should open up a file dialog in your Assets folder of your Unity project. I believe keeping things organized in a game project is very important so go ahead and create a folder named “Scenes” and then save your scene inside that folder with a name of “Scene1”. This naming convention is very important because we are going to use it to switch between scenes later.
 
 ![Scene Save](05_SaveScene.png)
@@ -449,7 +451,7 @@ public class DialogueManager : MonoBehaviour {
     public GameObject choiceBox;
 ```
 
-Now let’s get going with the Start() function. Here we are just initializing all our variables so that if we look at them before anything has happened it won’t break the game. For our parser we need to find the DialogueParser GameObject in the Scene. Luckily Unity has a great function for that called Find. This finds any GameObject within in our Scene and since we only have one DialogueParser GameObject we don’t have to worry about Unity finding the wrong one. After the GameObject is found we then have to get the actual DialogueParser script from the GameObject. To do this we just use GetComponent(). Now that we have the DialogueParser script we can get information about each line to show in our text boxes.
+Now let’s get going with the Start() function. Here we are just initializing all our variables so that if we look at them before anything has happened it won’t break the game. For our parser we need to find the DialogueParser GameObject in the Scene. Luckily Unity has a great function for that called Find. This finds any GameObject within in our Scene and since we only have one DialogueParser GameObject we don’t have to worry about Unity finding the wrong one. After the GameObject is found we then have to get the actually DialogueParser script from the GameObject. To do this we just use GetComponent(). Now that we have the DialogueParser script we can get information about each line to show in our text boxes.
 
 ```csharp
 public class DialogueManager : MonoBehaviour {
@@ -468,7 +470,7 @@ public class DialogueManager : MonoBehaviour {
     }
 ```
 
-Unlike the DialogParser class we are going to use the Update() method. The Update() method is called every frame update inside of Unity so the Update() function is constantly called. This function is really useful for constantly keeping track of things like player input in the game. We are going to use to it make detect if the player presses the left mouse button and to keep the UI up-to-date. So everytime the player presses the mouse button and there isn’t player choice options up we show the dialogue and go to the next line number.
+Unlike the DialogParser class we are going to use the Update() method. The Update() method is called every frame update inside of Unity so the Update() function is constantly called. This function is really useful for constantly keeping track of things like player input in the game. We are going to use to it make detect if the player presses the left mouse button and to keep the UI up-to-date. So every time the player presses the mouse button and there isn’t player choice options up we show the dialogue and go to the next line number.
 
 ```csharp
 void Start () {
@@ -563,7 +565,7 @@ void SetSpritePositions(GameObject spriteObj) {
 }
 ```
 
-Now let’s look at the second function that can be called from ParseLine() which is CreateButtons(). This function will create the buttons that the player can click to make a decision. To do this we use a for loop which just says run this code as long as i is less than options.Length which is how many options the player will have. We then use Unity’s Instantiate() function to create a new GameObject. This is similar to dragging a GameObject into the Scene or Hierarchy. Then we have to get the Button component and ChioceButton Script off of the button GameObject. We use the ChoiceButton Script to set the Text of the buttno and to set the option of the button so the button knows what to do when it is clicked. And we tell the button the DialogueManager created it by setting cb.box to “this”. The word “this” just means a reference to the current Script DialogueManger in this case. We then make the button a child of whatever GameObject the DialogueManager is connected to. In this case that means the Panel that is part of the Canvas. Then we set the location and scale based on the Panel GameObject. And finally we add the button to the buttons list to keep track of it.
+Now let’s look at the second function that can be called from ParseLine() which is CreateButtons(). This function will create the buttons that the player can click to make a decision. To do this we use a for loop which just says run this code as long as i is less than options.Length which is how many options the player will have. We then use Unity’s Instantiate() function to create a new GameObject. This is similar to dragging a GameObject into the Scene or Hierarchy. Then we have to get the Button component and ChioceButton Script off of the button GameObject. We use the ChoiceButton Script to set the Text of the button and to set the option of the button so the button knows what to do when it is clicked. And we tell the button the DialogueManager created it by setting cb.box to “this”. The word “this” just means a reference to the current Script DialogueManger in this case. We then make the button a child of whatever GameObject the DialogueManager is connected to. In this case that means the Panel that is part of the Canvas. Then we set the location and scale based on the Panel GameObject. And finally we add the button to the buttons list to keep track of it.
 
 ```csharp
 void CreateButtons() {

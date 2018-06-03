@@ -13,7 +13,7 @@ class About extends React.PureComponent {
             <h3>The musings and creations of Cody Claborn</h3>
             <p>
                 Hi! I'm a programmer currently living in Indiana. 
-                I'm passionate about video games, music, and how programming intersetcs the two. 
+                I'm passionate about video games, music, and how programming intersects  the two. 
                 Here are the projects I've worked on along with tutorials and other various blog posts.{' '}
                 <Link to="/about/"
                   css={{

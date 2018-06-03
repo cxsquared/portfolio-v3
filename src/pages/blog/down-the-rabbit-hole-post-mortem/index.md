@@ -1,8 +1,8 @@
 ---
-title: Down the Rabbit Hole Post-mortem
+title: Down the Rabbit Hole Postmortem
 category: blog
 date: "2014-12-22"
-tags: [blog, down the rabbit hole, post, mortem, postmortem, ludum, dare, haxe, haxeflixel, music]
+tags: [blog, down the rabbit hole, postmortem, ludum, dare, haxe, haxeflixel, music]
 image: 17.png
 comments: true
 ---

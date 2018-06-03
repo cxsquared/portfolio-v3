@@ -29,19 +29,19 @@ Here's on of my first prints of [Benchy][BenchyLink] which is a sort of standard
 
 ![First Benchy Test Print](benchy.jpg)
 
-I then when crazy adding modifications to my printer to make it print better. The two biggest ones anyone should do are the [Z brace mod] and a new [all metal hotend]. I did a few calibration tweaks and added some rubber feet to make it a little quieter. I'm also in the middle of changing the fan because my orginal one quit working. It's a little janky right now but it works. Here's a picture of my printer as it currently stands.
+I then when crazy adding modifications to my printer to make it print better. The two biggest ones anyone should do are the [Z brace mod] and a new [all metal hotend]. I did a few calibration tweaks and added some rubber feet to make it a little quieter. I'm also in the middle of changing the fan because my original one quit working. It's a little janky right now but it works. Here's a picture of my printer as it currently stands.
 
 ![My printer](myprinter.png)
 
 ## Making Cool Things
 
-Now I'm far from an artist. I drew a little bit when I was younger but now days I'm a full on logic person. Even the music I make has more logic then art in it in my opinion. But I've really found a happy balance of creativity and logic with designing things to be 3D printed. When you design something for a 3D printer you have to think about how it will print all the time. The main thing I've been creating this year is keychains. It really started on a whim. I'm a big fan of the Youtuber [Northernlion] and thought it'd be funny to make a keychain of him. I found a program called [OpenSCAD] that uses a programming language to create 3D models. I used this program because I'm super comfortable with programming and it had a function where I can turn 2D images into 3D models. Here was the result of my first design.
+Now I'm far from an artist. I drew a little bit when I was younger but now days I'm a full on logic person. Even the music I make has more logic then art in it in my opinion. But I've really found a happy balance of creativity and logic with designing things to be 3D printed. When you design something for a 3D printer you have to think about how it will print all the time. The main thing I've been creating this year is keychains. It really started on a whim. I'm a big fan of the YouTuber [Northernlion] and thought it'd be funny to make a keychain of him. I found a program called [OpenSCAD] that uses a programming language to create 3D models. I used this program because I'm super comfortable with programming and it had a function where I can turn 2D images into 3D models. Here was the result of my first design.
 
 ![Northernlion Keychain](nlKeychain.png)
 
 You can check out the design on my [Thingiverse][NL Thingiverse].
 
-My next design actually went really well. When Pokemon Go came out I decided to make keychains for the 3 teams. These designs turned out really well. At this point I was still using using the 2D to 3D function from [OpenSCAD] which while it does work, it doesn't work very well. This led me to using [Inkscape] and the [Generate OpenSCAD path extension] which made both my keychain making easier and cleaner. This really kick started my keychain making. Here's my Pokemon Go Keychains.
+My next design actually went really well. When Pokemon Go came out I decided to make keychains for the 3 teams. These designs turned out really well. At this point I was still using using the 2D to 3D function from [OpenSCAD] which while it does work, it doesn't work very well. This led me to using [Inkscape] and the [Generate OpenSCAD path extension] which made both my keychain making easier and cleaner. This really kick started my keychain making. Here's my Pokemon Go keychains.
 
 ![Instinct keychain](instinctKeychain.png)
 ![Valor keychain](alorKeychain.png)
@@ -67,7 +67,7 @@ Spelunky
 ![Spelunky Keychain](spelunkyKeychain.png)
 [Thingiverse Link][Spelunky Thingiverse]
 
-Then for this holiday season I tried to stretch my skills by making some presents. I made a spinning ornament and even combined electronics and LEDs into a statue thing.
+Then for this holiday season I tried to stretch my skills by making some presents. I made a spinning ornament and even combined electronics and LED's into a statue thing.
 
 Hamilton Spinning Ornament
 ![Hamilton Spinning Ornament](hamOrnament.png)

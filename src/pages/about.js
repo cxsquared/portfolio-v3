@@ -29,7 +29,7 @@ class About extends React.PureComponent {
         >
           Since you've stumbled upon this site I'll tell you a little about
           myself. My name is Cody Claborn. Currently I'm a full time programmer
-          and hobbiest game developer. My main focus is in audio programming and
+          and hobbyist game developer. My main focus is in audio programming and
           how audio can be made better for video games. My background is in
           Music Technology with a BS in Music Technology from IUPUI. If you want
           to talk video games, programming, music, or 3D printing feel free to

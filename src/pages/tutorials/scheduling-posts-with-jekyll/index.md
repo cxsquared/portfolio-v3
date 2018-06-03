@@ -56,7 +56,7 @@ Now that we have a way to update the site we need to schedule our sever to call 
 crontab -e
 ```
 
-This will bring up cron in what ever is your default editor. You should see a little bit of text that explains how the cronrab file works. Each line of the crontab file will run a command. The lines are formated as "Minute Hour Day Month Weekday Command". So if you want to run something everyday at 3:45 p.m. you would type...
+This will bring up cron in what ever is your default editor. You should see a little bit of text that explains how the cronrab file works. Each line of the crontab file will run a command. The lines are formatted as "Minute Hour Day Month Weekday Command". So if you want to run something everyday at 3:45 p.m. you would type...
 
 ```bash
 45 15 * * * 'your command here'
