@@ -30,7 +30,6 @@ class GamesCarousel extends React.PureComponent {
   }
 
   onCarouselChange(index) {
-    console.log(`previous index: ${this.state.selectedItem} new index: ${index}`);
     var newIndex = index;
     if (this.state.width > 1000) {
       if (index < 1) {
