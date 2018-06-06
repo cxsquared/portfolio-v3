@@ -7,6 +7,12 @@ class Search extends React.PureComponent {
     super(props)
 
     const options = {
+      shouldSort: true,
+      threshold: 0.6,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      location: 0,
       keys: [
         {
           name: 'node.frontmatter.title',
@@ -36,21 +42,26 @@ class Search extends React.PureComponent {
 
   _getSearchString() {
     const query = this.props.location.search
-    if (!/^\?s=[\w]+$/.test(query)) {
+    if (!/^\?s=.+$/.test(query)) {
       return ''
     }
 
-    return query.replace(/^\?s=/, '')
+    return decodeURI(query.replace(/^\?s=/, ''))
   }
 
   render() {
-    return (
-      <Posts
+    const postsFound = this._searchForPosts(this._getSearchString());
+
+    let posts = <h3>No Search results found :(</h3>;
+    if( postsFound.length > 0) {
+	    posts = <Posts
         sectionTitle="Search"
-        posts={this._searchForPosts(this._getSearchString())}
+        posts={postsFound}
         includeImages={true}
       />
-    )
+    }
+
+    return posts;
   }
 }
 
