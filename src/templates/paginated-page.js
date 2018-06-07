@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 import { navigateTo } from 'gatsby-link'
 import Posts from '../components/Posts'
 import Pagination from '../components/Pagination'
@@ -51,6 +52,11 @@ class PaginatedPage extends React.PureComponent {
 
     return (
       <div>
+      	<Helmet>
+	  <title>
+	    {additionalContext.category}
+	  </title>
+	</Helmet>
         {posts}
         <div style={{ textAlign: 'center' }}>{paginationNav}</div>
       </div>

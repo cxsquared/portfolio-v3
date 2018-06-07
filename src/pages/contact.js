@@ -1,9 +1,15 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import Contact from '../components/Contact'
 
 const ContactPage = ({ data, location }) => {
   return (
     <div>
+      <Helmet>
+        <title>
+          Contact 
+	</title>
+      </Helmet>
       <h1>I'd love to hear from you!</h1>
       <p>
         If you have any questions over a tutorial or just want to get in touch

@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import Contact from '../components/Contact'
 import me from '../assets/me.jpg'
 
@@ -41,6 +42,11 @@ class About extends React.PureComponent {
 
     return (
       <div>
+        <Helmet>
+	  <title>
+	    About
+	  </title>
+	</Helmet>
         {about}
         <Contact
           submitted={/^\?s=true/.test(this.props.location.search)}

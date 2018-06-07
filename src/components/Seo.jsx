@@ -92,6 +92,9 @@ const Seo = ({ postData, postImage, postUrl, isBlogPost }) => {
 
   return (
     <Helmet>
+      <title>
+	{title}
+      </title>
       {/* General tags */}
       <meta name="description" content={description} />
       <meta name="image" content={image} />

@@ -1,6 +1,6 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 import Colors from '../utils/Colors'
 import { css } from 'gatsby-plugin-glamor'
 
@@ -30,7 +30,19 @@ class Layout extends React.PureComponent {
           gridTemplateRows: '2fr auto auto 1fr',
         }}
       >
-        <Helmet title={this.props.data.site.siteMetadata.title} />
+        <Helmet 
+	  defaultTitle={this.props.data.site.siteMetadata.title} 
+	  titleTemplate={`%s | ${this.props.data.site.siteMetadata.title}`}
+	>
+	  <meta name="twitter:site" content="@cxsquared" />
+	  <meta name="og:type" content="website" />
+	  <meta name="og:site_name" content={this.props.data.site.siteMetadata.title} />
+	  <link
+	    rel="canonical"
+	    href={`${this.props.data.site.siteMetadata.siteUrl}${this.props.location.pathname}`}
+	  />
+	  <html lang="en" />
+	</Helmet>
         <div
           className="header"
           style={{

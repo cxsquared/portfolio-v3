@@ -1,5 +1,6 @@
 import React from 'react'
 import Fuse from 'fuse.js'
+import Helmet from 'react-helmet'
 import Posts from '../components/Posts'
 
 class Search extends React.PureComponent {
@@ -61,7 +62,16 @@ class Search extends React.PureComponent {
       />
     }
 
-    return posts;
+    return (
+      <div>
+        <Helmet>
+	  <title>
+	    Search
+	  </title>
+	</Helmet>
+        {posts}
+      </div>
+    );
   }
 }
 
