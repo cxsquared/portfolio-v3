@@ -47,7 +47,7 @@ class GamesCarousel extends React.PureComponent {
   _sortGames(gamesToSort) {
     const categories = {
       "released": 1,
-      "gamejam": 2,
+      "gamejam": 1,
       "game": 3
     }
 
