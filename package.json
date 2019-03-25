@@ -30,6 +30,7 @@
     "react-helmet": "^5.2.0",
     "react-icons-kit": "^1.2.1",
     "react-responsive-carousel": "^3.1.47",
+    "sharp": "^0.22.0",
     "typography-theme-github": "^0.15.10"
   },
   "keywords": [
