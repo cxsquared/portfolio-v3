@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../components/layout'
 
-const NotFoundPage = () => (
-  <Layout>
+const NotFoundPage = ({ location }) => (
+  <Layout location={location}>
     <div>
       <h1>NOT FOUND</h1>
       <img src="https://http.cat/404" alt="404 Cat" />
