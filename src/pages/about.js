@@ -39,7 +39,7 @@ class About extends React.PureComponent {
     )
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <div>
           <Helmet>
             <title>About</title>

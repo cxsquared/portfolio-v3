@@ -63,7 +63,7 @@ class Search extends React.PureComponent {
     }
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <div>
           <Helmet>
             <title>Search</title>
