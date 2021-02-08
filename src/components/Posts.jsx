@@ -1,15 +1,9 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
-import { css } from 'gatsby-plugin-glamor';
 import Colors from '../utils/Colors';
-import { rhythm  } from '../utils/typography';
 
 class Posts extends React.PureComponent {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { sectionTitle, posts } = this.props; 
 
@@ -19,6 +13,7 @@ class Posts extends React.PureComponent {
             if (this.props.includeImages && node.frontmatter.image) {
               image = <Link to={postLink}>
                 <img src={node.frontmatter.image.publicURL} 
+                  alt={node.frontmatter.title}
                            style={{
                              objectFit: 'cover',
                              width: '40%',
@@ -40,7 +35,7 @@ class Posts extends React.PureComponent {
                   <header>
                       <time dateTime={node.frontmatter.date}
                             style={{
-                              fontSize: rhythm (1/2)
+                              fontSize: "16px"
                             }}
                       >
                         <Link to={postLink}
@@ -54,7 +49,7 @@ class Posts extends React.PureComponent {
                         </Link>
                       </time>
                       <h3 style={{
-                        marginTop: rhythm(1/4)
+                        marginTop: "10px" 
                       }}>
                         <Link to={postLink}
                               css={{

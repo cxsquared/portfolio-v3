@@ -1,9 +1,9 @@
 ---
 title: Fireflies
-date: "2014-11-08"
+date: '2014-11-08'
 category: gamejam
 image: firefly.png
-tags: [game, jam, gamejam, zero, "0", hour, haxeflixel, haxe]
+tags: [game, jam, gamejam, zero, '0', hour, haxeflixel, haxe]
 comments: true
 ---
 
@@ -20,5 +20,7 @@ This was the original game that was built in just 1 hour.
 I spent an hour to improve the graphics just to experiment a bit.
 
 ![Image of improved fire fly game](firefly.png)
+
+[Play It HERE!](/games/0hgame/index.html)
 
 The experience was fun and quite silly to try and create anything working in an 1 hour at 2 in the morning.

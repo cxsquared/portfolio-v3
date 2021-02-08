@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        excerpt_seperator: '<!-- excerpt -->',
+        excerpt_separator: '<!-- excerpt -->',
         plugins: [
           'gatsby-remark-responsive-iframe',
           `gatsby-remark-autolink-headers`,
@@ -42,10 +42,14 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
+              ignoreFileExtensions: [],
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 590,
+              withWebp: true,
+              showCaptions: true,
+              quality: 100,
             },
           },
         ],

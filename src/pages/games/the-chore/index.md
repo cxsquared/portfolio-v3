@@ -1,16 +1,16 @@
 ---
 title: The Chore
-date: "2016-12-30"
+date: '2016-12-30'
 category: gamejam
 image: ld37_5.png
-tags: [game, jam, ludum, dare, ld, "37", haxe, haxeflixel]
+tags: [game, jam, ludum, dare, ld, '37', haxe, haxeflixel]
 description: The Chore is a game built with Haxeflixel for the Ludum Dare game jam.
 comments: true
 ---
 
 The Chore is a game built with [HaxeFlixel](http://haxeflixel.com) in the 72 hour [Ludume Dare Jam](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=23711). I handled the programming and audio for the game and the art was done by [@Moussetticus](https://twitter.com/Moussetticus). The theme for this jam was One Room and we created a sequence puzzle game about cleaning a room. Though the story of the game follows a darker path. You can look at the source code of the game on my [Github](https://github.com/cxsquared/LD37).
 
-<iframe src="https://codyclaborn.me/games/LD37/index.html" name="The Chore" width="800" height="600" frameborder="0" scrolling="no"><p>Your browser does not support iframes.</p></iframe>
+[Play it HERE!](/games/LD37/index.html)
 
 You've got one job today and that's to clean up the house. Hopefully you can do it before you significant other get's home. This choir might just test the relationship.
 

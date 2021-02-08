@@ -2,6 +2,8 @@ import React from 'react'
 import Fuse from 'fuse.js'
 import Helmet from 'react-helmet'
 import Posts from '../components/Posts'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 class Search extends React.PureComponent {
   constructor(props) {
@@ -51,27 +53,25 @@ class Search extends React.PureComponent {
   }
 
   render() {
-    const postsFound = this._searchForPosts(this._getSearchString());
+    const postsFound = this._searchForPosts(this._getSearchString())
 
-    let posts = <h3>No Search results found :(</h3>;
-    if( postsFound.length > 0) {
-	    posts = <Posts
-        sectionTitle="Search"
-        posts={postsFound}
-        includeImages={true}
-      />
+    let posts = <h3>No Search results found :(</h3>
+    if (postsFound.length > 0) {
+      posts = (
+        <Posts sectionTitle="Search" posts={postsFound} includeImages={true} />
+      )
     }
 
     return (
-      <div>
-        <Helmet>
-	  <title>
-	    Search
-	  </title>
-	</Helmet>
-        {posts}
-      </div>
-    );
+      <Layout>
+        <div>
+          <Helmet>
+            <title>Search</title>
+          </Helmet>
+          {posts}
+        </div>
+      </Layout>
+    )
   }
 }
 

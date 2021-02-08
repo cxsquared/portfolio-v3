@@ -1,6 +1,6 @@
 ---
 title: Down the Rabbit Hole
-date: "2014-12-07"
+date: '2014-12-07'
 category: gamejam
 image: dtrh1.jpg
 tags: [ludum, dare, haxe, haxeflixel, game, jam]
@@ -11,7 +11,7 @@ Down the Rabbit Hole is a standard platformer built with [HaxeFlixel](http://hax
 
 The theme for this Ludum Dare was Entire Game on One Screen. My idea was to have each of my levels be built from the tiles of the last so it appeared that you where falling from each level into the next. The art work for my level wasn't great but I was happy with the mood it created.
 
-![Down The Rabbit Hole](dtrh1.jpg)
+![Down The Rabbit Hole](./dtrh1.jpg)
 
 My biggest accomplishment was the soundtrack and the little sound design work I did. I added a few variants of a falling sound when you hit the ground at a certain speed. This really gave a heavier more realistic feel to the controls.
 
@@ -19,6 +19,6 @@ My biggest accomplishment was the soundtrack and the little sound design work I 
 
 Here's how the game did.
 
-![Ratings](dtrhrate.png)
+![Ratings](./dtrhrate.png)
 
 You can check out the game on [Ludum Dare website](http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=23711).

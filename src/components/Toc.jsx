@@ -3,8 +3,6 @@ import Colors from '../utils/Colors';
 import Icon from 'react-icons-kit';
 import { arrowUp } from 'react-icons-kit/fa';
 import PropTypes from 'prop-types';
-import { rhythm } from '../utils/typography'
-import { css } from 'gatsby-plugin-glamor';
 
 class Toc extends React.PureComponent {
     constructor(props) {

@@ -1,22 +1,17 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import { navigateTo } from 'gatsby-link'
+import { navigate } from 'gatsby-link'
 import Posts from '../components/Posts'
 import Pagination from '../components/Pagination'
+import Layout from '../components/layout'
 
 class PaginatedPage extends React.PureComponent {
-  constructor(props) {
-    super(props)
-  }
-
   _onPaginationChange(pageNumber) {
-    console.log(`pageNumber:${pageNumber}`)
-    const pathPrefix = `/${this.props.pathContext.pathPrefix}/`
+    const pathPrefix = `/${this.props.pageContext.pathPrefix}/`
     if (pageNumber === 1) {
-      navigateTo(pathPrefix)
+      navigate(pathPrefix)
     } else {
-      navigateTo(`${pathPrefix}${pageNumber}`)
+      navigate(`${pathPrefix}${pageNumber}`)
     }
   }
 
@@ -24,12 +19,10 @@ class PaginatedPage extends React.PureComponent {
     const {
       group,
       index,
-      first,
-      last,
       pageCount,
       pathPrefix,
       additionalContext,
-    } = this.props.pathContext
+    } = this.props.pageContext
 
     let paginationNav = null
     if (pageCount > 1) {
@@ -51,15 +44,15 @@ class PaginatedPage extends React.PureComponent {
     )
 
     return (
-      <div>
-      	<Helmet>
-	  <title>
-	    {additionalContext.category}
-	  </title>
-	</Helmet>
-        {posts}
-        <div style={{ textAlign: 'center' }}>{paginationNav}</div>
-      </div>
+      <Layout location={this.props.location}>
+        <div>
+          <Helmet>
+            <title>{additionalContext.category}</title>
+          </Helmet>
+          {posts}
+          <div css={{ textAlign: 'center' }}>{paginationNav}</div>
+        </div>
+      </Layout>
     )
   }
 }

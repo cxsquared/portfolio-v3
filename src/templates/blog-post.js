@@ -4,6 +4,8 @@ import Colors from '../utils/Colors'
 import { rhythm } from '../utils/typography'
 import Seo from '../components/Seo'
 import Toc from '../components/Toc'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 export default ({ data, location }) => {
   const post = data.markdownRemark
@@ -57,19 +59,21 @@ export default ({ data, location }) => {
   }
 
   return (
-    <div>
-      <Seo
-        key={`seo-${post.id}`}
-        postImage={postImage}
-        postData={post}
-        isBlogPost
-        postUrl={`${data.site.siteMetadata.siteUrl}${slug}`}
-      />
-      {header}
-      {toc}
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      {comments}
-    </div>
+    <Layout location={location}>
+      <div>
+        <Seo
+          key={`seo-${post.id}`}
+          postImage={postImage}
+          postData={post}
+          isBlogPost
+          postUrl={`${data.site.siteMetadata.siteUrl}${slug}`}
+        />
+        {header}
+        {toc}
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {comments}
+      </div>
+    </Layout>
   )
 }
 

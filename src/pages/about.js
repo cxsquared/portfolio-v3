@@ -2,19 +2,17 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Contact from '../components/Contact'
 import me from '../assets/me.jpg'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 class About extends React.PureComponent {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const about = (
       <div>
         <h1>About Me</h1>
         <img
           src={me}
-          alt="Picture of Cody Claborn with a doggo."
+          alt="Cody Claborn with a doggo."
           style={{
             width: '15%',
             height: '15%',
@@ -41,20 +39,18 @@ class About extends React.PureComponent {
     )
 
     return (
-      <div>
-        <Helmet>
-	  <title>
-	    About
-	  </title>
-	</Helmet>
-        {about}
-        <Contact
-          submitted={/^\?s=true/.test(this.props.location.search)}
-          siteUrl={`${this.props.data.site.siteMetadata.siteUrl}${
-            this.props.location.pathname
-          }`}
-        />
-      </div>
+      <Layout>
+        <div>
+          <Helmet>
+            <title>About</title>
+          </Helmet>
+          {about}
+          <Contact
+            submitted={/^\?s=true/.test(this.props.location.search)}
+            siteUrl={`${this.props.data.site.siteMetadata.siteUrl}${this.props.location.pathname}`}
+          />
+        </div>
+      </Layout>
     )
   }
 }

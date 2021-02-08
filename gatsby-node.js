@@ -8,8 +8,27 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const createPaginatedPages = require('gatsby-paginate')
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
+exports.onCreateBabelConfig = ({ actions }) => {
+  if (process.env.NODE_ENV !== 'development') {
+    actions.setBabelPlugin({
+      name: '@babel/plugin-transform-regenerator',
+      options: {},
+    })
+    actions.setBabelPlugin({
+      name: '@babel/plugin-transform-runtime',
+      options: {},
+    })
+  }
+}
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    devtool: 'eval-source-map',
+  })
+}
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode, basePath: 'pages' })
     createNodeField({
@@ -20,8 +39,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 }
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage, createRedirect } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage, createRedirect } = actions
   return new Promise((resolve, reject) => {
     graphql(`
       {
