@@ -173,6 +173,10 @@ exports.createPages = ({ graphql, actions }) => {
           f: `/blog/A-Year-Of-3D-Printing.html`,
           t: '/blog/a-year-of-3d-printing/',
         },
+        {
+          f: `/spooky/`,
+          t: '/games/spooky/',
+        },
       ]
 
       redirectUrls.forEach(({ f, t }) => {
