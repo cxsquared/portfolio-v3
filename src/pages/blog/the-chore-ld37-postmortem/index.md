@@ -1,10 +1,21 @@
 ---
 title: The Chore LD37 Postmortem
-date: "2016-12-29"
-tags: [Ludum Dare, post, mortem, Postmortem, LD37, The Chore, "37", haxe, haxeflixel]
+date: '2016-12-29'
+tags:
+  [
+    Ludum Dare,
+    post,
+    mortem,
+    Postmortem,
+    LD37,
+    The Chore,
+    '37',
+    haxe,
+    haxeflixel,
+  ]
 category: blog
 image: ld37_1.png
-description: A postmorten of the game I made for Ludum Dare 37.
+description: A postmortem of the game I made for Ludum Dare 37.
 comments: true
 ---
 
@@ -12,31 +23,31 @@ comments: true
 
 ## Things Used
 
-* [HaxeFlixel](http://haxeflixel.com/)
-* [Abelton Live](https://www.ableton.com/en/)
-* [Maya](http://www.autodesk.com/products/maya/overview)
-* [3D Coat](http://3dcoat.com/home/)
+- [HaxeFlixel](http://haxeflixel.com/)
+- [Abelton Live](https://www.ableton.com/en/)
+- [Maya](http://www.autodesk.com/products/maya/overview)
+- [3D Coat](http://3dcoat.com/home/)
 
-# The TLDR
+## The TLDR
 
-## What Went Right
+### What Went Right
 
-* Using a JSON actor system instead of a hard coded system allowed me to quickly implement final art and tweaks in a little over an hour.
-* I was really happy with how the sound effects turned out.
-* Adding a small bit of story seemed to make our game more interesting/replayable even though the game isn’t that interesting.
-* The initial idea, even though it was content heavy, was more or less fully realized.
+- Using a JSON actor system instead of a hard coded system allowed me to quickly implement final art and tweaks in a little over an hour.
+- I was really happy with how the sound effects turned out.
+- Adding a small bit of story seemed to make our game more interesting/replayable even though the game isn’t that interesting.
+- The initial idea, even though it was content heavy, was more or less fully realized.
 
-## What Went Wrong
+### What Went Wrong
 
-* Couldn’t get animations to render and export correctly from Maya.
-* Forgot about a timer feature (we should really write things down more.)
-* Didn’t  plan the time out well enough to model 100% of what we wanted.
-* Didn’t include enough visual feedback for the actions in game.
-* Lack of understanding of the game idea between us. Took till the second day for us to fully agree on the direction and game play.
+- Couldn’t get animations to render and export correctly from Maya.
+- Forgot about a timer feature (we should really write things down more.)
+- Didn’t plan the time out well enough to model 100% of what we wanted.
+- Didn’t include enough visual feedback for the actions in game.
+- Lack of understanding of the game idea between us. Took till the second day for us to fully agree on the direction and game play.
 
-# The Full Version
+## The Full Version
 
-## Day 1
+### Day 1
 
 So coming into this jam there was one thing I didn’t want to happen, and like all good moments in life, that exact thing happened. I really really really didn’t theme “One Room”. This was mostly because I hadn’t enjoyed the previous Ludum Dares that included number restrictions in the theme. But alas, that’s the theme that happened and we were prepared to roll with it.
 
@@ -46,11 +57,11 @@ After the next hour we had a solid idea of what the game flow was going to be. W
 
 ![The gameplay flow chart for the chore](ld37_2.jpg)
 
-## Day 2
+### Day 2
 
 The second day was mostly just work, work, work. This day was broad strokes of getting the base of the game created. When we decided the only input in the game was going to be the mouse it made my job as a programmer a lot easier. I had previously created an “actor component” system for some previous work and I knew this would be the perfect starting point. The main thing to this system is using JSON to create actors instead of hard coding them. On top of these actors I create components that I try to make a general as possible to allow for interactions with these actors. So I created a striped down version of this idea and by nightfall I had the actors with simple interaction into the game. The main portion of my time was spent placing all the individual actors in the correct location.I found out that the game framework I was using, [HaxeFlixel](http://haxeflixel.com/), actually allowed me to move actors around and this is what I used to get locations for actors. I blame the fact I was having allergic fits due to being around cats for not just using the reference image to find the correct locations. For the more back-end stuff such as text management and global states I used singletons. This was a functional but somewhat haphazardly approach to this. I’m sure there is a better way for all this but it was quicker for me to do what I already knew. By the end of the night I had all the temp art in with a few working aspects already done.
 
-## Day 3
+### Day 3
 
 The start of the third day was spent getting the game fully playable. Thanks to my “actor component” system adding in functionality was quite simple. All of the simple items could be controlled with just one class which played certain animations when clicked. For anything more complicated I just had to extend that class and use the functions I had set up to add more functionality. I’m really happy with how simple and quick these concepts worked. By dinner time I had a fully playable prototype with the temp art. Things were shaping up nicely.
 
@@ -62,7 +73,7 @@ Now with all of that done I wanted to start working on some polish for the game.
 
 Creating the text system was fun for me. I used another singleton pattern class to control everything. The fun part for me was implementing a queue for multiple lines. Creating the text fade in and out with tweens gives it a sense of polish and attention with very little work. It’s these little things that I hope give our game a little something more than just a 48 hour game about clicking.
 
-## Day 4
+### Day 4
 
 Having the extra 24 hours in the jam is so nice. I’m used to the 48 hours in compo that I was willing to stretch the scope of our game just a bit. The last day was full of last minute additions and polish. My main task on the last day was getting all the sound effects recorded, edited, and implemented. I first took on the task in implementing sound because if I couldn’t get that done in time it was pointless to record the sounds. Luckily [HaxeFlixel](http://haxeflixel.com/) makes this super easy. Once that was done I then ran around my house with a microphone recording all the things I needed. The weirdest of which involved me taking out my trash with a microphone in my mouth. Overall I’m super happy with how all the sounds turned out.
 

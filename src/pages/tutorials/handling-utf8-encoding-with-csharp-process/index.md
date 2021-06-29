@@ -1,16 +1,30 @@
 ---
-title: Handling UTF8 Encoding With C#'s Process 
-date: "2018-06-25"
+title: Handling UTF8 Encoding With C#'s Process
+date: '2018-06-25'
 category: tutorial
-tags: [tutorial, csharp, c#, mysql, sql, powershell, process, encoding, utf8, programming]
-description: A quick tip on how to handle different encoding's with C#'s Process class.
+tags:
+  [
+    tutorial,
+    csharp,
+    c#,
+    mysql,
+    sql,
+    powershell,
+    process,
+    encoding,
+    utf8,
+    programming,
+  ]
+description: A quick tip on how to handle different encodings with C#'s Process class.
 toc: true
 comments: true
 ---
+
 Recently at work I ran into a Unicode encoding issue. We using C#'s [Process]
 to run `powershell±mysqldump.exe` to create our SQL backups. Recently we discovered that any Unicode stored in our databases was mangled when we dumped the database. And I spent waaaaay too much time trying to figure out why this was happening so here's how I finally figured out how to fix it.
 
 ## TLDR
+
 Turns out Window's doesn't like UTF8 by default. C#'s [Process] uses Windows-1252 encoding by default which is basically latin1. To fix this problem you need to set [Process]'s [StandardErrorEncoding] setting. This is as simple as...
 
 ```csharp
@@ -35,5 +49,5 @@ process.StartInfo.StandardErrorEncoding = Encoding.UTF8
 
 Thanks for reading. Hopefully this saves someone else the pain I went through trying to figure out the problem. If you have a question or comment feel free to leave one below.
 
-[Process]:https://msdn.microsoft.com/en-us/library/system.diagnostics.process(v=vs.110).aspx
-[StandardErrorEncoding]:https://msdn.microsoft.com/en-us/library/system.diagnostics.processstartinfo.standarderrorencoding(v=vs.110).aspx
+[process]: https://msdn.microsoft.com/en-us/library/system.diagnostics.process(v=vs.110).aspx
+[standarderrorencoding]: https://msdn.microsoft.com/en-us/library/system.diagnostics.processstartinfo.standarderrorencoding(v=vs.110).aspx

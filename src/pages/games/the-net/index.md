@@ -1,9 +1,9 @@
 ---
 title: The NET
-date: "2013-11-04"
+date: '2013-11-04'
 category: game
 image: net.png
-tags: [net, falsh, early, class]
+tags: [net, flash, early, class]
 comments: true
 ---
 

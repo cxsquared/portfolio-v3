@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="8" tileheight="8" nextobjectid="271">
+ <tileset firstgid="1" name="LD40" tilewidth="8" tileheight="8" tilecount="50" columns="5">
+  <image source="tileMap.png" width="40" height="80"/>
+ </tileset>
+ <layer name="floor" width="64" height="64">
+  <properties>
+   <property name="tileset" value="LD40"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztW2uP1SAQJb5Y3bjxm8Y1PqKrde9tev//r7MknTiezEyBC5Ru/XDSUoaBAwzM0PbROfc447JcOS4LRkij3DBjYjKTkJZ08/Qo5J2FchMgPPstyKFOSR/x4e0bBB0Xof6B6UC+F6j7zPLHJS31o9RP2N6R6Z4Yp2npB6nPJP7Ei9rxfcYXhq+QRmj5VrlcnbH5sfI/oB/C9duMX5F4NeN1gnwuatXz0f0dd5pznztoV0v+aHN7HX8/48ZIW/wDd1q/9sofZWLK3DP+4wH5c/sP17PAn+bRMwFUh5RHuGF6LDkOnLs1+fN9U7J/0vNWgJVHuF30vFuRk/RiG6w+yynD1z/yCzT+Lee/xiWnz6wygT/ZPdkA7n898a8x/9Hf7Hn8a/APc5776HvlH9aXWyOt8cdYY6/8c0Dzn++BR+JP/o8V/+yFv3fX+b9r+3/v/Eut/0fc/+i8p3f/pyb/a+w/1q9PAdpyjTLEn87hpPjP4k97bKxfnwLcy2uU4fGfFv+2inG3AN//6Wz2aPz5WbAV/9Sw8dL2n4qU+KeGjZe2/1Tcu3/Pf1P9Xwuh3JuMcjWBbUL/bzwof27/pfjHxJ8E79Z99WvktTYh/1T/pxRS+ipHXkPgj+85j7b/4TvoUvy9y5ujNYFtkvinxH8Wx5T1L7Wvcvu29Ppn2WEK/1b2v8a/5Pzfy/5H619O/PsU+JP/r73/a8Hfuz7sf6vx38r+6fyXYt+S8e9e5j///iP1/d9T4k9nYGvj711cbE119RT/W+t/7Pl/bCx+7blBjfi/ZfzXY9zwn3/b/W9v/IMPWHL93xv/2uPvnf2OtnbaWv8pBq7Jf+0bjdZp8v9CH9SIf3qb/wj0f47MP+f7h1T+3m1r/5jm8S/N/5rr/9b2jm3i499i/dsaa/tf6fi3R/7a+Gv8vcuL2WLiRu9s+8R2YB49C7qeM710/0IA14Hfv0n8U2Ivy9YkPSnf7Eh5GGPeGfeUxvdftO5p/l+puRYjk8s/t400/2nse+Ev2dbLCvz5/Nfe/7TkTzZyp1zxzLPU+FvrX0v+NeqI5d/D/N+SP+HnjE8M7yFN+KA8R2B5qxyXfZhxEtqj6dHaadX7ANwH5V6SwatUDv9tRtmz8ozuTyv5g/LckqP1Hv8tn+CqQfpfm5fDf8S1svyfS03mZNSrtUP7f39N5g8sUwHw
+  </data>
+ </layer>
+ <objectgroup name="collision" visible="0">
+  <object id="198" type="collision" x="16" y="488" width="280" height="8"/>
+  <object id="201" type="collision" x="304" y="488" width="192" height="8"/>
+  <object id="202" type="collision" x="16" y="16" width="479.333" height="8"/>
+  <object id="204" type="collision" x="-204.333" y="484.667" width="464.666" height="8" rotation="90"/>
+  <object id="206" type="collision" x="200" y="368" width="16" height="16"/>
+  <object id="207" type="collision" x="232" y="368" width="16" height="16"/>
+  <object id="208" type="collision" x="264" y="368" width="16" height="16"/>
+  <object id="209" type="collision" x="296" y="368" width="16" height="16"/>
+  <object id="210" type="collision" x="328" y="368" width="16" height="16"/>
+  <object id="211" type="collision" x="360" y="368" width="16" height="16"/>
+  <object id="212" type="collision" x="344" y="256" width="16" height="16"/>
+  <object id="213" type="collision" x="424" y="368" width="16" height="16"/>
+  <object id="214" type="collision" x="424" y="400" width="16" height="16"/>
+  <object id="215" type="collision" x="392" y="400" width="16" height="16"/>
+  <object id="216" type="collision" x="360" y="400" width="16" height="16"/>
+  <object id="217" type="collision" x="264" y="400" width="16" height="16"/>
+  <object id="218" type="collision" x="328" y="400" width="16" height="16"/>
+  <object id="219" type="collision" x="296" y="400" width="16" height="16"/>
+  <object id="220" type="collision" x="200" y="400" width="16" height="16"/>
+  <object id="221" type="collision" x="232.667" y="399.667" width="16" height="16"/>
+  <object id="222" type="collision" x="280" y="456" width="39.6667" height="16"/>
+  <object id="223" type="collision" x="360" y="432" width="111.667" height="16"/>
+  <object id="224" type="collision" x="320" y="432" width="16" height="40.2424"/>
+  <object id="225" type="collision" x="360" y="448" width="16" height="40.9697"/>
+  <object id="226" type="collision" x="264" y="432" width="16" height="40.2424"/>
+  <object id="227" type="collision" x="160" y="247.667" width="16" height="239.667"/>
+  <object id="228" type="collision" x="192" y="432" width="55.6667" height="16"/>
+  <object id="229" type="collision" x="456" y="400.333" width="16" height="31"/>
+  <object id="230" type="collision" x="456" y="247.667" width="16" height="135.333"/>
+  <object id="231" type="collision" x="392" y="368" width="16" height="16"/>
+  <object id="232" type="collision" x="344" y="288" width="16" height="16"/>
+  <object id="233" type="collision" x="344" y="224" width="16" height="16"/>
+  <object id="234" type="collision" x="248" y="224" width="16" height="16"/>
+  <object id="235" type="collision" x="248" y="256" width="16" height="16"/>
+  <object id="236" type="collision" x="248" y="288" width="16" height="16"/>
+  <object id="237" type="collision" x="104" y="256" width="16" height="16"/>
+  <object id="238" type="collision" x="232" y="448" width="16" height="40.2424"/>
+  <object id="239" type="collision" x="176" y="320" width="119.333" height="16"/>
+  <object id="240" type="collision" x="312" y="320" width="144" height="16"/>
+  <object id="241" type="collision" x="64" y="192" width="231.666" height="16"/>
+  <object id="242" type="collision" x="48" y="432" width="95.333" height="16"/>
+  <object id="243" type="collision" x="48" y="64" width="16" height="367.667"/>
+  <object id="244" type="collision" x="80" y="320" width="79.9997" height="16"/>
+  <object id="246" type="collision" x="312" y="192" width="175.666" height="16"/>
+  <object id="247" type="collision" x="456" y="208" width="16" height="22.9997"/>
+  <object id="248" type="collision" x="416" y="39.6667" width="16" height="71.9997"/>
+  <object id="249" type="collision" x="384" y="128" width="15.8182" height="31.9997"/>
+  <object id="250" type="collision" x="312" y="160" width="87.666" height="16"/>
+  <object id="252" type="collision" x="416" y="160" width="71.3327" height="16"/>
+  <object id="253" type="collision" x="416" y="128" width="16" height="31.6664"/>
+  <object id="254" type="collision" x="384" y="40" width="16" height="71.9997"/>
+  <object id="255" type="collision" x="432" y="72" width="56.3327" height="16"/>
+  <object id="256" type="collision" x="192" y="64" width="87.9994" height="16"/>
+  <object id="257" type="collision" x="312" y="24.6364" width="16" height="135.31"/>
+  <object id="258" type="collision" x="280" y="64.0833" width="16" height="111.795"/>
+  <object id="259" type="collision" x="328" y="72" width="56.3327" height="16"/>
+  <object id="260" type="collision" x="64" y="64" width="40" height="16"/>
+  <object id="261" type="collision" x="104" y="24" width="16" height="151.333"/>
+  <object id="262" type="collision" x="103.97" y="160" width="176.196" height="16"/>
+  <object id="263" type="collision" x="160" y="208" width="16" height="24.3337"/>
+  <object id="264" type="collission" x="488" y="25" width="8" height="462.75"/>
+  <object id="266" type="collission" x="16" y="24.5" width="8" height="463"/>
+  <object id="267" type="collision" x="120" y="64" width="63.7494" height="16"/>
+ </objectgroup>
+ <objectgroup name="events">
+  <object id="104" name="Spawn" type="player" x="295.75" y="475.75" width="8" height="8"/>
+  <object id="105" name="Guard" type="guard" x="109.667" y="381.334" width="8" height="8"/>
+  <object id="106" name="Guard" type="guard" x="298.833" y="260.5" width="8" height="8"/>
+  <object id="107" name="Guard" type="guard" x="415.667" y="463.667" width="8" height="8"/>
+  <object id="108" name="Coin" type="coin" x="196.667" y="306.666" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="109" name="Coin" type="coin" x="179.333" y="306.667" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="110" name="Coin" type="coin" x="213.333" y="306.667" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="111" name="Coin" type="coin" x="70.3334" y="419" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="112" name="Coin" type="coin" x="143.333" y="343.667" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="113" name="Coin" type="coin" x="216.333" y="471.333" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="114" name="Coin" type="coin" x="216.167" y="453.833" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="115" name="Coin" type="coin" x="311.167" y="447.5" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="116" name="Coin" type="coin" x="296.333" y="448" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="117" name="Coin" type="coin" x="280" y="448.667" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="118" name="Safe" type="safe" x="376.333" y="464" width="8" height="8">
+   <properties>
+    <property name="coins" value="10"/>
+   </properties>
+  </object>
+  <object id="120" name="Safe" type="safe" x="23.6667" y="480" width="8" height="8">
+   <properties>
+    <property name="coins" value="25"/>
+   </properties>
+  </object>
+  <object id="121" name="Guard" type="guard" x="30.6667" y="297" width="8" height="8"/>
+  <object id="122" name="Coin" type="coin" x="411.333" y="309" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="123" name="Coin" type="coin" x="428.667" y="308.999" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="124" name="Coin" type="coin" x="445.333" y="309" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="125" name="Coin" type="coin" x="283.667" y="260.667" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="126" name="Coin" type="coin" x="314" y="261" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="127" name="Coin" type="coin" x="178.667" y="215.501" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="128" name="Coin" type="coin" x="444.667" y="217.834" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="129" name="Coin" type="coin" x="196.001" y="215.5" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="130" name="Coin" type="coin" x="410.667" y="217.834" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="131" name="Coin" type="coin" x="428.001" y="217.833" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="132" name="Coin" type="coin" x="213.667" y="215.167" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="133" name="Safe" type="safe" x="262.667" y="144.667" width="8" height="8">
+   <properties>
+    <property name="coins" value="50"/>
+   </properties>
+  </object>
+  <object id="134" name="Guard" type="guard" x="42.6667" y="37.6667" width="8" height="8"/>
+  <object id="138" name="Coin" type="coin" x="78.1673" y="52.8327" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="139" name="Coin" type="coin" x="93.8333" y="52.833" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="140" name="Coin" type="coin" x="63.1667" y="53.167" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="144" name="Coin" type="coin" x="79.5006" y="22.9995" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="145" name="Coin" type="coin" x="94.5" y="22.9999" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="146" name="Coin" type="coin" x="62.1666" y="23.0005" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="147" name="Coin" type="coin" x="143.333" y="304.333" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="148" name="Coin" type="coin" x="67.6667" y="214" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="149" name="Guard" type="guard" x="93.6667" y="273.667" width="8" height="8"/>
+  <object id="150" name="Safe" type="safe" x="90.3333" y="38.3333" width="8" height="8">
+   <properties>
+    <property name="coins" value="50"/>
+   </properties>
+  </object>
+  <object id="151" name="Safe" type="safe" x="127.333" y="142.333" width="8" height="8">
+   <properties>
+    <property name="coins" value="50"/>
+   </properties>
+  </object>
+  <object id="155" name="Coin" type="coin" x="140.667" y="84.8329" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="156" name="Coin" type="coin" x="156.333" y="84.8331" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="157" name="Coin" type="coin" x="125.667" y="85.1671" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="158" name="Coin" type="coin" x="216.334" y="84.1662" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="159" name="Coin" type="coin" x="232" y="84.1664" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="160" name="Coin" type="coin" x="201.334" y="84.5004" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="161" name="Coin" type="coin" x="264" y="84.4996" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="163" name="Coin" type="coin" x="248.667" y="84.5004" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="164" name="Safe" type="safe" x="188.333" y="144.667" width="8" height="8">
+   <properties>
+    <property name="coins" value="100"/>
+   </properties>
+  </object>
+  <object id="165" name="Safe" type="safe" x="184" y="63.6667" width="8" height="8">
+   <properties>
+    <property name="coins" value="-1"/>
+   </properties>
+  </object>
+  <object id="166" name="Guard" type="guard" x="403.667" y="74" width="8" height="8"/>
+  <object id="167" name="Guard" type="guard" x="146.561" y="37.3333" width="8" height="8"/>
+  <object id="168" name="Guard" type="guard" x="220.909" y="40.2576" width="8" height="8"/>
+  <object id="169" name="Coin" type="coin" x="370" y="91.4995" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="170" name="Coin" type="coin" x="354.667" y="91.5003" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="171" name="Coin" type="coin" x="338" y="91.1663" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="172" name="Coin" type="coin" x="370.667" y="144.833" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="173" name="Coin" type="coin" x="355.334" y="144.834" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="174" name="Coin" type="coin" x="338.667" y="144.5" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="175" name="Coin" type="coin" x="470.333" y="92.8329" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="176" name="Coin" type="coin" x="455" y="92.8337" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="177" name="Coin" type="coin" x="438.333" y="92.4997" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="178" name="Coin" type="coin" x="471.667" y="147.5" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="179" name="Coin" type="coin" x="456.334" y="147.5" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="180" name="Coin" type="coin" x="439.667" y="147.166" width="8" height="8">
+   <properties>
+    <property name="coinType" value="1"/>
+   </properties>
+  </object>
+  <object id="181" name="Coin" type="coin" x="470.333" y="60.167" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="182" name="Coin" type="coin" x="455" y="60.167" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="183" name="Coin" type="coin" x="438.333" y="59.833" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="184" name="Coin" type="coin" x="369.667" y="57.8337" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="185" name="Coin" type="coin" x="354.334" y="57.8337" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="186" name="Coin" type="coin" x="337.667" y="57.4997" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="187" name="Coin" type="coin" x="368.333" y="32.5003" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="188" name="Coin" type="coin" x="353" y="32.5003" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="189" name="Coin" type="coin" x="336.333" y="32.1663" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="190" name="Coin" type="coin" x="473" y="30.8337" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="191" name="Coin" type="coin" x="441" y="30.4997" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="192" name="Coin" type="coin" x="457.667" y="30.8337" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="194" name="Coin" type="coin" x="79.334" y="87.8329" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="195" name="Coin" type="coin" x="95" y="87.8331" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="196" name="Coin" type="coin" x="64.3334" y="88.1671" width="8" height="8">
+   <properties>
+    <property name="coinType" value="2"/>
+   </properties>
+  </object>
+  <object id="268" name="Door" type="door" x="296" y="488" width="8" height="8"/>
+ </objectgroup>
+</map>

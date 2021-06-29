@@ -1,9 +1,24 @@
 ---
 title: Return of Aetheria
-date: "2015-06-01"
+date: '2015-06-01'
 category: released
 image: roa2.jpg
-tags: [school, alternate, reality, game, work, music, convention, con, flash, as3, indy, pop, con]
+tags:
+  [
+    school,
+    alternate,
+    reality,
+    game,
+    work,
+    music,
+    convention,
+    con,
+    flash,
+    as3,
+    indy,
+    pop,
+    con,
+  ]
 comments: true
 ---
 

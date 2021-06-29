@@ -68,7 +68,10 @@ class GamesCarousel extends React.PureComponent {
               display: 'flex',
             }}
           >
-            <Link to={game.fields.slug}>
+            <Link
+              style={{ marginLeft: 'auto', marginRight: 'auto' }}
+              to={game.fields.slug}
+            >
               <img
                 alt={`${game.frontmatter.title} screen shot`}
                 src={game.frontmatter.image.publicURL}
@@ -94,7 +97,7 @@ class GamesCarousel extends React.PureComponent {
       <div className="games">
         <h1 css={{ textAlign: 'center' }}>Games</h1>
         <Carousel
-          infiniteLoop={true}
+          infiniteLoop={false}
           showThumbs={false}
           showStatus={false}
           centerMode={true}

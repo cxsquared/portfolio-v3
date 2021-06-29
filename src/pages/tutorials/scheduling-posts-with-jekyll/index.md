@@ -1,7 +1,21 @@
 ---
 title: Scheduling Posts with Jekyll
-date: "2017-01-12"
-tags: [jekyll, automation, site, posts, tutorial, future, bash, cron, crontab, scripts, static, linux]
+date: '2017-01-12'
+tags:
+  [
+    jekyll,
+    automation,
+    site,
+    posts,
+    tutorial,
+    future,
+    bash,
+    cron,
+    crontab,
+    scripts,
+    static,
+    linux,
+  ]
 category: tutorial
 description: A tutorial covering how I schedule posts for my Jekyll site using cron and bash scripts.
 image: jekyllAuto.png
@@ -50,7 +64,7 @@ The first if statement just checks that at least 1 argument was supplied. If no 
 
 ## Cron Scheduling
 
-Now that we have a way to update the site we need to schedule our sever to call that script. To do this we'll use a handy software that comes with Ubuntu called [Cron][cron]. [Cron][cron] is a time-based job scheduler that we can use to schedule tasks. I'll only be showing you how I use cron so if you want more info there's a nice guide on the [Ubuntu help documentation][cronGuide]. Before we setup our cron it's important to know that you should run the following commands as the user you want the script to be ran as. So if you want to run your build script as sudo then make sure to run the commands as sudo. To set up cron to run our script you need to type this into your terminal...
+Now that we have a way to update the site we need to schedule our sever to call that script. To do this we'll use a handy software that comes with Ubuntu called [Cron][cron]. [Cron][cron] is a time-based job scheduler that we can use to schedule tasks. I'll only be showing you how I use cron so if you want more info there's a nice guide on the [Ubuntu help documentation][cronguide]. Before we setup our cron it's important to know that you should run the following commands as the user you want the script to be ran as. So if you want to run your build script as sudo then make sure to run the commands as sudo. To set up cron to run our script you need to type this into your terminal...
 
 ```bash
 crontab -e
@@ -62,7 +76,7 @@ This will bring up cron in what ever is your default editor. You should see a li
 45 15 * * * 'your command here'
 ```
 
-The astrix(*) denotes that you should use every instance. So this says run the command at 45 minutes on hour 15 of every day of every month. I have my site update script set to run at 6:30 a.m. everyday. So to call our scripts you just add this line to the end of your crontab file...
+The astrix(\*) denotes that you should use every instance. So this says run the command at 45 minutes on hour 15 of every day of every month. I have my site update script set to run at 6:30 a.m. everyday. So to call our scripts you just add this line to the end of your crontab file...
 
 ```bash
 30 6 * * * sh path_to_script path_to_Jekyll_site path_to_log_file
@@ -76,15 +90,15 @@ rvm cron setup
 
 This command will let rvm setup the path inside your crontab file for you. One more thing I added to my crontab file was a "MAILTO='my_email'" line. This makes cron email me a log every time my crontab script is ran. It's super helpful to see when things fail while updating your site.
 
-Now that your site is updated we need to copy it to the correct file that your sever serves the html files from. For me this is as simple as setting up a cron command to call cp 'my_Jekyll_folder'/_site/* 'my_html_folder'. For me I have to run this as sudo so I have to run the 'sudo crontab -e' to allow from cron to use sudo. I have this scheduled for 30 minutes after my site updates just so that if my site takes a while to process it should be ready by the time I push it live.
+Now that your site is updated we need to copy it to the correct file that your sever serves the html files from. For me this is as simple as setting up a cron command to call cp 'my_Jekyll_folder'/\_site/\* 'my_html_folder'. For me I have to run this as sudo so I have to run the 'sudo crontab -e' to allow from cron to use sudo. I have this scheduled for 30 minutes after my site updates just so that if my site takes a while to process it should be ready by the time I push it live.
 
 ## Setting Up Jekyll
 
-There's one last thing we have to do to actually allow Jekyll to schedule posts. By default Jekyll builds all posts in your _posts file even if they would occur in the future. However, you can turn this feature off by adding the line 'future: false' in your _config.yml file. This stops Jekyll from building posts that are dated to happen in the future. So now you can type up a post with a future date, push it to your git repo, and let your sever actually push it live when the time comes. The one down side to this method is that you can only schedule posts for specific days not specific times. But other than that this method has worked out nicely for me. I can now write out a few posts and schedule them to post a few days apart. If you have any questions or tips for me feel free to leave a comment and as always thanks for reading!
+There's one last thing we have to do to actually allow Jekyll to schedule posts. By default Jekyll builds all posts in your \_posts file even if they would occur in the future. However, you can turn this feature off by adding the line 'future: false' in your_config.yml file. This stops Jekyll from building posts that are dated to happen in the future. So now you can type up a post with a future date, push it to your git repo, and let your sever actually push it live when the time comes. The one down side to this method is that you can only schedule posts for specific days not specific times. But other than that this method has worked out nicely for me. I can now write out a few posts and schedule them to post a few days apart. If you have any questions or tips for me feel free to leave a comment and as always thanks for reading!
 
 [jekyll]: http://jekyllrb.com/
 [wordpress]: https://wordpress.com/
 [git]: https://git-scm.com/
 [github]: https://github.com/
 [cron]: https://www.wikiwand.com/en/Cron
-[cronGuide]: https://help.ubuntu.com/community/CronHowto
+[cronguide]: https://help.ubuntu.com/community/CronHowto

@@ -6,7 +6,7 @@ const NotFoundPage = ({ location }) => (
     <div>
       <h1>NOT FOUND</h1>
       <img src="https://http.cat/404" alt="404 Cat" />
-      <p>You just hit a page that doesn&#39;t exist... the sadness.</p>
+      <p>You just hit a page that doesn't exist... the sadness.</p>
     </div>
   </Layout>
 )

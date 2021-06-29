@@ -1,38 +1,39 @@
 ---
 title: Creating a Visual Novel in Unity
-date: "2015-09-27"
+date: '2015-09-27'
 tags: [Unity, Tutorial, Visual Novel]
 category: tutorial
 comments: true
 toc: true
 ---
+
 This tutorial will help you create a basic visual novel framework that you can use your own story and art in, as well as expand upon the framework itself with more functionality. I will say I’m not the best Unity dev and there are probably better ways to lay out this framework but this will give you a good start if you want to quickly get started with game development. You can see and download the games [source code on Github](https://github.com/cxsquared/Visual-Novel-Tutorial).
 
-A lot of this tutorial was adapted and inspired from TheHappieCat’s tutorial on the same subject. You can check out her [channel on Youtube](https://www.youtube.com/user/TheHappieCat) for more awesome game development videos. If you’d like a more in-deepth look at the basics I recommend checkout out [Unity’s documentation](http://docs.unity3d.com/Manual/UnityBasics.html).
+A lot of this tutorial was adapted and inspired from TheHappieCat’s tutorial on the same subject. You can check out her [channel on YouTube](https://www.youtube.com/user/TheHappieCat) for more awesome game development videos. If you’d like a more in-depth look at the basics I recommend checkout out [Unity’s documentation](http://docs.unity3d.com/Manual/UnityBasics.html).
 
 ## Planning
 
-* Intro
+- Intro
 
 One of most important step to starting any game project is getting a decent plan in place. Just having a simple road map with the features you want can help guide you and make your time writing code and creating content more efficient. This tutorial will guide you through the steps to create a visual novel framework that you can use to create a game using your own story and art.
 
-* Road Map
+- Road Map
 
 The visual novel we are going to create is a basic one with only a few features. The basic features of a visual novel are:
 
-* Scenes
+- Scenes
 
 You can think of these as the chapters to our visual novel. The scenes will hold the dialogue information for each encounter that you decide to create.
 
-* Characters
+- Characters
 
 You can’t have a “visual” novel without having characters. The characters will contain the information about their art and different possible poses.
 
-* Dialog
+- Dialog
 
 What good is a character if it can’t say anything? The dialog will be our script that the players will end up reading.
 
-* Choices
+- Choices
 
 Choices are what separates a game from other forms of media and lest the player interact with the game. The choices will go hand in hand with the dialog to allow the player to experience a dynamic story.
 
@@ -48,7 +49,7 @@ So now we’ll open Unity, I’m using version 5.1.1, and create a new project. 
 
 ![Blank Unity](02_BlankUnity.png)
 
-When your project is created you should be greeted with a default scene with just a Main Camera and Direction Light. The big grid image you see in the middle of the screen is your Scene view. This is where you’ll normally arrange things in the game, such as characters and objects. Using the mouse you can move around in the scene view. For now I’m going to assume you know the basics of scene view movement. You really won’t need much of it but if you’d like to look into it more you can check out [Unity’s manual page](http://docs.unity3d.com/Manual/SceneViewNavigation.html).  Since we are really only concerned about 2D movement we are going to change the scene view to fit our needs a little better.
+When your project is created you should be greeted with a default scene with just a Main Camera and Direction Light. The big grid image you see in the middle of the screen is your Scene view. This is where you’ll normally arrange things in the game, such as characters and objects. Using the mouse you can move around in the scene view. For now I’m going to assume you know the basics of scene view movement. You really won’t need much of it but if you’d like to look into it more you can check out [Unity’s manual page](http://docs.unity3d.com/Manual/SceneViewNavigation.html). Since we are really only concerned about 2D movement we are going to change the scene view to fit our needs a little better.
 
 ![Gizmo](03_Gizmo.png)
 
@@ -108,7 +109,7 @@ Now right under the File and Edit buttons at the top you should see a row of ico
 
 ## Anchors
 
-A big part of the Unity UI system is what is called anchors. The anchors tell the Canvas how it  should resize GameObjects inside it when the screen is resized. There should be a little “X” looking shape in the middle of the canvas right now. This is actually the anchor points. What it’s saying right now is that the image should just always be in the center without resizing. We need to change that to say we want the image to resize with the Canvas size because the Canvas will adapt to whatever screen size we use. Click on one the corners of the “X” and drag it to the corresponding corner of the Canvas. When you move one corner you should some of the other corners of the “X” move and a grid pop up. Drag whatever corner is left to it’s corner of the Canvas. You should see 100% on both the left side and bottom. Now that we have all the anchors set to the corners of the Canvas whenever the canvas resizes the image will as well.
+A big part of the Unity UI system is what is called anchors. The anchors tell the Canvas how it should resize GameObjects inside it when the screen is resized. There should be a little “X” looking shape in the middle of the canvas right now. This is actually the anchor points. What it’s saying right now is that the image should just always be in the center without resizing. We need to change that to say we want the image to resize with the Canvas size because the Canvas will adapt to whatever screen size we use. Click on one the corners of the “X” and drag it to the corresponding corner of the Canvas. When you move one corner you should some of the other corners of the “X” move and a grid pop up. Drag whatever corner is left to it’s corner of the Canvas. You should see 100% on both the left side and bottom. Now that we have all the anchors set to the corners of the Canvas whenever the canvas resizes the image will as well.
 
 ![Stretched Background](12_StretchedBackground.png)
 
@@ -181,7 +182,7 @@ public class DialogueParser : MonoBehaviour {
     }
 ```
 
-The next thing we need to do is set up a variable to contain all the different lines of dialogue we will have. We are using a List to hold the DialgueLines. You can think of a List as a office cabinet where you can store things with specific labels and in specific orders. The order thing will be very important for us because we want the lines to be shown to the player in a specific order
+The next thing we need to do is set up a variable to contain all the different lines of dialogue we will have. We are using a List to hold the DialogueLines. You can think of a List as a office cabinet where you can store things with specific labels and in specific orders. The order thing will be very important for us because we want the lines to be shown to the player in a specific order
 
 ```csharp
 public class DialogueParser : MonoBehaviour {
@@ -193,7 +194,7 @@ public class DialogueParser : MonoBehaviour {
     List<DialogueLine> lines;
 ```
 
-Now to work with our Start() function. What this function is doing for us is dynamically getting the dialogue file that we saved by looking at the name of the Unity Scene we are in and getting the number from that. It also instantiates the lines List which tells the computer to give use memory to store things in the List because we are about to put things in the List.  And finally we pass our dialogue file location to a new function called LoadDialogue() that we are about to create.
+Now to work with our Start() function. What this function is doing for us is dynamically getting the dialogue file that we saved by looking at the name of the Unity Scene we are in and getting the number from that. It also instantiates the lines List which tells the computer to give use memory to store things in the List because we are about to put things in the List. And finally we pass our dialogue file location to a new function called LoadDialogue() that we are about to create.
 
 ```csharp
 List<DialogueLine> lines;
@@ -414,13 +415,13 @@ Now we need to add it to our game so that it will actually run. To do this go ba
 
 ![Create Empty](16_CreateEmpty.png)
 
-So go ahead and click on the GameObject and rename it to Dialogue Parser. To acutally get our parser working we need to add the Script to the GameObject. There’s two ways to do this: either drag-and-drop the Script from the Project Browser to the GameObject’s inspector, or in the GameObject’s inspector click Add Component and search for the DialogueParser script. In the end the script should show up in the GameObjects Inspector. Now when we click play are DialogueParser is parsing all the data we have saved in our Dialogue1.txt file. You won’t see it now but soon we will start to hook everything up.
+So go ahead and click on the GameObject and rename it to Dialogue Parser. To actually get our parser working we need to add the Script to the GameObject. There’s two ways to do this: either drag-and-drop the Script from the Project Browser to the GameObject’s inspector, or in the GameObject’s inspector click Add Component and search for the DialogueParser script. In the end the script should show up in the GameObjects Inspector. Now when we click play are DialogueParser is parsing all the data we have saved in our Dialogue1.txt file. You won’t see it now but soon we will start to hook everything up.
 
-![Dialgoue Parser](17_DialogueParserObject.png)
+![Dialogue Parser](17_DialogueParserObject.png)
 
 ## Dialogue Manager
 
-Time for a new Script! This Script will be called “DialogueManager” and it will be the bridge between our DialogueParser and the text boxes that will actually show the game dialogue. So let’s get to it and right click in our Scripts folder and create a new C# Script called “DialogueManager”. Double click on it to open it up in Monodevelop. The first thing we need to do is add a few using at the top: UnityEngine.UI, and System.Collecitons.Generic;
+Time for a new Script! This Script will be called “DialogueManager” and it will be the bridge between our DialogueParser and the text boxes that will actually show the game dialogue. So let’s get to it and right click in our Scripts folder and create a new C# Script called “DialogueManager”. Double click on it to open it up in Monodevelop. The first thing we need to do is add a few using at the top: UnityEngine.UI, and System.Collections.Generic;
 
 ```csharp
 using UnityEngine;
@@ -431,7 +432,7 @@ using System.Collections.Generic;
 public class DialogueManager : MonoBehaviour {
 ```
 
-We need a lot more variable this time compared to the DialogueParser. The first thing we need is a DialogureParser so that we can get the information for it to show in the text boxes. Then we need a variable for each thing that we are expecting from the DialogueParser so we need a string for the dialogue, a string for the character name, an int for the line number, an int for the pose, a string for the character position, and a string array (which is created with the [] symbols) for the player decision options to be stored. On top of that we need a boolean (which is just a variable that holds true or false) to see if the player is making a decision and a List to keep track of the buttons we create for the player decisions. Then we need 3 public variables that are going to be the dialogue text box we created earlier, the name text box we created earlier, and a GameObject to hold our choice button prefab. We’ll get to learning about Prefabs a little later in the tutorial.
+We need a lot more variable this time compared to the DialogueParser. The first thing we need is a DialogueParser so that we can get the information for it to show in the text boxes. Then we need a variable for each thing that we are expecting from the DialogueParser so we need a string for the dialogue, a string for the character name, an int for the line number, an int for the pose, a string for the character position, and a string array (which is created with the [] symbols) for the player decision options to be stored. On top of that we need a boolean (which is just a variable that holds true or false) to see if the player is making a decision and a List to keep track of the buttons we create for the player decisions. Then we need 3 public variables that are going to be the dialogue text box we created earlier, the name text box we created earlier, and a GameObject to hold our choice button prefab. We’ll get to learning about Prefabs a little later in the tutorial.
 
 ```csharp
 public class DialogueManager : MonoBehaviour {
@@ -565,7 +566,7 @@ void SetSpritePositions(GameObject spriteObj) {
 }
 ```
 
-Now let’s look at the second function that can be called from ParseLine() which is CreateButtons(). This function will create the buttons that the player can click to make a decision. To do this we use a for loop which just says run this code as long as i is less than options.Length which is how many options the player will have. We then use Unity’s Instantiate() function to create a new GameObject. This is similar to dragging a GameObject into the Scene or Hierarchy. Then we have to get the Button component and ChioceButton Script off of the button GameObject. We use the ChoiceButton Script to set the Text of the button and to set the option of the button so the button knows what to do when it is clicked. And we tell the button the DialogueManager created it by setting cb.box to “this”. The word “this” just means a reference to the current Script DialogueManger in this case. We then make the button a child of whatever GameObject the DialogueManager is connected to. In this case that means the Panel that is part of the Canvas. Then we set the location and scale based on the Panel GameObject. And finally we add the button to the buttons list to keep track of it.
+Now let’s look at the second function that can be called from ParseLine() which is CreateButtons(). This function will create the buttons that the player can click to make a decision. To do this we use a for loop which just says run this code as long as i is less than options.Length which is how many options the player will have. We then use Unity’s Instantiate() function to create a new GameObject. This is similar to dragging a GameObject into the Scene or Hierarchy. Then we have to get the Button component and ChoiceButton Script off of the button GameObject. We use the ChoiceButton Script to set the Text of the button and to set the option of the button so the button knows what to do when it is clicked. And we tell the button the DialogueManager created it by setting cb.box to “this”. The word “this” just means a reference to the current Script DialogueManger in this case. We then make the button a child of whatever GameObject the DialogueManager is connected to. In this case that means the Panel that is part of the Canvas. Then we set the location and scale based on the Panel GameObject. And finally we add the button to the buttons list to keep track of it.
 
 ```csharp
 void CreateButtons() {
@@ -772,7 +773,7 @@ public void SetText(string newText) {
 }
 ```
 
-The next function, SetOpiton() does almost the same thing as the last function except it sets the option instead of the text. The option is going to be what we will look at to determine what to do when the button is clicked
+The next function, SetOption() does almost the same thing as the last function except it sets the option instead of the text. The option is going to be what we will look at to determine what to do when the button is clicked
 
 ```csharp
 public void SetOption(string newOption) {
@@ -780,7 +781,7 @@ public void SetOption(string newOption) {
 }
 ```
 
-The final function is ParseOpiton() which is what is going to happen when the Player clicks the button. We first split the option at the ‘,’ to separate the command from the number. After we have the command and the number we tell the DialogueManager that the player isn’t talking anymore because they’ve clicked the button. We then use an if statement to check if the option is going to change the line the player is on or change the scene. If they are changing the line then we just change the line inside of the DialogueManager. If it’s changing the scene we use a Unity class called Application to load the scene we want.
+The final function is ParseOption() which is what is going to happen when the Player clicks the button. We first split the option at the ‘,’ to separate the command from the number. After we have the command and the number we tell the DialogueManager that the player isn’t talking anymore because they’ve clicked the button. We then use an if statement to check if the option is going to change the line the player is on or change the scene. If they are changing the line then we just change the line inside of the DialogueManager. If it’s changing the scene we use a Unity class called Application to load the scene we want.
 
 ```csharp
 public void ParseOption() {
@@ -893,7 +894,7 @@ Now your character is done, I’m going to make my characters presets so that I 
 
 Now we are almost done. One of the last things we need to do is hook everything up. Click on your Panel and click Add Component. We are going to add the DialogueManager class to our Panel. Once you’ve added it you need to drag both the Dialogue text box and the Name text box to the appropriate variable spot inside the DialogueManager. And for the Choice Box you need to drag our button prefab into it.
 
-![Dialogue Manager](25_DialogeManager.png)
+![Dialogue Manager](25_DialogueManager.png)
 
 Now if you run it we still have a few problems but most of it should be working. First we need to set our Canvas to be an actual layer inside our Camera. Right now it just an overlay to and doesn’t have depth. To do this click on your Canvas in the Hierarchy and under Render Mode select Screen Space - Camera. Click on Render Camera and select Main Camera and then set the Order in Layer to -1 so it shows up behind the characters. If you play it now you’ll see characters pop up but the player buttons still won’t be working.
 

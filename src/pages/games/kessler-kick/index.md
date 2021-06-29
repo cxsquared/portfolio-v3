@@ -1,6 +1,6 @@
 ---
-title: Kessler Kick 
-date: "2019-01-27"
+title: Kessler Kick
+date: '2019-01-27'
 category: gamejam
 image: title.png
 tags: [game, jam, global, game, global game jam, jam, unity, fmod]

@@ -8,8 +8,8 @@ import Header from './Header'
 import About from './About'
 import SocialMediaLinks from './SocialMediaLinks'
 
-import 'prismjs/themes/prism-tomorrow.css'
 import './index.css'
+import 'prismjs/themes/prism-tomorrow.css'
 
 class Layout extends React.PureComponent {
   constructor(props) {

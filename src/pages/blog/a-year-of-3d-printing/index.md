@@ -1,9 +1,9 @@
 ---
 title: A Year of 3D Printing
 category: blog
-date: "2016-12-31"
+date: '2016-12-31'
 image: allprints.png
-tags: [blog, life, 3d, printing, maker, recap, "2016"]
+tags: [blog, life, 3d, printing, maker, recap, '2016']
 description: A recap of my escapades with 3D printing in 2016 including prints from Game of Thrones, Hamilton, Spelunky, Psych, and Psychonauts.
 comments: true
 ---
@@ -19,13 +19,13 @@ By the end of my first week I had actually gotten the 3D printer to start printi
 
 ![3D Printed Winterfell](winterfell.jpg)
 
-You can download the file on [Thingiverse][WinterfellLink]
+You can download the file on [Thingiverse][winterfelllink]
 
 ## My Own Printer
 
-For my birthday this year I finally got my own printer. I purchased the [MonoPrice Maker Select] which is a relatively cheap (around $300) entry level printer. This printer was actually a recommended printer from the [3D Printing subreddit]. If you are interested in getting into 3D printing you really can't go wrong with this printer. It prints pretty good straight out of the box and is easy enough to start getting awesome prints from. This is actually a whole lot easier than the printer I helped get working. There are only two parts that need to be screwed together and a few cables that need plugged in. If you end up getting this printer here's a super helpful [guide on the printer].
+For my birthday this year I finally got my own printer. I purchased the [MonoPrice Maker Select] which is a relatively cheap (around \$300) entry level printer. This printer was actually a recommended printer from the [3D Printing subreddit]. If you are interested in getting into 3D printing you really can't go wrong with this printer. It prints pretty good straight out of the box and is easy enough to start getting awesome prints from. This is actually a whole lot easier than the printer I helped get working. There are only two parts that need to be screwed together and a few cables that need plugged in. If you end up getting this printer here's a super helpful [guide on the printer].
 
-Here's on of my first prints of [Benchy][BenchyLink] which is a sort of standard test print.
+Here's on of my first prints of [Benchy][benchylink] which is a sort of standard test print.
 
 ![First Benchy Test Print](benchy.jpg)
 
@@ -39,43 +39,43 @@ Now I'm far from an artist. I drew a little bit when I was younger but now days 
 
 ![Northernlion Keychain](nlKeychain.png)
 
-You can check out the design on my [Thingiverse][NL Thingiverse].
+You can check out the design on my [Thingiverse][nl thingiverse].
 
 My next design actually went really well. When Pokemon Go came out I decided to make keychains for the 3 teams. These designs turned out really well. At this point I was still using using the 2D to 3D function from [OpenSCAD] which while it does work, it doesn't work very well. This led me to using [Inkscape] and the [Generate OpenSCAD path extension] which made both my keychain making easier and cleaner. This really kick started my keychain making. Here's my Pokemon Go keychains.
 
 ![Instinct keychain](instinctKeychain.png)
-![Valor keychain](alorKeychain.png)
+![Valor keychain](valorKeychain.png)
 ![Mystic Keychain](mysticKeychain.png)
 
-You can download them on my [Thingiverse][Pokemon Go Keychain Link].
+You can download them on my [Thingiverse][pokemon go keychain link].
 
 From this point I started making various keychains that I thought would be cool. I turned a Gravity Falls picture my friend drew into a keychain. I've made keychains based on TV shows and games I liked. And I plan on making a lot more keychains in 2017. Here are the various keychains I made in 2016.
 
 Bill Cypher
 ![Bill Keychain](billKeychain.jpg)
-[Thingiverse Link][Bill Thingiverse]
+[Thingiverse Link][bill thingiverse]
 
 Psych Pineapple
 ![Psych Pineapple Keychain](psychKeychain.jpg)
-[Thingiverse Link][Psych Thingiverse]
+[Thingiverse Link][psych thingiverse]
 
 Psychonauts Badges
 ![Psychonauts Badges](psychonautsBadges.jpg)
-[Thingiverse Link][Psychonauts Thingiverse]
+[Thingiverse Link][psychonauts thingiverse]
 
 Spelunky
 ![Spelunky Keychain](spelunkyKeychain.png)
-[Thingiverse Link][Spelunky Thingiverse]
+[Thingiverse Link][spelunky thingiverse]
 
 Then for this holiday season I tried to stretch my skills by making some presents. I made a spinning ornament and even combined electronics and LED's into a statue thing.
 
 Hamilton Spinning Ornament
 ![Hamilton Spinning Ornament](hamOrnament.png)
-[Thingiverse Link][Ham Ornament Thingiverse]
+[Thingiverse Link][ham ornament thingiverse]
 
 Fallout Hamilton Crossover Statue
 ![Fallout Hamilton Crossover Statue](falloutStatue.png)
-[Thingiverse Link][Fallout Thingiverse]
+[Thingiverse Link][fallout thingiverse]
 
 Hamilton Lightup Statue
 ![Hamilton Lightup Statue](hamStatueFull.png)
@@ -86,26 +86,26 @@ Hamilton Lightup Statue
 
 I'd love to hear about your thoughts on 3D printing. Is this the first time you've heard of it? Have you been printing awesome stuff for ages now? Feel free to leave a comment below and check back for more musings on 3D printing.
 
-[Tested Videos]: https://www.youtube.com/watch?v=b0U6LgmB0j4
-[Pursa i3]: http://www.prusa3d.com
-[Github repo]: https://github.com/garynmckinney/3DPrinter
-[WinterfellLink]: http://www.thingiverse.com/thing:39680
-[Monoprice Maker Select]: http://www.monoprice.com/product?p_id=13860
-[3D Printing subreddit]: https://www.reddit.com/r/3Dprinting/
+[tested videos]: https://www.youtube.com/watch?v=b0U6LgmB0j4
+[pursa i3]: http://www.prusa3d.com
+[github repo]: https://github.com/garynmckinney/3DPrinter
+[winterfelllink]: http://www.thingiverse.com/thing:39680
+[monoprice maker select]: http://www.monoprice.com/product?p_id=13860
+[3d printing subreddit]: https://www.reddit.com/r/3Dprinting/
 [guide on the printer]: http://3dprinterwiki.info/wiki/wanhao-duplicator-i3/
-[BenchyLink]: http://www.3dbenchy.com
-[Z brace mod]: http://www.thingiverse.com/thing:921948
+[benchylink]: http://www.3dbenchy.com
+[z brace mod]: http://www.thingiverse.com/thing:921948
 [all metal hotend]: http://www.micro-swiss.com/product-page/29551477-6081-c30f-04fe-cece31e3ba6f
-[Northernlion]: https://www.youtube.com/user/Northernlion
-[OpenSCAD]: http://www.openscad.org
-[NL Thingiverse]: http://www.thingiverse.com/thing:1591913
-[Inkscape]: https://inkscape.org/en/
-[Generate OpenSCAD path extension]: http://www.thingiverse.com/thing:25036
-[Pokemon Go Keychain Link]: http://www.thingiverse.com/cxsquared/collections/pokemon-go-keychains
-[Bill Thingiverse]: http://www.thingiverse.com/thing:1738493
-[Psych Thingiverse]: http://www.thingiverse.com/thing:1649355
-[Psychonauts Thingiverse]: http://www.thingiverse.com/thing:1940017
-[Spelunky Thingiverse]: http://www.thingiverse.com/thing:1976613
-[Ham Ornament Thingiverse]: http://www.thingiverse.com/thing:1935739
-[Fallout Thingiverse]: http://www.thingiverse.com/thing:1976702
-[Shapeways]: http://www.shapeways.com/shops/nerdy-knickknacks
+[northernlion]: https://www.youtube.com/user/Northernlion
+[openscad]: http://www.openscad.org
+[nl thingiverse]: http://www.thingiverse.com/thing:1591913
+[inkscape]: https://inkscape.org/en/
+[generate openscad path extension]: http://www.thingiverse.com/thing:25036
+[pokemon go keychain link]: http://www.thingiverse.com/cxsquared/collections/pokemon-go-keychains
+[bill thingiverse]: http://www.thingiverse.com/thing:1738493
+[psych thingiverse]: http://www.thingiverse.com/thing:1649355
+[psychonauts thingiverse]: http://www.thingiverse.com/thing:1940017
+[spelunky thingiverse]: http://www.thingiverse.com/thing:1976613
+[ham ornament thingiverse]: http://www.thingiverse.com/thing:1935739
+[fallout thingiverse]: http://www.thingiverse.com/thing:1976702
+[shapeways]: http://www.shapeways.com/shops/nerdy-knickknacks

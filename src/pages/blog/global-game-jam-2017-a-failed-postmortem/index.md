@@ -1,6 +1,6 @@
 ---
-title: "Global Game Jam 2017: A Failed Postmortem"
-date: "2017-01-26"
+title: 'Global Game Jam 2017: A Failed Postmortem'
+date: '2017-01-26'
 tags: [ggj, global game jam, game jam, postmortem, unreal 4, midi]
 category: blog
 description: A postmortem on my Global Game Jam 2017 experience and some Unreal 4 tips and tricks.
@@ -8,7 +8,7 @@ image: rippleRush.png
 comments: true
 ---
 
-So [Global Game Jam][ggj] just happened last weekend. I didn't have the time to participate all weekend but got a lot of work done on Saturday. Sadly, the team I worked with didn't quite finish because we ran into quite a few issues with [Unreal 4][unreal]. This year's theme was *Waves* which to me is actually a pretty good theme. This was the first year I've had a super large team. I ended up being on a team with 8 people including me. Overall, while we didn't quite finish, I think we came up with some cool stuff and I discovered a few cool things to do with [Unreal 4][unreal]. But as always I had a great time at [GGJ][ggj] and I'm super glad I got to participate for my 4th year in a row.
+So [Global Game Jam][ggj] just happened last weekend. I didn't have the time to participate all weekend but got a lot of work done on Saturday. Sadly, the team I worked with didn't quite finish because we ran into quite a few issues with [Unreal 4][unreal]. This year's theme was _Waves_ which to me is actually a pretty good theme. This was the first year I've had a super large team. I ended up being on a team with 8 people including me. Overall, while we didn't quite finish, I think we came up with some cool stuff and I discovered a few cool things to do with [Unreal 4][unreal]. But as always I had a great time at [GGJ][ggj] and I'm super glad I got to participate for my 4th year in a row.
 
 When I arrived on Saturday I hopped onto a team that needed some help and got to work. They were creating a sort of endless runner game where the player dodges rain drops and waves as they run along a city street. I wanted to focus more on music for this jam because I wasn't able to stay for the whole weekend. I was actually the second musician on the team so I decided to try and help incorporate the music into the game better. I ended up helping design a system that generated obstacles based on the music track. This was all done using the midi track that was actually used to create the music track.
 

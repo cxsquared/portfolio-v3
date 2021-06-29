@@ -13,7 +13,7 @@ class Contact extends React.PureComponent {
 
   validateEmail(email) {
     if (email === '') {
-      return 'Email is a requried field'
+      return 'Email is a required field'
     }
 
     var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -82,7 +82,7 @@ class Contact extends React.PureComponent {
 
       const innerForm = () => (
         <form
-          action="https://formspree.io/codylclaborn@gmail.com"
+          action="https://formspree.io/f/codylclaborn@gmail.com"
           method="POST"
           css={{
             width: '400px',

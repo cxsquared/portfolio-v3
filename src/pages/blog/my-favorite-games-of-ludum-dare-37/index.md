@@ -1,7 +1,7 @@
 ---
 title: My Favorite Games of Ludum Dare 37
-date: "2017-01-02"
-tags: [ld, ludum, dare, "37", ld37, game, jam]
+date: '2017-01-02'
+tags: [ld, ludum, dare, '37', ld37, game, jam]
 category: blog
 image: favoriteLD.png
 description: A recap of my favorite games from the 37th Ludum Dare game jam.
@@ -56,7 +56,7 @@ You can play it at [http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid
 
 ## Cozy Christmas Village
 
-![Cozy Chirstmas Village game play preview](http://ludumdare.com/compo/wp-content/compo2/593814/45848-shot0-1481517404.gif)
+![Cozy Christmas Village game play preview](http://ludumdare.com/compo/wp-content/compo2/593814/45848-shot0-1481517404.gif)
 
 This could very well be my favorite game of the Ludum Dare. It's so Zen and addicting that I ended up playing it for at least an hour (which is a long time for a jam game). Cozy Christmas Village is a city building game where you use toy pieces on a table top to build your village. Seeing your wonderful pixel village become populated with tiny figures is super fun. I highly recommend this game.
 
@@ -96,15 +96,15 @@ You can play it at [http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid
 
 While those were my favorite entries I've played this jam there were a lot that I still enjoyed. Here are a few honorable mentions from this Ludum Dare.
 
-* [The Boxer](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=124895)
-* [Khaos Arena](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=111418)
-* [Conștiență](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=125678)
-* [What Happened to Michael](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=66146)
-* [Freedom](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=57713)
-* [Nightowl](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=40492)
-* [Feather Gladiator](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=33993)
-* [Shush Prowler](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=3343)
-* [Last Wights](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=19367)
-* [Filthy Chore](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=54894)
+- [The Boxer](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=124895)
+- [Khaos Arena](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=111418)
+- [Conștiență](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=125678)
+- [What Happened to Michael](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=66146)
+- [Freedom](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=57713)
+- [Nightowl](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=40492)
+- [Feather Gladiator](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=33993)
+- [Shush Prowler](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=3343)
+- [Last Wights](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=19367)
+- [Filthy Chore](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=54894)
 
 Ludum Dare 37 produced some great games. And if you have the time you should check out my entry. You can play it at [http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=23711](http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=23711) and read the postmortem I wrote at [CodyClaborn.me](/blog/the-chore-ld37-postmortem/).

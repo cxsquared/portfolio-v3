@@ -39,7 +39,7 @@ class About extends React.PureComponent {
       <div>
         <h4>Music</h4>
         <iframe
-          title="Soundcloud Player"
+          title="SoundCloud Player"
           width="100%"
           height="450"
           style={{ border: 'none' }}

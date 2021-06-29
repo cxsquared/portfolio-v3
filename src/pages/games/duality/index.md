@@ -1,15 +1,17 @@
 ---
 title: Duality - LD34
-date: "2016-01-06"
+date: '2016-01-06'
 category: gamejam
 image: ld3400.png
 comments: true
-tags: [ludum, dare, "34", ld, game, jam, haxe, haxeflixel, music]
+tags: [ludum, dare, '34', ld, game, jam, haxe, haxeflixel, music]
 ---
 
-Duality is my entry into the 34 Ludum Dare compo. The game was ranked 3rd in audio in the compo. You can listen to the track on my [SoundCloud](https://soundcloud.com/cxsquared/duality). It's a rhythm based skill game where you have to click the right mouse buttons on the right target. The game was made in 48 hours using [HaxeFlixel](http://haxeflixel.com/) for the game and [Abelton Live 9](https://www.ableton.com/) for the music. You can play the most recent version by reading more or checkout my original version on the [Ludum Dare page](http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=23711). You can also checkout the source on my [GitHub](https://github.com/cxsquared/LD34).
+## [Play it HERE!](/games/ld34/index.html)
 
-### My Entry
+Duality is my entry into the 34 Ludum Dare compo. The game was ranked 3rd in audio in the compo. You can listen to the track on my [SoundCloud](https://soundcloud.com/cxsquared/duality). It's a rhythm based skill game where you have to click the right mouse buttons on the right target. The game was made in 48 hours using [HaxeFlixel](http://haxeflixel.com/) for the game and [Ableton Live 9](https://www.ableton.com/) for the music. You can play the most recent version by reading more or checkout my original version on the [Ludum Dare page](http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=23711). You can also checkout the source on my [GitHub](https://github.com/cxsquared/LD34).
+
+## My Entry
 
 The theme was Growth/Two Buttons
 
@@ -21,7 +23,7 @@ Here are my final judging results...
 
 ![Duality Results](ld34Rate.png)
 
-#### Soundtrack
+### Soundtrack
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/237334316&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
