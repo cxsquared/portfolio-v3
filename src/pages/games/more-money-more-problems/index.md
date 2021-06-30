@@ -5,9 +5,8 @@ category: gamejam
 image: screen01.png
 comments: true
 tags: [ludum, dare, '40', ld, game, jam, haxe, haxeflixel, music]
+game_link: /games/ld40/index.html
 ---
-
-## [Play it HERE!](/games/ld40/index.html)
 
 Take on one last job as you break into your final score. But don’t get too greedy or you might just get caught. Collect coins, crack safes, find the master vault, and escape with as much as you can.
 

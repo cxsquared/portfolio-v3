@@ -29,6 +29,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.0.0",
     "react-burger-menu": "^2.9.2",
+    "react-device-detect": "^1.17.0",
     "react-dom": "^16.0.0",
     "react-form": "^3.5.7",
     "react-helmet": "^5.2.1",
